@@ -15,7 +15,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "exciting-theme.scss"
       ],
       "scripts": [],
       "environments": {
