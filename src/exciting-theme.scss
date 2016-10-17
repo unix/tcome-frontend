@@ -15,7 +15,7 @@ $theme: md-light-theme($primary, $accent);
 
 	$dark-t: md-dark-theme($dark-p, $dark-a);
 
-	@include angular-material-theme($dark-t);
+	@include angular-material-theme($theme);
 }
 
 // 主页相关样式
@@ -28,7 +28,7 @@ $theme: md-light-theme($primary, $accent);
 	flex-flow: row;
 	>.app-list {
 		width: 260px;
-		//background-color: #ccc;
+		background-color: #fff;
 	}
 	>.app-content {
 		flex: 1;
