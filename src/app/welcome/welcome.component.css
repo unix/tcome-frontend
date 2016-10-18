@@ -27,7 +27,7 @@
 	color: #717171;
 }
 
-.article-list > li ::after{
+.article-list > li::after{
 	 display: inline-block;
 	 width: 25rem;
 	 height: 0;
