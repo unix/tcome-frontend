@@ -12,12 +12,19 @@
     <!--</md-list-item>-->
 <!--</md-list>-->
 
-<md-list>
+<ul>
     <h3 md-subheader>Folders</h3>
 
-    <md-list-item *ngFor="let menuTitle of menuTitles">
-        <md-icon md-list-avatar>folder</md-icon>
-        <h4 md-line> {{menuTitle.name}}</h4>
-        <p md-line class="demo-2"> {{menuTitle.number}} </p>
-    </md-list-item>
-</md-list>
+    <li *ngFor="let menuTitle of menuTitles">
+        <button md-button class="menu-button">
+            <h3 md-line>
+                {{menuTitle.name}}
+            </h3>
+
+            <p md-line>
+            <span> {{menuTitle.number}} </span>
+            </p>
+
+        </button>
+    </li>
+</ul>
