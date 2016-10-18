@@ -1,0 +1,53 @@
+.article-list-box {
+	width: 100%;
+	height: 100%;
+}
+
+.article-list {
+	width: 100%;
+	height: auto;
+	padding: 3rem 0 0 1.3rem;
+}
+.article-list > li {
+	width: 100%;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+.article-list > li > h2 {
+	font-size: 1.4rem;
+	color: #555555;
+	line-height: 2.5rem;
+	font-weight: 600;
+}
+
+
+.article-list > li > p {
+	font-size: .9rem;
+	color: #717171;
+}
+
+.article-list > li::after{
+	 display: inline-block;
+	 width: 25rem;
+	 height: 0;
+	 background-color: #fff;
+	 content: '';
+	 border-top: .2rem solid #f0f0f0;
+ }
+
+
+.mark{
+	width: auto;
+}
+
+.mark > p{
+	font-size: .75rem;
+	color: #717171;
+	display: inline;
+	margin-right: 0.5rem;
+}
+
+.mark > span{
+	 padding-left: .3rem;
+ }

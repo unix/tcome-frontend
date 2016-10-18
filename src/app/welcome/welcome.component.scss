@@ -1,0 +1,38 @@
+>ul.list{
+	width: 100%;
+	height: auto;
+	padding: 3rem 0 0 1.3rem;
+	>li{
+		@extend %auto;
+		margin-bottom: 1rem;
+		>h2{
+			@include fontc(1.4rem,#555555,2.5rem);
+			font-weight: 600;
+			a{
+				color: inherit;
+			}
+		}
+		>p{
+			@include fontc(.9rem,#717171);
+		}
+		&::after{
+			display: inline-block;
+			width: 25rem;
+			height: 0;
+			background-color: #fff;
+			content: '';
+			border-top: .2rem solid #f0f0f0;
+		}
+	}
+}
+.mark{
+	width: auto;
+	p{
+		@include fontc(.75rem,#717171);
+		display: inline;
+		margin-right: 0.5rem;
+		>span{
+			padding-left: .3rem;
+		}
+	}
+}
