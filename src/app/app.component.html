@@ -1,23 +1,12 @@
-<md-sidenav-layout style="overflow: hidden">
+<div class="app-body">
 
-
-
-    <md-sidenav #sidenav opened="false" align="end" >
-        Start Sidenav.
-        <br>
-    </md-sidenav>
-
-    <div class="app-body">
-
-        <div class="app-list">
-            <app-menu></app-menu>
-        </div>
-
-        <div class="app-content">
-            <router-outlet>
-            </router-outlet>
-        </div>
-
+    <div class="app-list">
+        <app-menu></app-menu>
     </div>
 
-</md-sidenav-layout>
+    <div class="app-content">
+        <router-outlet>
+        </router-outlet>
+    </div>
+
+</div>

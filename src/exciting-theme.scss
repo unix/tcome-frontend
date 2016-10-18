@@ -447,8 +447,11 @@ ol,ul,li {
 	display: flex;
 	flex-flow: row;
 	>.app-list {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
 		width: 260px;
-		background-color: #fff;
 	}
 	>.app-content {
 		flex: 1;

@@ -1,7 +1,19 @@
-.menu-button {
+
+.menu {
 	width: 100%;
-	height: 100%;
+
 	display: flex;
 	flex-direction: row;
+}
+.menu-bar {
+	width: 25px;
+	height: 100%;
+	background-color: #2A2A2A;
+}
+
+
+
+
+.menu-button {
 	flex: 1;
 }
