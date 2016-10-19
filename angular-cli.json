@@ -16,7 +16,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "exciting-theme.scss"
+        "assets/sass/master.scss"
       ],
       "scripts": [],
       "environments": {
@@ -39,7 +39,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false
   }
 }

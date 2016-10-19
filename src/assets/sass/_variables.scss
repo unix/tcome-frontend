@@ -1,0 +1,22 @@
+/**
+ * Created by WittBulter on 2016/10/19.
+ */
+
+
+@mixin fontc($size:1.4rem,$color:#545558,$line:null){
+	font-size:$size;
+	color:$color;
+	line-height: $line;
+}
+%auto{
+	width: 100%;
+	height: auto;
+}
+%full{
+	width: 100%;
+	height: 100%;
+}
+%img{
+	display: block;
+	margin: 0 auto;
+}
