@@ -6,6 +6,9 @@
 export class List {
     constructor(
         public title: string,
-        public content: string
+        public content: string,
+        public createdAt: string,
+        public tags: string[],
+
     ){}
 }

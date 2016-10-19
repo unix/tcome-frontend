@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import {Observable} from 'rxjs/Observable'
 import {Headers, RequestOptions} from '@angular/http';
 
-import List from './list'
+import {List} from './list'
 
 @Injectable()
 export class ListService {
@@ -11,7 +11,7 @@ export class ListService {
     constructor(private http: Http) {
     }
 
-    private listUrl = 'http://127.0.0.1/article'
+    private listUrl = 'http://127.0.0.1:1337/article'
 
     getList(): Observable<List[]> {
         return this.http.get(this.listUrl)
