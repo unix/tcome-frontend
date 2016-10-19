@@ -3,7 +3,7 @@
  */
 
 import { Routes, RouterModule } from '@angular/router'
-import { WelcomeComponent } from "./welcome/welcome.component";
+import { ListComponent } from "./list/list.component";
 
 
 /**
@@ -11,7 +11,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
  * @type {{path: string; component: SessionComponent}[]}
  */
 const appRoutes: Routes = [
-    {path: '', component: WelcomeComponent},
+    {path: '', component: ListComponent},
 ]
 
 /**
