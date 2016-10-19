@@ -3,13 +3,14 @@
 ul.article-list{
 	width: 100%;
 	height: auto;
-	padding: 3rem 0 0 1.3rem;
+	padding: 2rem 0 0 1.3rem;
 	>li{
 		@extend %auto;
 		margin-bottom: 1rem;
 		>h2{
 			@include fontc(1.3rem,#555555,2.5rem);
 			font-weight: 600;
+			cursor: pointer;
 			a{
 				color: inherit;
 			}
