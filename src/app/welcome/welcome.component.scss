@@ -38,3 +38,35 @@ ul.article-list{
 		}
 	}
 }
+
+
+.breadcrumb {
+	width: 100%;
+	height: 35px;
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0 1px 4px #eee;
+	background-color: #fff;
+	padding-left: 2rem;
+	>ul {
+		width: 100%;
+		overflow: hidden;
+		>li{
+			@include fontc(.85rem, #999, 35px);
+			padding: 0 0.2rem;
+			float: left;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
+			&:hover {
+				color: #0DB8C1;
+			}
+			&::after {
+				content: '-';
+				padding-left: 0.3rem;
+				font-size: .8rem;
+			}
+		}
+	}
+}
