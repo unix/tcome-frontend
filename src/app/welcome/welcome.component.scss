@@ -1,6 +1,6 @@
+@import "../../assets/sass/variables";
 
-
->ul.list{
+ul.article-list{
 	width: 100%;
 	height: auto;
 	padding: 3rem 0 0 1.3rem;
@@ -8,7 +8,7 @@
 		@extend %auto;
 		margin-bottom: 1rem;
 		>h2{
-			@include fontc(1.4rem,#555555,2.5rem);
+			@include fontc(1.3rem,#555555,2.5rem);
 			font-weight: 600;
 			a{
 				color: inherit;

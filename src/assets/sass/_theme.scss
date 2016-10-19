@@ -24,6 +24,13 @@ html {
 	-webkit-text-size-adjust: 100%; // 2
 }
 
+body {
+	font-family: 'Lantinghei SC', 'Open Sans', Arial, 'Hiragino Sans GB','Microsoft YaHei','Helvetica Neue', Helvetica,;
+	font-size: 16px;
+	line-height: 1.4;
+	color: lighten(#000, 20%);
+}
+
 // _normalize
 // Remove default margin.
 //
