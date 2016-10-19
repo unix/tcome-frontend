@@ -1,0 +1,23 @@
+
+// 主页相关样式
+//
+
+.app-body {
+	height: 100%;
+	flex: 1;
+	display: flex;
+	flex-flow: row;
+	>.app-list {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 260px;
+	}
+	>.app-content {
+		flex: 1;
+		padding-left: 292px;
+		overflow-x: hidden;
+		height: 100%;
+	}
+}
