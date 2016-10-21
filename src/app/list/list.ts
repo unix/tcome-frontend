@@ -5,10 +5,9 @@
 
 export class List {
     constructor(
-        public title: string,
-        public content: string,
-        public createdAt: string,
-        public tags: string[],
+        public title: string,       // 标题
+        public createdAt: string,   // 创建日期
+        public readTotal: number,   // 阅读数
 
     ){}
 }
