@@ -1,6 +1,52 @@
 @import "../../assets/sass/variables";
 
 
-.article-detail{
-
+.article-detail {
+	width: 800px;
+	margin:0 auto;
+	background-color: #fff;
+	padding-top: 2rem;
 }
+
+.article-detail-title {
+	@extend %auto;
+	padding-bottom: .5rem;
+	border-bottom: 1px solid #EEE;
+	>h2 {
+		@include fontc(2rem, #555, 1.5);
+	}
+	>p {
+		@include fontc(.9rem, #767676);
+		>span {
+			padding-right: .7rem;
+		}
+	}
+	.author {
+		color: #4094c7;
+	}
+}
+
+.article-detail-content {
+	@extend %auto;
+	padding: .4rem .7rem .7rem 1rem;
+	>.content-box {
+		@extend %auto;
+		border: 1px solid #EEE;
+		border-radius: 5px;
+
+		>.content-bar {
+			height: 1.9rem;
+			background-color: #F7F7F7;
+			padding-left: 1rem;
+			@include fontc(.85rem, #555, 1.9rem);
+			border-bottom: 1px solid #EEE;
+		}
+		>.content-show {
+			@extend %auto;
+			min-height: 100px;
+			background-color: #fff;
+			padding: .5rem;
+		}
+	}
+}
+
