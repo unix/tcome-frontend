@@ -1,3 +1,31 @@
-<p>
-  detail works!
-</p>
+<div class="article-detail">
+    <div class="content">
+        <h1 ng-bind="article.articleName"></h1>
+        <div class="mark">
+            <p>阅读:<span>123</span></p>
+            <p>评论:<span>2</span></p>
+            <p>发表于:<span ng-bind="article.creationTime"></span></p>
+        </div>
+        <div class="art" ng-bind="article.content">
+
+        </div>
+        <div class="comment">
+            <div class="title">
+                <p> <span class="back" title="评论">ADD </span>COMMENT
+                    <span>//</span><span class="title">一共十条</span></p>
+            </div>
+            <ul class="comment-list">
+                <li>
+                    <div class="comment-list-user">
+                        <p><span>新用户</span>评论于<span>2小时前</span>来自:<span>上海普陀</span>
+                            <span class="title">//</span><span class="reply">回复</span></p>
+                    </div>
+                    <div class="comment-list-detail">
+                        <p>评论内容</p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

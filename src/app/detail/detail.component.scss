@@ -1,0 +1,122 @@
+@import "../../assets/sass/variables";
+
+
+.article-detail{
+	@extend %auto;
+	padding: 0 1rem;
+	>.content{
+		width: 50rem;
+		height: auto;
+		margin: 0 auto;
+		padding-top: 5rem;
+		>h1{
+			@include fontc(1.7rem,#555,2.5rem);
+			font-weight: bold;
+		}
+		>.art{
+			padding: 2rem 0;
+			min-height: 30rem;
+			@include fontc(1rem,#000,1.5rem);
+			p{
+
+			}
+		}
+		.comment{
+			@extend %auto;
+			width: 50rem;
+			height: auto;
+			margin: 2rem auto;
+			>.title{
+				@extend %auto;
+				position: relative;
+				top: 0;
+				left: -1rem;
+				padding-left: .8rem;
+				p{
+					@include fontc(1.5rem,#555,3rem);
+					>span.title{
+						@include fontc(1rem,#555,3rem);
+						@include transition(all,0.6s);
+						position: relative;
+						left: -1.5rem;
+						z-index: -1;
+						display: inline;
+						opacity: 0;
+						&.change{
+							left: 0;
+							opacity: 1;
+							z-index: 1;
+						}
+					}
+					span{
+						color: #0DB8C1;
+						background-color: #E9EAEC;
+						position: relative;
+						padding: 0 0.3rem;
+						z-index: 2;
+						&.back{
+							font-size: 1rem;
+							padding-right: 1rem;
+							-webkit-user-select: none;
+							-moz-user-select: none;
+							-ms-user-select: none;
+							user-select: none;
+							cursor: pointer;
+							&.no-back{
+								color: #B9B9B9;
+								cursor: no-drop;
+							}
+						}
+					}
+				}
+			}
+			.comment-list{
+				@extend %auto;
+				>li{
+					@extend %auto;
+					padding-bottom: 1rem;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					border: 1px solid #0DB8C1;
+					.comment-list-user{
+						width: 100%;
+						height: auto;
+						padding: 0 1rem;
+						>p{
+							@include fontc(.8rem,#000,1.5rem);
+							display: inline-block;
+							width: auto;
+							border-bottom: 1px solid #0DB8C1;
+							>span{
+								padding-right: 1rem;
+								background-color: #E9EAEC;
+								&.title{
+									color: #0DB8C1;
+									position: relative;
+									left: -0.5rem;
+									padding: 0 0.4rem;
+									z-index: 2;
+								}
+								&.reply{
+									color: #0DB8C1;
+									padding-right: 0;
+									-webkit-user-select: none;
+									-moz-user-select: none;
+									-ms-user-select: none;
+									user-select: none;
+									cursor: pointer;
+								}
+							}
+						}
+					}
+					.comment-list-detail{
+						@extend %auto;
+						padding: .5rem 2rem;
+						@include fontc(.9rem,#000)
+					}
+				}
+			}
+		}
+	}
+}
