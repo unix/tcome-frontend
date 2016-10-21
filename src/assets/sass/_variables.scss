@@ -1,7 +1,7 @@
 /**
  * Created by WittBulter on 2016/10/19.
  */
-
+@import "./vendor-prefixes";
 
 @mixin fontc($size:1.4rem,$color:#545558,$line:null){
 	font-size:$size;
