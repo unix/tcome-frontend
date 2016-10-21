@@ -8,6 +8,9 @@ export class Detail {
         public id: string,              // id
         public title: string,           // 标题
         public content: string,         // 详情
+        public authorId: string,        // 作者id
+        public authorName: string,      // 作者名
+
         public createdAt: string,       // 创建日期
         public updatedAt: string,       // 更新日期
         public tags: string[],          // 标签
