@@ -6,9 +6,10 @@ ul.article-list{
 	padding: 2rem 0 0 1.3rem;
 	>li{
 		@extend %auto;
-		margin-bottom: 1rem;
+		position: relative;
+		margin-bottom: 1.3rem;
 		>h2{
-			@include fontc(1.3rem,#555555,2.5rem);
+			@include fontc(1.3rem,#555555,2rem);
 			font-weight: 600;
 			cursor: pointer;
 			a{
@@ -19,17 +20,21 @@ ul.article-list{
 			@include fontc(.9rem,#717171);
 		}
 		&::after{
+			position: absolute;
+			top: 110%;
+			left: 0;
 			display: inline-block;
 			width: 25rem;
 			height: 0;
 			background-color: #fff;
 			content: '';
-			border-top: .2rem solid #f0f0f0;
+			border-top: 2px solid #f0f0f0;
 		}
 	}
 }
 .mark{
 	width: auto;
+	margin-top: -0.3rem;
 	p{
 		@include fontc(.75rem,#717171);
 		display: inline;

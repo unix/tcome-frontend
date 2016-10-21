@@ -8,6 +8,6 @@ export class List {
         public title: string,       // 标题
         public createdAt: string,   // 创建日期
         public readTotal: number,   // 阅读数
-
+        public commentTotal: number,// 评论数
     ){}
 }
