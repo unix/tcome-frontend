@@ -13,6 +13,7 @@
 	padding-bottom: .5rem;
 	padding-left: 1.5rem;
 	border-bottom: 1px solid #EEE;
+	margin-bottom: 5px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	>h2 {
 		@include fontc(2rem, #555, 1.5);
@@ -35,7 +36,7 @@
 
 .article-detail-content {
 	@extend %auto;
-	padding: .4rem 0;
+	padding: .6rem 0;
 	>.content-box {
 		@extend %auto;
 		border: 1px solid #EEE;
@@ -99,5 +100,64 @@
 		}
 	}
 }
-
+.comment {
+	@extend %auto;
+	padding: .4rem 0;
+	.comment-box {
+		@extend %auto;
+		border: 1px solid #EEE;
+		border-radius: 5px;
+		.comment-bar {
+			height: 1.9rem;
+			background-color: #F7F7F7;
+			padding-left: 1rem;
+			@include fontc(.85rem, #555, 1.9rem);
+			border-bottom: 1px solid #EEE;
+		}
+	}
+}
+.comment-list {
+	@extend %auto;
+	>li {
+		padding: 5px 5px;
+		overflow: hidden;
+		border-bottom: 1px solid #CCCCCC;
+		position: relative;
+		min-height:70px;
+		&:last-child {
+			border: none;
+		}
+		>img {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 50px;
+			border-radius: 50%;
+			float: left;
+			margin: 5px;
+			min-height: 50px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
+		}
+		>.right {
+			width: 100%;
+			padding-left: 70px;
+			.name {
+				color: #778087;
+				font-size: 15px;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			>.content {
+				word-wrap: break-word;
+				word-break: normal;
+				padding-right:5px;
+				padding-bottom: 3px;
+			}
+		}
+	}
+}
 
