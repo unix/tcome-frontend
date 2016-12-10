@@ -60,6 +60,21 @@
 .editor {
 	@extend %auto;
 	padding: .4rem 0;
+	.editor-box {
+		@extend %auto;
+		border:1px solid #EEE;
+		.title {
+			width: 100%;
+			height: 30px;
+		}
+		.md {
+			padding:4px 7px;
+		}
+		.bottom {
+			width: 100%;
+			height: 30px;
+		}
+	}
 }
 
 

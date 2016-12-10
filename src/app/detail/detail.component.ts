@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
     ) {
     }
     public detail: Detail
-    public field1 = 2
+    public field = ''
 
     getDetail (id: string){
         this.detailService.getDetail(id)

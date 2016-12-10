@@ -18,7 +18,9 @@ export class MdeditorComponent implements AfterViewInit {
     ngAfterViewInit() {
         new SimpleMDE({
             element: this.textarea.nativeElement,
-            showIcons: ["code", "table"]
+            showIcons: ["code", "table"],
+            placeholder: '@anyone & markdown',
+            hideIcons: true
         })
     }
 
