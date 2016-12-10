@@ -11,6 +11,7 @@
 .article-detail-title {
 	@extend %auto;
 	padding-bottom: .5rem;
+	padding-left: 1.5rem;
 	border-bottom: 1px solid #EEE;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	>h2 {
@@ -51,7 +52,7 @@
 			@extend %auto;
 			min-height: 100px;
 			background-color: #fff;
-			padding: .5rem;
+			padding:  .5rem 1.5rem;
 		}
 	}
 }
