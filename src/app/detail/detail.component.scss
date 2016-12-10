@@ -35,7 +35,7 @@
 
 .article-detail-content {
 	@extend %auto;
-	padding: .4rem .7rem .7rem 1rem;
+	padding: .4rem 0;
 	>.content-box {
 		@extend %auto;
 		border: 1px solid #EEE;
@@ -55,6 +55,11 @@
 			padding:  .5rem 1.5rem;
 		}
 	}
+}
+
+.editor {
+	@extend %auto;
+	padding: .4rem 0;
 }
 
 

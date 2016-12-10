@@ -24,5 +24,8 @@
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 }
-
+.CodeMirror {
+	min-height: 180px;
+	max-height: 200px;
+}
 
