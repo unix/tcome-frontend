@@ -6,7 +6,7 @@ import {StaticService} from '../lib/service/static'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
 
-let a =  require('simplemde')
+let SimpleMDE =  require('simplemde')
 
 @Component({
     selector: 'app-detail',
@@ -34,6 +34,7 @@ export class DetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        let simplemde = new SimpleMDE({ element: document.getElementById("editor") })
         this.titleService.setTitle('文章详情-维特博客')
         this.route.params.forEach((params: Params) => {
             const id = params['id']

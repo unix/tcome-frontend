@@ -10,14 +10,16 @@ import {ListComponent} from './list/list.component'
 
 import {AppRoutingModule} from './app.routing'
 import {MenuComponent} from './menu/menu.component'
-import {DetailComponent} from './detail/detail.component'
+import {DetailComponent} from './detail/detail.component';
+import { MdeditorComponent } from './lib/component/mdeditor/mdeditor.component'
 
 @NgModule({
     declarations: [
         AppComponent,
         ListComponent,
         MenuComponent,
-        DetailComponent
+        DetailComponent,
+        MdeditorComponent
     ],
     imports: [
         BrowserModule,
