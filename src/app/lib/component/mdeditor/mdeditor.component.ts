@@ -20,7 +20,7 @@ export class MdeditorComponent implements AfterViewInit {
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
             placeholder: '@anyone & markdown',
-            hideIcons: true
+            toolbar: false
         })
     }
 
