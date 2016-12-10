@@ -54,10 +54,10 @@
     <div class="editor">
         <div class="editor-box">
             <div class="title">
-                <p><span>提交</span>一段回复</p>
+                <p><span (click)="createComment()" [class.active]="mdValue.length > 5">提交</span>一段回复</p>
             </div>
             <div class="md">
-                <app-mdeditor [text]="field"></app-mdeditor>
+                <app-mdeditor [text]="field" (mdChange)="mdChange($event)"></app-mdeditor>
             </div>
         </div>
 

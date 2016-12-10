@@ -25,6 +25,7 @@ export class DetailComponent implements OnInit {
     }
     public detail: Detail
     public field = ''
+    public mdValue: any = ''
 
     getDetail (id: string){
         this.detailService.getDetail(id)
@@ -32,6 +33,16 @@ export class DetailComponent implements OnInit {
                 detail => this.detail = detail,
                 error => console.log(error)
             )
+    }
+
+    createComment (){
+        if (this.field.length < 5) return ;
+
+
+    }
+
+    mdChange (mdValue: any){
+        this.mdValue = mdValue
     }
 
     ngOnInit() {

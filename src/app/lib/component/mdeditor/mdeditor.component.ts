@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild, Input, AfterViewInit} from '@angular/core'
+import {Component, ElementRef, ViewChild, Input, Output, AfterViewInit, EventEmitter} from '@angular/core'
 
 const SimpleMDE: any = require('simplemde')
 @Component({
@@ -13,15 +13,17 @@ export class MdeditorComponent implements AfterViewInit {
 
     @ViewChild('simplemde') textarea: ElementRef
 
-    @Input() text: string;
+    @Input() text: string
+    @Output() mdChange = new EventEmitter<any>()
 
     ngAfterViewInit() {
-        new SimpleMDE({
+        const simplemde = new SimpleMDE({
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
             placeholder: '@anyone & markdown',
             toolbar: false
         })
+        simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
     }
 
 }
