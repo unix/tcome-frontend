@@ -7,8 +7,8 @@ import {MaterialModule} from '@angular/material'
 import {AppComponent} from './app.component'
 import {ListComponent} from './list/list.component'
 
-import {routing, appRoutingProviders} from './app.routing';
-import { MenuComponent } from './menu/menu.component';
+import {routing, appRoutingProviders} from './app.routing'
+import { MenuComponent } from './menu/menu.component'
 import { DetailComponent } from './detail/detail.component'
 
 @NgModule({
