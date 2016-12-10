@@ -25,7 +25,9 @@
 	-webkit-font-smoothing: antialiased;
 }
 .CodeMirror {
-	min-height: 180px;
-	max-height: 200px;
+	min-height: 80px;
+}
+.CodeMirror-scroll {
+	min-height: 80px;
 }
 
