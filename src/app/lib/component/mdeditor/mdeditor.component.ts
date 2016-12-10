@@ -1,24 +1,25 @@
 import {Component, ElementRef, ViewChild, Input, AfterViewInit} from '@angular/core'
 
-let SimpleMDE : any = require('simplemde')
+const SimpleMDE: any = require('simplemde')
 @Component({
-  selector: 'app-mdeditor',
-  templateUrl: './mdeditor.component.html',
-  styleUrls: ['./mdeditor.component.scss']
+    selector: 'app-mdeditor',
+    templateUrl: './mdeditor.component.html',
+    styleUrls: ['./mdeditor.component.scss']
 })
 export class MdeditorComponent implements AfterViewInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  @ViewChild('simplemde') textarea : ElementRef
+    @ViewChild('simplemde') textarea: ElementRef
 
-  @Input() text: string;
+    @Input() text: string;
 
-  ngAfterViewInit() {
-    let mde = new SimpleMDE({
-      element: this.textarea.nativeElement,
-      showIcons: ["code", "table"]
-    });
-  }
+    ngAfterViewInit() {
+        new SimpleMDE({
+            element: this.textarea.nativeElement,
+            showIcons: ["code", "table"]
+        })
+    }
 
 }
