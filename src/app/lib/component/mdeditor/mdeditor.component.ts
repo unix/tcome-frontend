@@ -1,7 +1,6 @@
 import {Component, ElementRef, ViewChild, Input, AfterViewInit} from '@angular/core'
 
-declare let SimpleMDE: any
-
+let SimpleMDE : any = require('simplemde')
 @Component({
   selector: 'app-mdeditor',
   templateUrl: './mdeditor.component.html',
