@@ -15,7 +15,7 @@ export class ListService {
     ) {
     }
 
-    private listUrl = this.staticService.makeApi('article')
+    private listUrl = this.staticService.makeApi('articles')
 
     getList(): Observable<List[]> {
         return this.http.get(this.listUrl)
