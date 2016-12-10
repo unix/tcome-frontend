@@ -7,7 +7,7 @@ import {MaterialModule} from '@angular/material'
 import {AppComponent} from './app.component'
 import {ListComponent} from './list/list.component'
 
-import {routing, appRoutingProviders} from './app.routing'
+import {mainRoute, appRoutingProviders} from './app.routing'
 import { MenuComponent } from './menu/menu.component'
 import { DetailComponent } from './detail/detail.component'
 
@@ -22,7 +22,7 @@ import { DetailComponent } from './detail/detail.component'
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing,
+        mainRoute,
         MaterialModule.forRoot()
     ],
     providers: [

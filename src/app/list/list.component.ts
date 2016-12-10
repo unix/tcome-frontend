@@ -5,8 +5,8 @@ import {StaticService} from '../lib/service/static'
 
 @Component({
     selector: 'app-list',
-    templateUrl: 'list.component.html',
-    styleUrls: ['list.component.scss'],
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.scss'],
     providers: [StaticService, ListService]
 })
 export class ListComponent implements OnInit {
