@@ -7,7 +7,7 @@ import {MaterialModule} from '@angular/material'
 import {AppComponent} from './app.component'
 import {ListComponent} from './list/list.component'
 
-import {mainRoute, appRoutingProviders} from './app.routing'
+import {AppRoutingModule} from './app.routing'
 import { MenuComponent } from './menu/menu.component'
 import { DetailComponent } from './detail/detail.component'
 
@@ -22,11 +22,10 @@ import { DetailComponent } from './detail/detail.component'
         BrowserModule,
         FormsModule,
         HttpModule,
-        mainRoute,
+        AppRoutingModule,
         MaterialModule.forRoot()
     ],
     providers: [
-        appRoutingProviders
     ],
     bootstrap: [AppComponent]
 })

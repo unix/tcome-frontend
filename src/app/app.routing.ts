@@ -1,7 +1,7 @@
 /**
  * Created by WittBulter on 16/8/17.
  */
-
+import {NgModule} from '@angular/core'
 import {Routes, RouterModule} from '@angular/router'
 import {ListComponent} from "./list/list.component";
 import {DetailComponent} from './detail/detail.component'
@@ -20,5 +20,9 @@ const appRoutes: Routes = [
  *
  * @type {Array}
  */
-export const appRoutingProviders: any = []
-export const mainRoute = RouterModule.forRoot(appRoutes)
+@NgModule({
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
