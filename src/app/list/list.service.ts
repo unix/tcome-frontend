@@ -1,17 +1,21 @@
 import {Injectable} from '@angular/core'
-import { Http, Response } from '@angular/http';
+import { Http, Response } from '@angular/http'
 import {Observable} from 'rxjs/Observable'
-import {Headers, RequestOptions} from '@angular/http';
+import {Headers, RequestOptions} from '@angular/http'
 
 import {List} from './list'
+import {StaticService} from '../lib/service/static'
 
 @Injectable()
 export class ListService {
 
-    constructor(private http: Http) {
+    constructor(
+        private http: Http,
+        private staticService: StaticService
+    ) {
     }
 
-    private listUrl = 'http://127.0.0.1:1337/article'
+    private listUrl = this.staticService.makeApi('article')
 
     getList(): Observable<List[]> {
         return this.http.get(this.listUrl)

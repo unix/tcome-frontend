@@ -1,12 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 import {List} from './list'
 import {ListService} from './list.service'
+import {StaticService} from '../lib/service/static'
 
 @Component({
     selector: 'app-list',
     templateUrl: 'list.component.html',
     styleUrls: ['list.component.scss'],
-    providers: [ListService]
+    providers: [StaticService, ListService]
 })
 export class ListComponent implements OnInit {
 
