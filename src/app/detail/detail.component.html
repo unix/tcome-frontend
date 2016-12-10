@@ -22,28 +22,17 @@
     <div class="comment">
         <div class="comment-box">
             <div class="comment-bar">
-                0 Comments
+                {{comment.length}} Comments
             </div>
-            <ul class="comment-list">
-                <li>
+            <ul class="comment-list" *ngIf="comment&& comment.length">
+                <li *ngFor="let c of comment" >
                     <img src="../../assets/images/default_photo.png" alt="" >
                     <div class="right">
                         <div class="name">
-                            <p>维特</p>
+                            <p>{{c.authorName}}</p>
                         </div>
                         <div class="content">
-                            yiduashdbqwebqbweiqbwiu
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="../../assets/images/default_photo.png" alt="" >
-                    <div class="right">
-                        <div class="name">
-                            <p>维特</p>
-                        </div>
-                        <div class="content">
-                            yiduashdbqwebyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuyiduashdbqwebqbweiqbwiuqbweiqbwiu
+                            {{c.content}}
                         </div>
                     </div>
                 </li>

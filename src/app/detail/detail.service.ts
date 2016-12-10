@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable'
 
 import {StaticService} from '../lib/service/static'
 import {Detail} from './detail'
+import {Comment} from './comment'
 
 @Injectable()
 export class DetailService {
@@ -16,11 +17,22 @@ export class DetailService {
     private options = new RequestOptions({
         headers: new Headers({
             'Content-Type': 'application/json',
+            'Authorization': this.staticService.authorization()
         }),
     })
 
     getDetail (id: string): Observable<Detail> {
         return this.http.get(`${this.detailUrl}/${id}`, this.options)
+            .map(this.extractData)
+            .catch(this.handleError)
+    }
+    getComment (id: string): Observable<Comment[]> {
+        return this.http.get(`${this.detailUrl}/${id}/comment`, this.options)
+            .map(this.extractData)
+            .catch(this.handleError)
+    }
+    postComment (id: string, content: any): Observable<Comment> {
+        return this.http.post(`${this.detailUrl}/${id}/comment`, content, this.options)
             .map(this.extractData)
             .catch(this.handleError)
     }

@@ -6,6 +6,7 @@ import {StaticService} from '../lib/service/static'
 import {MdeditorComponent} from '../lib/component/mdeditor'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
+import {Comment} from './comment'
 
 
 @Component({
@@ -24,20 +25,34 @@ export class DetailComponent implements OnInit {
     ) {
     }
     public detail: Detail
+    public comment: Comment[] = []
     public field = ''
     public mdValue: any = ''
 
     getDetail (id: string){
+        this.getComment(id)
         this.detailService.getDetail(id)
             .subscribe(
                 detail => this.detail = detail,
                 error => console.log(error)
             )
     }
-
+    getComment (id: string){
+        this.detailService.getComment(id)
+            .subscribe(
+                comment => this.comment = comment,
+                error => console.log(error)
+            )
+    }
     createComment (){
-        if (this.field.length < 5) return ;
-
+        if (this.mdValue.length < 5) return ;
+        this.detailService.postComment(this.detail.id, {
+            content: this.mdValue
+        })
+            .subscribe(
+                comment => {},
+                error => console.log(error)
+            )
 
     }
 
