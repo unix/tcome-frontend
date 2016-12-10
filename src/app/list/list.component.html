@@ -10,9 +10,9 @@
         <li *ngFor="let item of list">
             <h2><a routerLink="/article/{{item.id}}">{{item.title}}</a></h2>
             <div class="mark">
-                <p>阅读:<span>{{item.readTotal? item.readTotal: 1}}</span></p>
-                <p>评论:<span>{{item.commentTotal? item.commentTotal: '暂无'}}</span></p>
-                <p>发表于:<span >{{item.createdAt.toString().split('T')}}</span></p>
+                <p>views:<span>{{item.readTotal? item.readTotal: 1}}</span></p>
+                <p>comments:<span>{{item.commentTotal? item.commentTotal: '0'}}</span></p>
+                <p>Last updated:<span >{{item.createdAt | amTimeAgo:true}}</span></p>
             </div>
         </li>
     </ul>
