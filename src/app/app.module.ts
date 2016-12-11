@@ -11,7 +11,8 @@ import {ListComponent} from './list/list.component'
 import {AppRoutingModule} from './app.routing'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component';
-import {MdeditorComponent} from './lib/component/mdeditor'
+import {MdeditorComponent} from './lib/component/mdeditor';
+import { BackComponent } from './lib/component/back/back/back.component'
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import {MdeditorComponent} from './lib/component/mdeditor'
         ListComponent,
         MenuComponent,
         MdeditorComponent,
-        DetailComponent
+        DetailComponent,
+        BackComponent
     ],
     imports: [
         BrowserModule,
