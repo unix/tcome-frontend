@@ -25,7 +25,9 @@ export class ListComponent implements OnInit {
         this.listService.getList()
             .subscribe(
                 list => this.list = list,
-                error => this.errorMessage = error
+                error => {
+                    this.errorMessage = error.json().message
+                }
             )
     }
 

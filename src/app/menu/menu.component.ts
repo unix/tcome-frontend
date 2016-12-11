@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, OnInit, OnChanges} from '@angular/core'
 import {Locker} from 'angular2-locker'
 
 import {StaticService} from '../lib/service/static'
@@ -25,17 +25,19 @@ export class MenuComponent implements OnInit {
                     this.user = {}
                 },
                 error =>{
-                    if (error.status == 401 || error.status == 200 ){
+                    if (error.status == 401){
                         this.locker.clear()
                         this.user = {}
                     }
-                    console.log(error.json());
                 }
             )
     }
 
     ngOnInit (){
         this.user = this.locker.get('user')
+    }
+    ngOnChanges (){
+        console.log(333);
     }
 
 }

@@ -18,7 +18,7 @@ export class StaticService {
     public options = new RequestOptions({
         headers: new Headers({
             'Content-Type': 'application/json',
-            'Authorization': this.locker.get('user').token
+            'Authorization': this.locker.get('user')? this.locker.get('user').token: ''
         })
     })
 
@@ -26,14 +26,17 @@ export class StaticService {
         return this.staging + path
     }
     public authorization (){
-        return this.locker.get('user').token
+        return this.locker.get('user')? this.locker.get('user').token: ''
     }
     public clearAuthorization (){
         this.locker.clear()
     }
 
     public extractData(res: Response) {
-        const body = res.json()
+        let body
+        if (res.status != 204){
+            body = res.json()
+        }
         return body || {}
     }
     handleError(error: any) {
