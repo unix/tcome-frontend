@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core'
-import {Http} from '@angular/http'
+import {Http, Response} from '@angular/http'
 import {Observable} from 'rxjs/Observable'
+import 'rxjs/add/observable/throw'
 
 import {StaticService} from '../lib/service/static'
 
@@ -16,7 +17,11 @@ export class MenuService {
     logout ():Observable<any> {
         return this.http.delete(this.session, this.staticService.options)
             .map(this.staticService.extractData)
-            .catch(this.staticService.handleError)
+            .catch(this.handleError)
+    }
+
+    private handleError (error: any){
+        return Observable.throw(error || '服务器错误')
     }
 
 }

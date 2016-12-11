@@ -21,9 +21,15 @@ export class MenuComponent implements OnInit {
         this.menuService.logout()
             .subscribe(
                 res =>{
-
+                    this.locker.clear()
+                    this.user = {}
                 },
                 error =>{
+                    if (error.status == 401 || error.status == 200 ){
+                        this.locker.clear()
+                        this.user = {}
+                    }
+                    console.log(error.json());
                 }
             )
     }
