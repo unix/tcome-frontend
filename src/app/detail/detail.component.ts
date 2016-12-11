@@ -50,7 +50,10 @@ export class DetailComponent implements OnInit {
             content: this.mdValue
         })
             .subscribe(
-                comment => {},
+                comment => {
+                    this.getComment(this.detail.id)
+                    this.field = ''
+                },
                 error => console.log(error)
             )
 

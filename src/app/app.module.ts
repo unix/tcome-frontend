@@ -27,7 +27,7 @@ import {MdeditorComponent} from './lib/component/mdeditor'
         HttpModule,
         AppRoutingModule,
         MaterialModule.forRoot(),
-        MomentModule
+        MomentModule,
     ],
     providers: [
     ],
