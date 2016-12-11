@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core'
+import {Locker} from 'angular2-locker'
+import {Router} from '@angular/router'
 
 import {StaticService} from '../lib/service/static'
 import {LoginService} from './login.service'
@@ -14,7 +16,9 @@ import {User} from './user'
 export class LoginComponent implements OnInit {
 
     constructor (
-        private loginService: LoginService
+        private loginService: LoginService,
+        private locker: Locker,
+        private router: Router,
     ){
     }
     public email:string = ''
@@ -30,11 +34,21 @@ export class LoginComponent implements OnInit {
             password: this.password
         })
             .subscribe(
-                res => this.user = res.user,
+                res => {
+                    if (res.user){
+                        this.user = res.user
+                        this.loginSuccessful(res.user)
+                    }
+                },
                 error => {
                     if (error) this.errorMessage = error.toString()
                 }
             )
+    }
+
+    loginSuccessful (user){
+        this.locker.set('user', user)
+        this.router.navigate(['/welcome'])
     }
 
     ngOnInit (){

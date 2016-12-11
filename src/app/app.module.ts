@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms'
 import {HttpModule} from '@angular/http'
 import {MaterialModule} from '@angular/material'
 import {MomentModule} from 'angular2-moment'
+import {LockerModule, Locker, LockerConfig, DRIVERS} from 'angular2-locker'
 
 import {MdeditorComponent} from './lib/component/mdeditor';
 import {BackComponent} from './lib/component/back'
@@ -16,6 +17,8 @@ import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component';
 import { LoginComponent } from './login/login.component'
+
+const lockerConfig = new LockerConfig('itsmycar', DRIVERS.LOCAL, '-')
 
 @NgModule({
     declarations: [
@@ -35,6 +38,7 @@ import { LoginComponent } from './login/login.component'
         HttpModule,
         AppRoutingModule,
         MaterialModule.forRoot(),
+        LockerModule.forRoot(lockerConfig),
         MomentModule,
     ],
     providers: [
@@ -42,4 +46,7 @@ import { LoginComponent } from './login/login.component'
     bootstrap: [AppComponent],
 })
 export class AppModule {
+    constructor (
+        private locker: Locker
+    ){}
 }
