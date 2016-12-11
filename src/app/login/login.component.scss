@@ -1,0 +1,60 @@
+.login {
+	width: 100%;
+	height: 100%;
+	background: #04A777;
+	position: fixed;
+	.login-box {
+		width: auto;
+		height: auto;
+		margin-top: 120px;
+		margin-left: 110px;
+		h3 {
+			font-size: 18px;
+			display: block;
+			color: #FFF;
+			font-weight: lighter;
+			margin-bottom: 40px;
+		}
+		input {
+			border: none;
+			border-bottom: 1px solid #8DD7C1;
+			color: #fff;
+			font-size: 21px;
+			line-height: 51px;
+			height: 38px;
+			margin-bottom: 10px;
+			width: 275px;
+			background: transparent;
+			display: block;
+			padding: 0;
+			font-weight: lighter;
+			&:focus, &:active {
+				outline: none;
+			}
+			&::-webkit-input-placeholder {
+				color: #8DD7C1;
+				font-size: 16px;
+				font-weight: 200;
+			}
+		}
+		button {
+			background: transparent;
+			color: #fff;
+			border: 1px solid #fff;
+			margin-left: -1px;
+			border-radius: 2px;
+			margin-top: 20px;
+			padding: 7px 30px;
+			font-size: 14px;
+			transition: all .2s;
+			&:focus, &:active {
+				outline: none;
+			}
+			&:hover {
+				background: rgba(255, 255, 255, .75);
+				border: 1px solid #8DD7C1;
+				color: #0b7b5a;
+			}
+		}
+	}
+}
