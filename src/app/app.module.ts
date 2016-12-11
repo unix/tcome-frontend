@@ -13,6 +13,7 @@ import {AppRoutingModule} from './app.routing'
 import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {DetailComponent} from './detail/detail.component';
         MenuComponent,
         MdeditorComponent,
         DetailComponent,
-        BackComponent
+        BackComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
