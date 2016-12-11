@@ -14,9 +14,71 @@
 	bottom: 0;
 	width: 260px;
 	z-index: 5;
+	>.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+	.photo {
+		width: 100%;
+		height: auto;
+		padding-top: 50px;
+		text-align: center;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		img {
+			width: 70px;
+			border-radius: 50%;
+			margin: 10px auto;
+			display: block;
+			border: 2px solid #fff;
+		}
+		span {
+			font-size: 16px;
+			color: #fff;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+		}
+	}
 }
 
 .menu-content > img {
 	width: 100%;
 	height: 100%;
+}
+.session {
+	position: absolute;
+	bottom: 10px;
+	width: 260px;
+	left: 50%;
+	margin-left: -130px;
+	button {
+		background: transparent;
+		border: 1px solid #fff;
+		border-radius: 28px;
+		width: 140px;
+		text-align: center;
+		line-height: 32px;
+		height: 32px;
+		color: #fff;
+		display: block;
+		margin: 0 auto;
+		font-size: 14px;
+		transition: all .2s;
+		&:active, &:focus {
+			outline: none;
+		}
+		&:hover {
+			color: #4094C7;
+			border: 1px solid #4094C7;
+			background: rgba(255, 255, 255, .75);
+			border-radius: 4px;
+			width: 150px;
+		}
+	}
 }
