@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core'
+import {Title} from '@angular/platform-browser'
+
 import {List} from './list'
 import {ListService} from './list.service'
 import {StaticService} from '../lib/service/static'
@@ -11,14 +13,13 @@ import {StaticService} from '../lib/service/static'
 })
 export class ListComponent implements OnInit {
 
-    constructor(private listService: ListService) {}
+    constructor(
+        private listService: ListService,
+        private titleService: Title,
+    ) {}
 
     list: List[]
     errorMessage: string
-
-    ngOnInit() {
-        this.getList()
-    }
 
     getList() {
         this.listService.getList()
@@ -26,6 +27,11 @@ export class ListComponent implements OnInit {
                 list => this.list = list,
                 error => this.errorMessage = error
             )
+    }
+
+    ngOnInit() {
+        this.titleService.setTitle('文章列表-维特博客')
+        this.getList()
     }
 
 }

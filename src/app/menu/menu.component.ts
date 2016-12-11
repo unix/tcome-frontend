@@ -10,19 +10,18 @@ import {MenuService} from './menu.service'
 })
 export class MenuComponent implements OnInit {
 
-    constructor (
-        private menuService: MenuService
-    ){
+    constructor (private menuService: MenuService){
     }
 
     logout (){
-            this.menuService.logout()
-                .subscribe(
-                    res => {
+        this.menuService.logout()
+            .subscribe(
+                res =>{
 
-                    },
-                    error => {}
-                )
+                },
+                error =>{
+                }
+            )
     }
 
     ngOnInit (){
