@@ -7,7 +7,12 @@ ul.article-list{
 	>li{
 		@extend %auto;
 		position: relative;
-		margin-bottom: 1.3rem;
+		margin-top: 1.3rem;
+		overflow: hidden;
+		border-bottom: 2px solid #f0f0f0;
+		&:first-child {
+			margin-top: 0;
+		}
 		>h2{
 			@include fontc(1.3rem,#555555,2rem);
 			font-weight: 600;
@@ -16,19 +21,13 @@ ul.article-list{
 				color: inherit;
 			}
 		}
-		>p{
-			@include fontc(.9rem,#717171);
+		.mark {
 		}
-		&::after{
-			position: absolute;
-			top: 110%;
-			left: 0;
-			display: inline-block;
-			width: 25rem;
-			height: 0;
-			background-color: #fff;
-			content: '';
-			border-top: 2px solid #f0f0f0;
+		p{
+			@include fontc(12px, #717171, 22px);
+			display: block;
+			float: left;
+			min-width: 80px;
 		}
 	}
 }
