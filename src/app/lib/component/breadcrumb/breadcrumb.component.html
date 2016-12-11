@@ -2,6 +2,6 @@
     <ul>
         <li><a routerLinkActive="active" routerLink="/welcome">Home</a></li>
         <li><a routerLinkActive="active" routerLink="/articles">List</a></li>
-        <li><a routerLinkActive="active" routerLink="/login">Login</a></li>
+        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/login">Login</a></li>
     </ul>
 </div>
