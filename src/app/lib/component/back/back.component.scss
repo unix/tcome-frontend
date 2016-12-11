@@ -1,0 +1,18 @@
+.back {
+	background: #3D596D;
+	padding: 4px 7px;
+	border-radius: 4px;
+	display: block;
+	float: left;
+	>span {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		color: #FFF;
+		&:hover {
+
+		}
+	}
+}

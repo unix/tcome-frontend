@@ -4,6 +4,7 @@ import {Title} from '@angular/platform-browser'
 
 import {StaticService} from '../lib/service/static'
 import {MdeditorComponent} from '../lib/component/mdeditor'
+import {BackComponent} from '../lib/component/back'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
 import {Comment} from './comment'
