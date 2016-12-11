@@ -8,6 +8,7 @@ import {Routes, RouterModule} from '@angular/router'
 import {ListComponent} from "./list/list.component"
 import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component'
+import {LoginComponent} from './login/login.component'
 
 
 /**
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'articles', component: ListComponent},
     {path: 'articles/:id', component: DetailComponent},
-    {path: 'welcome', component: HomeComponent}
+    {path: 'welcome', component: HomeComponent},
+    {path: 'login', component: LoginComponent}
 ]
 
 /**

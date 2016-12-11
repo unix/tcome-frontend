@@ -14,7 +14,8 @@ import {AppRoutingModule} from './app.routing'
 import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component'
-import {HomeComponent} from './home/home.component'
+import {HomeComponent} from './home/home.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import {HomeComponent} from './home/home.component'
         DetailComponent,
         BackComponent,
         HomeComponent,
-        BreadcrumbComponent
+        BreadcrumbComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
