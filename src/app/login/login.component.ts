@@ -3,6 +3,7 @@ import {Locker} from 'angular2-locker'
 import {Router} from '@angular/router'
 
 import {StaticService} from '../lib/service/static'
+import {MissionService} from '../lib/service/mission'
 import {LoginService} from './login.service'
 
 import {User} from './user'
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
         private loginService: LoginService,
         private locker: Locker,
         private router: Router,
+        private missionService: MissionService
     ){
     }
     public email:string = ''
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
                     if (res.user){
                         this.user = res.user
                         this.loginSuccessful(res.user)
+                        this.missionService.confirmMission({update: true})
                     }
                 },
                 error => {
@@ -52,6 +55,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit (){
+
     }
 
 }
