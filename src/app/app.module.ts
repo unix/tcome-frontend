@@ -14,6 +14,7 @@ import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
+import { BreadcrumbComponent } from './lib/component/breadcrumb/breadcrumb.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
         MdeditorComponent,
         DetailComponent,
         BackComponent,
-        HomeComponent
+        HomeComponent,
+        BreadcrumbComponent
     ],
     imports: [
         BrowserModule,
