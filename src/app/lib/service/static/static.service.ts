@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Response, Headers, RequestOptions} from '@angular/http'
+import {Observable} from "rxjs"
+import 'rxjs/add/observable/throw'
 
 @Injectable()
 export class StaticService {
@@ -29,8 +31,8 @@ export class StaticService {
         const body = res.json()
         return body || {}
     }
-    public handleError(error: any) {
-        return error.json().message
+    handleError(error: any) {
+        return error.json()
     }
 
 

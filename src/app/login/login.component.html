@@ -1,8 +1,7 @@
 <div class="login">
     <div class="login-box">
-        <h3>Login <p>error_message: error email</p></h3>
-        <input type="text" placeholder="Your name" [(ngModel)]="username">
-        <input type="email" placeholder="Your email" [(ngModel)]="emaiil">
+        <h3>Login <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
+        <input type="email" placeholder="Your email" [(ngModel)]="email">
         <input type="password" placeholder="Password" [(ngModel)]="password">
         <button (click)="login()">Submit</button>
     </div>
