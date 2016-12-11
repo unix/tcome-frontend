@@ -1,5 +1,4 @@
 import {Component, AfterViewInit, ViewChild} from '@angular/core'
-import {MenuComponent} from './menu/menu.component'
 
 import {MissionService} from './lib/service/mission'
 
@@ -9,22 +8,17 @@ import {MissionService} from './lib/service/mission'
     styleUrls: ['./app.component.scss'],
     providers: [MissionService]
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent{
     constructor (
         private missionService: MissionService
     ){
+        // 订阅子组件通知 通知至所有子组件
         missionService.missionConfirmed$.subscribe(
             astronaut =>{
-                if (astronaut.update){
-                    this.menuComponent.update()
-                }
+                missionService.announceMission(astronaut)
             }
         )
     }
-    @ViewChild(MenuComponent)
-    private menuComponent: MenuComponent
-
-
 
     ngAfterViewInit (){
 
