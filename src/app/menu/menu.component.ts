@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Locker} from 'angular2-locker'
+import {Router} from '@angular/router'
 
 import {StaticService} from '../lib/service/static'
 import {MissionService} from '../lib/service/mission'
@@ -16,7 +17,8 @@ export class MenuComponent implements OnInit {
     constructor (
         private menuService: MenuService,
         private locker: Locker,
-        private missionService: MissionService
+        private missionService: MissionService,
+        private router: Router,
     ){
         this.missionService.missionAnnounced$.subscribe(
             mission =>{
@@ -43,6 +45,9 @@ export class MenuComponent implements OnInit {
                     }
                 }
             )
+    }
+    goLogin (){
+        this.router.navigate(['/login'])
     }
 
     update (){
