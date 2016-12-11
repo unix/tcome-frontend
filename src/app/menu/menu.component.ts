@@ -7,25 +7,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-    constructor() {
+    constructor (){
 
     }
 
-    ngOnInit() {
+    logout (){
+
     }
 
-    menuTitles = [{
-        name: '归档',
-        detail: '',
-        number: '5'
-    }, {
-        name: ' 作者',
-        detail: '',
-        number: '5'
-    }, {
-        name: '搜索',
-        detail: '',
-        number: '5'
-    }]
+    ngOnInit (){
+    }
 
 }

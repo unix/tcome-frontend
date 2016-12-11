@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from '@angular/http'
+import {Http} from '@angular/http'
 import {Observable} from 'rxjs/Observable'
 
 import {StaticService} from '../lib/service/static'
@@ -14,40 +14,22 @@ export class DetailService {
     }
 
     private detailUrl = this.staticService.makeApi('articles')
-    private options = new RequestOptions({
-        headers: new Headers({
-            'Content-Type': 'application/json',
-            'Authorization': this.staticService.authorization()
-        }),
-    })
 
     getDetail (id: string): Observable<Detail> {
-        return this.http.get(`${this.detailUrl}/${id}`, this.options)
-            .map(this.extractData)
-            .catch(this.handleError)
+        return this.http.get(`${this.detailUrl}/${id}`, this.staticService.options)
+            .map(this.staticService.extractData)
+            .catch(this.staticService.handleError)
     }
     getComment (id: string): Observable<Comment[]> {
-        return this.http.get(`${this.detailUrl}/${id}/comment`, this.options)
-            .map(this.extractData)
-            .catch(this.handleError)
+        return this.http.get(`${this.detailUrl}/${id}/comment`, this.staticService.options)
+            .map(this.staticService.extractData)
+            .catch(this.staticService.handleError)
     }
     postComment (id: string, content: any): Observable<Comment> {
-        return this.http.post(`${this.detailUrl}/${id}/comment`, content, this.options)
-            .map(this.extractData)
-            .catch(this.handleError)
+        return this.http.post(`${this.detailUrl}/${id}/comment`, content, this.staticService.options)
+            .map(this.staticService.extractData)
+            .catch(this.staticService.handleError)
     }
 
-
-    private extractData(res: Response) {
-        const body = res.json()
-        return body || {}
-    }
-
-    private handleError(error: any) {
-        if (error instanceof Response) {
-            return Observable.throw(error.json().message || '服务器错误');
-        }
-        return Observable.throw(error || '服务器错误')
-    }
 
 }
