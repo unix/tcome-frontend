@@ -49,6 +49,9 @@ export class MenuComponent implements OnInit {
     goNext (path: string){
         this.router.navigate([`/${path}`])
     }
+    goMember (){
+        if (this.user&& this.user.id) this.goNext('member')
+    }
 
 
     update (){

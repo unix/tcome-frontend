@@ -10,6 +10,7 @@ import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component'
 import {LoginComponent} from './login/login.component'
 import {RegisterComponent} from './register/register.component'
+import {MemberComponent} from './member/member.component'
 
 
 /**
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     {path: 'welcome', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'register/:id/:token', component: RegisterComponent}
+    {path: 'register/:id/:token', component: RegisterComponent},
+    {path: 'member', component: MemberComponent}
 ]
 
 /**

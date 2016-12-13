@@ -5,7 +5,7 @@
 <div class="menu-content">
     <img class="bg" src="../../assets/images/default_bg.jpeg" alt="" draggable="false">
     <div class="photo">
-        <img src="../../assets/images/default_photo.png" alt="" draggable="false">
+        <img src="../../assets/images/default_photo.png" alt="" draggable="false" (click)="goMember()">
         <span>{{user&& user.username? user.username: '游客'}}</span>
     </div>
     <div class="session">
