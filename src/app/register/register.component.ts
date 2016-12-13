@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core'
+import {Router, ActivatedRoute, Params} from '@angular/router'
+import {Title} from '@angular/platform-browser'
 import {Locker} from 'angular2-locker'
 
 import {StaticService} from '../lib/service/static'
@@ -14,7 +16,10 @@ export class RegisterComponent implements OnInit {
 
     constructor (
         private registerService: RegisterService,
-        private locker: Locker
+        private locker: Locker,
+        private titleService: Title,
+        private route: ActivatedRoute,
+        private router: Router,
     ){
     }
 
@@ -22,9 +27,10 @@ export class RegisterComponent implements OnInit {
     public email: string = ''
     public password: string = ''
     public errorMessage: string = ''
+    public validateToggle: boolean = false
 
-    // 注册完成界面控制
-    public regOver: boolean = false
+    // 注册完成界面控制 注册/注册完成/验证中/验证完成
+    public regView: boolean[] = [true, false, false, false]
 
     register (){
         if (!this.checkName()) return ;
@@ -37,11 +43,25 @@ export class RegisterComponent implements OnInit {
                 result =>{
                     if (result && result.message){
                         this.errorMessage = result.message
-                        this.regOver = true
+                        this.regView = [false, true, false, false]
                     }
                 },
                 error =>{
                     this.errorMessage = error
+                }
+            )
+    }
+    validate (id, token){
+        this.registerService.valiedate(id, token)
+            .subscribe(
+                user =>{
+                    this.validateToggle = true
+                    this.regView = [false, false, false, true]
+                },
+                error =>{
+                    this.errorMessage = error
+                    this.validateToggle = false
+                    this.regView = [false, false, false, true]
                 }
             )
     }
@@ -61,12 +81,20 @@ export class RegisterComponent implements OnInit {
         }
         return true
     }
-
-    ngOnInit (){
-    }
-
     change (event){
         this.errorMessage = ''
+    }
+
+    ngOnInit (){
+        this.titleService.setTitle('注册-维特博客')
+        this.route.params.forEach((params: Params) => {
+            const id = params['id']
+            const token = params['token']
+            if (id && token){
+                this.validate(id, token)
+                this.regView = [false, false, true, false]
+            }
+        })
     }
 
 }

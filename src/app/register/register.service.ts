@@ -16,9 +16,15 @@ export class RegisterService {
     }
 
     private user = this.staticService.makeApi('user')
+    private validateUrl = this.staticService.makeApi('users')
 
     register (member: any): Observable<any>{
         return this.http.post(this.user, member, this.staticService.options)
+            .map(this.staticService.extractData)
+            .catch(this.handleError)
+    }
+    valiedate (id:string, token:string): Observable<User>{
+        return this.http.post(`${this.validateUrl}/${id}/validate`, {token: token}, this.staticService.options)
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

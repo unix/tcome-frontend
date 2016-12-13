@@ -2,14 +2,20 @@
 <div class="register">
     <div class="register-box">
         <h3>Register <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
-        <div *ngIf="!regOver">
+        <div *ngIf="regView[0]">
             <input type="email" placeholder="User name" [(ngModel)]="username" (ngModelChange)="change($event)">
             <input type="email" placeholder="Your email" [(ngModel)]="email" (ngModelChange)="change($event)">
             <input type="password" placeholder="Password" [(ngModel)]="password" (ngModelChange)="change($event)">
             <button (click)="register()">Register</button>
         </div>
-        <div class="message" *ngIf="regOver">
+        <div class="message" *ngIf="regView[1]">
             <p>一封注册邮件已发送到您的邮箱[{{email}}],请注意查收!</p>
+        </div>
+        <div class="message" *ngIf="regView[2]">
+            <p>您好，正在验证中!</p>
+        </div>
+        <div class="message" *ngIf="regView[3]">
+            <p>{{validateToggle? '验证成功，请前往登录！': '抱歉，验证失败，请稍候重试！'}}</p>
         </div>
     </div>
 </div>

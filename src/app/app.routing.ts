@@ -22,7 +22,8 @@ const appRoutes: Routes = [
     {path: 'articles/:id', component: DetailComponent},
     {path: 'welcome', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'register', component: RegisterComponent},
+    {path: 'register/:id/:token', component: RegisterComponent}
 ]
 
 /**
