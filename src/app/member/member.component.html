@@ -1,3 +1,10 @@
-<p>
-  member works!
-</p>
+<app-breadcrumb></app-breadcrumb>
+
+<div class="member">
+    <ul class="bar">
+        <li *ngFor="let item of tabbar; let i = index"
+            [class.active]="item.t"
+            (click)="tabbarToggle(i)"
+        ><span>{{item.content}}</span></li>
+    </ul>
+</div>
