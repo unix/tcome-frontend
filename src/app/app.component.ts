@@ -1,5 +1,4 @@
 import {Component, AfterViewInit, ViewChild} from '@angular/core'
-
 import {MissionService} from './lib/service/mission'
 
 @Component({
@@ -10,7 +9,7 @@ import {MissionService} from './lib/service/mission'
 })
 export class AppComponent{
     constructor (
-        private missionService: MissionService
+        private missionService: MissionService,
     ){
         // 订阅子组件通知 通知至所有子组件
         missionService.missionConfirmed$.subscribe(

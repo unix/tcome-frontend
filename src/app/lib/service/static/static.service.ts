@@ -13,7 +13,7 @@ export class StaticService {
     }
 
     private server: string = 'http://admin.itsmycar.cn/'
-    private staging: string = 'http://127.0.0.1:1337/'
+    private staging: string = 'http://120.27.200.112/'
 
     public options = new RequestOptions({
         headers: new Headers({

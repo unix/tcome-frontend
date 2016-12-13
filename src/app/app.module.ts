@@ -16,9 +16,10 @@ import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component';
-import { LoginComponent } from './login/login.component'
+import {LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component'
 
-const lockerConfig = new LockerConfig('itsmycar', DRIVERS.LOCAL, '-')
+let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ const lockerConfig = new LockerConfig('itsmycar', DRIVERS.LOCAL, '-')
         BackComponent,
         HomeComponent,
         BreadcrumbComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,

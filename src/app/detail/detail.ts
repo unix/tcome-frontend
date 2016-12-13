@@ -15,6 +15,6 @@ export class Detail {
         public updatedAt: string,       // 更新日期
         public tags: string[],          // 标签
         public readTotal: number,       // 阅读数
-        public commentTotal: number,    // 评论数
+        public commentTotal: number    // 评论数
     ){}
 }

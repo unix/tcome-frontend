@@ -9,6 +9,7 @@ import {ListComponent} from "./list/list.component"
 import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component'
 import {LoginComponent} from './login/login.component'
+import {RegisterComponent} from './register/register.component'
 
 
 /**
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
     {path: 'articles', component: ListComponent},
     {path: 'articles/:id', component: DetailComponent},
     {path: 'welcome', component: HomeComponent},
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent}
 ]
 
 /**
