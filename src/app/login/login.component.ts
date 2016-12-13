@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     public user: User
 
     login (){
-
         this.loginService.login({
             email: this.email,
             password: this.password

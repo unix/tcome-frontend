@@ -3,6 +3,7 @@
 	height: 100%;
 	background: #04A777;
 	position: fixed;
+	font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
 	.register-box {
 		width: auto;
 		height: auto;
@@ -59,6 +60,17 @@
 				border: 1px solid #8DD7C1;
 				color: #0b7b5a;
 			}
+		}
+	}
+	.message {
+		width: 400px;
+		height: auto;
+		margin-top: 80px;
+		p {
+			font-size: 20px;
+			display: block;
+			color: #FFF;
+			font-weight: lighter;
 		}
 	}
 }

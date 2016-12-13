@@ -2,9 +2,14 @@
 <div class="register">
     <div class="register-box">
         <h3>Register <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
-        <input type="email" placeholder="User name" [(ngModel)]="username">
-        <input type="email" placeholder="Your email" [(ngModel)]="email">
-        <input type="password" placeholder="Password" [(ngModel)]="password">
-        <button (click)="register()">Register</button>
+        <div *ngIf="!regOver">
+            <input type="email" placeholder="User name" [(ngModel)]="username" (ngModelChange)="change($event)">
+            <input type="email" placeholder="Your email" [(ngModel)]="email" (ngModelChange)="change($event)">
+            <input type="password" placeholder="Password" [(ngModel)]="password" (ngModelChange)="change($event)">
+            <button (click)="register()">Register</button>
+        </div>
+        <div class="message" *ngIf="regOver">
+            <p>一封注册邮件已发送到您的邮箱[{{email}}],请注意查收!</p>
+        </div>
     </div>
 </div>
