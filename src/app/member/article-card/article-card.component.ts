@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core'
+import {Locker} from 'angular2-locker'
+import {Router} from '@angular/router'
 
 import {StaticService} from '../../lib/service/static'
 import {ArticleCardService} from './article-card.service'
@@ -13,14 +15,17 @@ import {List} from './list'
 export class ArticleCardComponent implements OnInit {
 
     constructor (
-        private articleCardService: ArticleCardService
+        private articleCardService: ArticleCardService,
+        private locker: Locker,
+        private router: Router,
     ){
     }
 
     public list: List[]
+    private user: any
 
-    getList() {
-        this.articleCardService.getList()
+    getList(id) {
+        this.articleCardService.getList(id)
             .subscribe(
                 list => this.list = list,
                 error => {
@@ -30,7 +35,11 @@ export class ArticleCardComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getList()
+        this.user = this.locker.get('user')
+        if (!this.user|| !this.user.id){
+            return this.router.navigate(['/welcome'])
+        }
+        this.getList(this.user.id)
     }
 
 }

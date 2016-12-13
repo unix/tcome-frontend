@@ -16,10 +16,10 @@ export class ArticleCardService {
     ){
     }
 
-    private listUrl = this.staticService.makeApi('articles')
+    private listUrl = this.staticService.makeApi('users')
 
-    getList (): Observable<List[]>{
-        return this.http.get(this.listUrl)
+    getList (id): Observable<List[]>{
+        return this.http.get(`${this.listUrl}/${id}/article`)
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
