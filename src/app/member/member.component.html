@@ -8,6 +8,6 @@
         ><span>{{item.content}}</span></li>
     </ul>
     <div class="content">
-        <app-article-card></app-article-card>
+        <app-article-card *ngIf="tabbar[0].t"></app-article-card>
     </div>
 </div>
