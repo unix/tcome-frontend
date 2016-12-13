@@ -10,7 +10,8 @@
     </div>
     <div class="session">
         <button *ngIf="user&& user.id" (click)="logout()">Logout</button>
-        <button *ngIf="!user|| !user.id" (click)="goLogin()">Login</button>
+        <button *ngIf="!user|| !user.id" (click)="goNext('login')">Login</button>
+        <button *ngIf="!user|| !user.id" (click)="goNext('register')">Register</button>
     </div>
 
 </div>

@@ -46,9 +46,10 @@ export class MenuComponent implements OnInit {
                 }
             )
     }
-    goLogin (){
-        this.router.navigate(['/login'])
+    goNext (path: string){
+        this.router.navigate([`/${path}`])
     }
+
 
     update (){
         this.user = this.locker.get('user')

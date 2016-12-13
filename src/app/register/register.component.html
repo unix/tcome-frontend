@@ -1,3 +1,10 @@
-<p>
-  register works!
-</p>
+<app-breadcrumb></app-breadcrumb>
+<div class="register">
+    <div class="register-box">
+        <h3>Register <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
+        <input type="email" placeholder="User name" [(ngModel)]="username">
+        <input type="email" placeholder="Your email" [(ngModel)]="email">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+        <button (click)="register()">Register</button>
+    </div>
+</div>
