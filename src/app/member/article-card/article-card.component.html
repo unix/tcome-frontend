@@ -1,7 +1,7 @@
 <div class="article-card">
-    <div class="box">
+    <div class="box" *ngFor="let item of list">
         <img src="../../../assets/images/default_bg.jpeg" alt="" draggable="false">
-        <p>测试文章的一个标题</p>
-        <span>时间</span>
+        <p>{{item.title}}</p>
+        <span>{{item.createdAt | amTimeAgo:true}}</span>
     </div>
 </div>
