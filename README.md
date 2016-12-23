@@ -2,44 +2,43 @@
 witt-blog-frontend
 </h1>
 
-### [Website](http://wittsay.cc/)  &nbsp;  [Docs](http://wittsay.cc/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
+### [Website](http://wittsay.cc/)  &nbsp;  [Docs](ttp://120.27.200.112/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
 
-witt-blog是基于NodeJs,MongoDB的博客系统，它负责基础的API服务。
+这是一个基于NodeJs,MongoDB的博客系统，它负责前端展示。
 
 
 ## 开发者
-**关于 [NodeJs](http://nodejs.org) **
+**配置环境**
 ```sh
 * 安装依赖
 $ npm install
+
+* 安装全局angular-cli
+$ sudo npm install -g angular-cli@1.0.0-beta.24
 ```
 
 
-**运行:**
+**开发:**
 ```sh
-* 挂起服务
-$ sails lift
+* 本地已有服务端运行
+$ npm run start
+
+* 本地暂无服务端 使用远程接口开发
+$ npm run start_pro
 ```
 
-**创建sails:**
+**打包:**
 ```sh
-
-$ sails generate api <foo>
-
-$ sails generate model <foo> [attribute1:type1, attribute2:type2 ... ]
-
-$ sails generate controller <foo> [action1, action2, ...]
+* 仅在服务器运行 本地无需build
+$ npm run build
 ```
 
 
-## 文档
-- [Sails.js in Action](https://www.manning.com/books/sails-js-in-action) by Mike McNeil and Irl Nathan (Manning Publications).  Available October 2016 _([estimated](https://www.manning.com/meap-program#section-faq-10))_.
-
-## 支持
-- [StackOverflow](http://stackoverflow.com/questions/tagged/sails.js)
-- [What are the best video tutorials for Node.js or Sails.js?](https://www.quora.com/What-are-the-best-video-tutorials-for-Node-js-or-Sails-js) (Quora)
-- [Up and Running in Node.js](http://www.lynda.com/Node.js-tutorials/Up-Running-Node.js/370605-2.html) (Sails basics are covered towards the end of this video course on Lynda)
-- [Gitter Chat Room](https://gitter.im/balderdashy/sails)
+## 参考
+- [API DOC](http://120.27.200.112/doc)
+- [Angular Doc](https://angular.cn/docs/ts/latest/)
+- [Angular Cli](https://github.com/angular/angular-cli)
+- [TypeScript](http://www.typescriptlang.org/docs/tutorial.html)
 
 
 ## 团队
