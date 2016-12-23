@@ -32,6 +32,9 @@ export class ArticleCardComponent implements OnInit {
                 }
             )
     }
+    goNext (path){
+        this.router.navigate(['/articles', path])
+    }
 
     ngOnInit() {
         this.user = this.locker.get('user')

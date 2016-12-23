@@ -1,5 +1,5 @@
 <div class="article-card">
-    <div class="box" *ngFor="let item of list">
+    <div class="box" *ngFor="let item of list" (click)="goNext(item.id)">
         <img src="../../../assets/images/default_bg.jpeg" alt="" draggable="false">
         <p>{{item.title}}</p>
         <span>{{item.createdAt | amTimeAgo:true}}</span>
