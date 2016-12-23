@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core'
+import {Title} from '@angular/platform-browser'
 
 @Component({
     selector: 'app-member',
@@ -7,7 +8,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MemberComponent implements OnInit {
 
-    constructor (){
+    constructor (
+        private titleService: Title,
+    ){
     }
 
     public tabbar:any[] = [{
@@ -30,6 +33,7 @@ export class MemberComponent implements OnInit {
     }
 
     ngOnInit (){
+        this.titleService.setTitle('总览-维特博客')
     }
 
 }
