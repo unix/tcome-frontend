@@ -20,7 +20,8 @@ import {LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberComponent } from './member/member.component';
 import { ArticleCardComponent } from './member/article-card/article-card.component';
-import { ArticleWriteComponent } from './member/article-write/article-write.component'
+import { ArticleWriteComponent } from './member/article-write/article-write.component';
+import { ArticleEditorComponent } from './lib/component/article-editor/article-editor.component'
 
 let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
 
@@ -38,7 +39,8 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         RegisterComponent,
         MemberComponent,
         ArticleCardComponent,
-        ArticleWriteComponent
+        ArticleWriteComponent,
+        ArticleEditorComponent
     ],
     imports: [
         BrowserModule,
