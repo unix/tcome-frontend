@@ -9,9 +9,9 @@
         <span>{{user&& user.username? user.username: '游客'}}</span>
     </div>
     <div class="session">
-        <button *ngIf="user&& user.id" (click)="logout()">Logout</button>
-        <button *ngIf="!user|| !user.id" (click)="goNext('login')">Login</button>
-        <button *ngIf="!user|| !user.id" (click)="goNext('register')">Register</button>
+        <button *ngIf="user&& user.id" (click)="logout()">Sign out</button>
+        <button *ngIf="!user|| !user.id" (click)="goNext('login')">Sign in</button>
+        <button *ngIf="!user|| !user.id" (click)="goNext('register')">Sign up</button>
     </div>
 
 </div>

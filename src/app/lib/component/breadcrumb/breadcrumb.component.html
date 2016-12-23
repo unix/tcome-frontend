@@ -2,8 +2,8 @@
     <ul>
         <li><a routerLinkActive="active" routerLink="/welcome">Home</a></li>
         <li><a routerLinkActive="active" routerLink="/articles">List</a></li>
-        <li *ngIf="user&& user.id"><a routerLinkActive="active" routerLink="/member">Member</a></li>
-        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/login">Login</a></li>
-        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/register">Register</a></li>
+        <li *ngIf="user&& user.id"><a routerLinkActive="active" routerLink="/member">Overview</a></li>
+        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/login">Sign in</a></li>
+        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/register">Sign up</a></li>
     </ul>
 </div>
