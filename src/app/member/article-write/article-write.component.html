@@ -1,3 +1,9 @@
-<p>
-    <app-article-editor [text]="field" (mdChange)="mdChange($event)"></app-article-editor>
-</p>
+<div class="write-title">
+    <input type="text" placeholder="此处补全标题">
+</div>
+
+<app-article-editor [text]="field" (mdChange)="mdChange($event)"></app-article-editor>
+
+<div class="write-submit">
+    <button md-button>发表</button>
+</div>

@@ -1,0 +1,32 @@
+.write-title {
+	border-bottom: 2px solid #DDD;
+	height: 40px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	max-width: 400px;
+	input {
+		border: none;
+		line-height: 45px;
+		height: 40px;
+		width: 100%;
+		color: #3D596D;
+		font-size: 19px;
+		padding: 0 8px;
+		&:focus, &:active {
+			outline: none;
+		}
+		&::-webkit-input-placeholder {
+			color: #808080;
+		}
+	}
+}
+
+.write-submit {
+	margin: 10px 0;
+	button {
+		width: 110px;
+		height: 35px;
+		border: 1px solid #DDD;
+		color: #3D596D;
+	}
+}

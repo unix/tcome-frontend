@@ -30,6 +30,10 @@
 }
 .member .CodeMirror,.member .CodeMirror-scroll {
 	min-height: 350px !important;
+	border-radius: 0;
+}
+.member .editor-toolbar {
+	border-radius: 0;
 }
 .member .editor-toolbar:before {
 	margin-bottom: 3px;
