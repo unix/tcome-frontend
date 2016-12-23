@@ -1,0 +1,44 @@
+@import '../../../node_modules/@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$primary: md-palette($md-cyan);
+$accent: md-palette($md-amber);
+
+$theme: md-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.dark-theme {
+	$dark-p: md-palette($md-pink, 700);
+	$dark-a: md-palette($md-blue-grey);
+
+	$dark-t: md-dark-theme($dark-p, $dark-a);
+
+	@include angular-material-theme($theme);
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+html {
+	-ms-text-size-adjust: 100%; // 2
+	-webkit-text-size-adjust: 100%; // 2
+}
+
+body {
+	font-family: -apple-system, 'Helvetica Neue', 'Lantinghei SC', 'Open Sans', Arial, 'Hiragino Sans GB','Microsoft YaHei',Helvetica,;
+	font-size: 16px;
+	line-height: 1.4;
+	color: lighten(#000, 20%);
+}
