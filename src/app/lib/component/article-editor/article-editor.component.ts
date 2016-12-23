@@ -21,7 +21,6 @@ export class ArticleEditorComponent implements AfterViewInit {
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
             placeholder: 'markdown',
-            toolbar: true
         })
         simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
     }

@@ -24,10 +24,16 @@
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 }
-.CodeMirror {
-	min-height: 150px;
-}
-.CodeMirror-scroll {
-	min-height: 150px;
-}
 
+.article-detail .CodeMirror,.article-detail .CodeMirror-scroll {
+	min-height: 150px !important;
+}
+.member .CodeMirror,.member .CodeMirror-scroll {
+	min-height: 350px !important;
+}
+.member .editor-toolbar:before {
+	margin-bottom: 3px;
+}
+.member .editor-toolbar:after {
+	margin-top: 3px;
+}
