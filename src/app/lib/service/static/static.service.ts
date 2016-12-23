@@ -5,7 +5,7 @@ import {Locker} from 'angular2-locker'
 import {ToastyService, ToastOptions} from 'ng2-toasty'
 
 import 'rxjs/add/observable/throw'
-
+import {environment} from '../../../../environments/environment'
 
 @Injectable()
 export class StaticService {
@@ -16,7 +16,7 @@ export class StaticService {
     ) {
     }
 
-    private staging: string = 'http://127.0.0.1:1337/'
+    private host: string = environment.host
 
     public options = new RequestOptions({
         headers: new Headers({
@@ -26,7 +26,7 @@ export class StaticService {
     })
 
     public makeApi(path: string) {
-        return this.staging + path
+        return this.host + path
     }
     public authorization (){
         return this.locker.get('user')? this.locker.get('user').token: ''

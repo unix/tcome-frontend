@@ -4,12 +4,12 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve -port 3001",
+    "start": "ng serve -port 3001 -dev",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "build": "ng build"
+    "build": "ng build -prod dist/"
   },
   "private": true,
   "dependencies": {
