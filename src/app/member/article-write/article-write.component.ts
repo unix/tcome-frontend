@@ -1,17 +1,21 @@
 import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
 
+import {ArticleWriteService} from './article-write.service'
 import {StaticService} from '../../lib/service/static'
 
 @Component({
     selector: 'app-article-write',
     templateUrl: './article-write.component.html',
     styleUrls: ['./article-write.component.scss'],
-    providers: [StaticService]
+    providers: [StaticService, ArticleWriteService]
 })
 export class ArticleWriteComponent implements OnInit {
 
     constructor (
-        private staticService: StaticService
+        private staticService: StaticService,
+        private articleWriteService: ArticleWriteService,
+        private router: Router,
     ){
     }
 
@@ -30,7 +34,21 @@ export class ArticleWriteComponent implements OnInit {
         if (this.mdValue.length < 5 || this.mdValue.length > 20000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
-
+        this.articleWriteService.create({
+            title: this.titleValue,
+            content: this.mdValue,
+        })
+            .subscribe(
+                res => {
+                    if (res && res.id){
+                        this.staticService.toastyInfo('文章已发表!', '发表成功')
+                        this.router.navigate(['/articles', res.id])
+                    }
+                },
+                error => {
+                    console.log(error.toString());
+                }
+            )
     }
 
 
