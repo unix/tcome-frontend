@@ -2,13 +2,17 @@ import {Injectable} from '@angular/core'
 import {Response, Headers, RequestOptions} from '@angular/http'
 import {Observable} from "rxjs"
 import {Locker} from 'angular2-locker'
+import {ToastyService, ToastOptions} from 'ng2-toasty'
+
 import 'rxjs/add/observable/throw'
+
 
 @Injectable()
 export class StaticService {
 
     constructor(
-        private locker: Locker
+        private locker: Locker,
+        private toastyService:ToastyService,
     ) {
     }
 
@@ -38,6 +42,18 @@ export class StaticService {
         }
         return body || {}
     }
+
+    public toastyInfo (message: string){
+        let toastOptions:ToastOptions = {
+            title: "My title",
+            msg: "The message",
+            theme: 'material',
+        }
+        this.toastyService.info(toastOptions);
+    }
+
+
+
     handleError(error: any) {
         return error.json()
     }

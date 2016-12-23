@@ -1,6 +1,7 @@
 
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 @import "assets/css/simplemde.css";
+@import "assets/css/skeleton.css";
 
 @font-face {
 	font-family: 'Material Icons';

@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms'
 import {HttpModule} from '@angular/http'
 import {MaterialModule} from '@angular/material'
 import {MomentModule} from 'angular2-moment'
+import {ToastyModule} from 'ng2-toasty';
 import {LockerModule, Locker, LockerConfig, DRIVERS} from 'angular2-locker'
 
 import {MdeditorComponent} from './lib/component/mdeditor';
@@ -48,6 +49,7 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         HttpModule,
         AppRoutingModule,
         MaterialModule.forRoot(),
+        ToastyModule.forRoot(),
         LockerModule.forRoot(lockerConfig),
         MomentModule,
     ],

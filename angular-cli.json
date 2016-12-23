@@ -19,7 +19,8 @@
 	  "mobile": false,
 	  "styles": [
 		"styles.css",
-		"assets/sass/master.scss"
+		"assets/sass/master.scss",
+		"../node_modules/ng2-toasty/style.css"
 	  ],
 	  "scripts": [],
 	  "environments": {

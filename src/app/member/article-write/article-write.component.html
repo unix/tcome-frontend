@@ -1,9 +1,9 @@
 <div class="write-title">
-    <input type="text" placeholder="此处补全标题">
+    <input type="text" placeholder="此处补全标题" [(ngModel)]="titleValue">
 </div>
 
 <app-article-editor [text]="field" (mdChange)="mdChange($event)"></app-article-editor>
 
 <div class="write-submit">
-    <button md-button>发表</button>
+    <button md-button (click)="submit()">发表</button>
 </div>
