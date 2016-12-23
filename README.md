@@ -2,7 +2,7 @@
 witt-blog-frontend
 </h1>
 
-### [Website](http://wittsay.cc/)  &nbsp;  [Docs](ttp://120.27.200.112/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
+### [Website](http://test.wittsay.cc/)  &nbsp;  [Docs](ttp://120.27.200.112/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
 
 这是基于NodeJs,MongoDB的博客系统，它负责前端展示。如需要与之契合的服务端项目请前往[服务端项目](https://github.com/WittBulter/sails-blog/)
 
