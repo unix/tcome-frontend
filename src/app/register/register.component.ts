@@ -3,14 +3,13 @@ import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 import {Locker} from 'angular2-locker'
 
-import {StaticService} from '../lib/service/static'
 import {RegisterService} from './register.service'
 
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.scss'],
-    providers: [StaticService, RegisterService]
+    providers: [RegisterService]
 })
 export class RegisterComponent implements OnInit {
 

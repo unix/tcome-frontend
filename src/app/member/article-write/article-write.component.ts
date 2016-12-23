@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core'
-import {ToastyService, ToastOptions} from 'ng2-toasty'
 
 import {StaticService} from '../../lib/service/static'
 

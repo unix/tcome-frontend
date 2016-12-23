@@ -1,11 +1,12 @@
 import {Component, AfterViewInit, ViewChild} from '@angular/core'
 import {MissionService} from './lib/service/mission'
+import {StaticService} from './lib/service/static'
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    providers: [MissionService]
+    providers: [StaticService, MissionService]
 })
 export class AppComponent{
     constructor (

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
-import {StaticService} from '../lib/service/static'
 import {MdeditorComponent} from '../lib/component/mdeditor'
 import {BackComponent} from '../lib/component/back'
 import {DetailService} from './detail.service'
@@ -14,7 +13,7 @@ import {Comment} from './comment'
     selector: 'app-detail',
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss'],
-    providers: [StaticService, DetailService]
+    providers: [DetailService]
 })
 export class DetailComponent implements OnInit {
 

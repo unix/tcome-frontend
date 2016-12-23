@@ -3,13 +3,12 @@ import {Title} from '@angular/platform-browser'
 
 import {List} from './list'
 import {ListService} from './list.service'
-import {StaticService} from '../lib/service/static'
 
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.scss'],
-    providers: [StaticService, ListService]
+    providers: [ListService]
 })
 export class ListComponent implements OnInit {
 

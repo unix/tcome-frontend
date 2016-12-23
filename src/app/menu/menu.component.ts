@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core'
 import {Locker} from 'angular2-locker'
 import {Router} from '@angular/router'
 
-import {StaticService} from '../lib/service/static'
 import {MissionService} from '../lib/service/mission'
 import {MenuService} from './menu.service'
 
@@ -10,7 +9,7 @@ import {MenuService} from './menu.service'
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
-    providers: [StaticService, MenuService]
+    providers: [MenuService]
 })
 export class MenuComponent implements OnInit {
 

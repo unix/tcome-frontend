@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core'
 import {Locker} from 'angular2-locker'
 import {Router} from '@angular/router'
 
-import {StaticService} from '../../lib/service/static'
 import {ArticleCardService} from './article-card.service'
 import {List} from './list'
 
@@ -10,7 +9,7 @@ import {List} from './list'
     selector: 'app-article-card',
     templateUrl: './article-card.component.html',
     styleUrls: ['./article-card.component.scss'],
-    providers: [StaticService, ArticleCardService]
+    providers: [ArticleCardService]
 })
 export class ArticleCardComponent implements OnInit {
 
