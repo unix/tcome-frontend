@@ -22,8 +22,13 @@ export class ArticleWriteComponent implements OnInit {
         this.mdValue = mdValue
     }
     submit (){
-        if (!this.titleValue){
-            this.staticService.toastyInfo('123')
+        if (!this.titleValue) return this.staticService.toastyInfo('需要补全标题', '无法提交')
+        if (this.titleValue.length < 5 || this.titleValue.length > 20){
+            return this.staticService.toastyInfo('标题长度不符合规范', '无法提交')
+        }
+        if (!this.mdValue) return this.staticService.toastyInfo('需要补全正文内容', '无法提交')
+        if (this.mdValue.length < 5 || this.mdValue.length > 20000){
+            return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
 
     }

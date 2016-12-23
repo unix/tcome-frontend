@@ -43,10 +43,10 @@ export class StaticService {
         return body || {}
     }
 
-    public toastyInfo (message: string){
+    public toastyInfo (message: string, title: string = '提示'){
         let toastOptions:ToastOptions = {
-            title: "My title",
-            msg: "The message",
+            title: title,
+            msg: message,
             theme: 'material',
         }
         this.toastyService.info(toastOptions);
