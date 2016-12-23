@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {MdeditorComponent} from '../../lib/component/mdeditor'
+import {ArticleEditorComponent} from '../../lib/component/article-editor'
 
 @Component({
     selector: 'app-article-write',
@@ -13,7 +13,6 @@ export class ArticleWriteComponent implements OnInit {
     ){
     }
 
-    public field = ''
     public mdValue: any = ''
 
     mdChange (mdValue: any){
