@@ -46,7 +46,7 @@ export class ArticleWriteComponent implements OnInit {
                     }
                 },
                 error => {
-                    console.log(error.toString());
+                    if (error) this.staticService.toastyError(error.toString())
                 }
             )
     }

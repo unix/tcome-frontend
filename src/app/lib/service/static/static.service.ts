@@ -44,12 +44,20 @@ export class StaticService {
     }
 
     public toastyInfo (message: string, title: string = '提示'){
-        let toastOptions:ToastOptions = {
+        const toastOptions:ToastOptions = {
             title: title,
             msg: message,
             theme: 'material',
         }
         this.toastyService.info(toastOptions);
+    }
+    public toastyError (message: string, title: string = '错误提示'){
+        const toastOptions:ToastOptions = {
+            title: title,
+            msg: message,
+            theme: 'material',
+        }
+        this.toastyService.error(toastOptions);
     }
 
 
