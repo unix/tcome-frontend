@@ -3,6 +3,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
 import {MdeditorComponent} from '../lib/component/mdeditor'
+import {ShowdownComponent} from '../lib/component/showdown'
 import {BackComponent} from '../lib/component/back'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
