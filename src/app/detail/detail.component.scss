@@ -15,13 +15,16 @@
 	margin-bottom: 35px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	position: relative;
+	&.no-tag {
+		margin-bottom: 10px;
+	}
 	>h2 {
 		@include fontc(2rem, #555, 1.5);
 	}
 	>p {
 		@include fontc(.9rem, #3D596D);
 		>span {
-			padding-right: .7rem;
+			padding-left: 9px;
 		}
 		span.box {
 			background: #3D596D;
@@ -39,16 +42,24 @@
 		top: 100%;
 		margin-top: -5px;
 		line-height: 35px;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		cursor: pointer;
+		&:before {
+			content: 'tags:';
+			float: left;
+			font-size: 0.9rem;
+			color: #3D596D;
+			padding-right: 10px;
+			line-height: 35px;
+		}
 		> li{
 			float: left;
 			margin-right: 12px;
 			color: #4094c7;
 			font-size: 15px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
 		}
 	}
 }

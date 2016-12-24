@@ -1,17 +1,14 @@
 <app-breadcrumb></app-breadcrumb>
 <div class="article-detail" *ngIf="detail&& detail.id">
-    <div class="article-detail-title">
+    <div class="article-detail-title" [class.no-tag]="detail.tags.length == 0">
         <h2>测试测试</h2>
         <p>
-            from <span class="author">{{detail.authorName}}</span>
+            from:<span class="author">{{detail.authorName}}</span>
             <span class="date">{{detail.createdAt | amDateFormat:'LL'}}</span>
            <!--<span class="read box">{{detail.readTotal}} viewed &nbsp;&nbsp;&nbsp;{{detail.commentTotal}} Comments</span>-->
         </p>
         <ul class="tag">
-            <li>标签1</li>
-            <li>标签1</li>
-            <li>标签标签</li>
-            <li>标签1</li>
+            <li *ngFor="let tag of detail.tags">{{tag}}</li>
         </ul>
     </div>
 
