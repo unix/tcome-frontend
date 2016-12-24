@@ -50,7 +50,9 @@ export class ArticleWriteComponent implements OnInit {
                 }
             )
     }
+    addImages (){
 
+    }
 
     ngOnInit (){
     }

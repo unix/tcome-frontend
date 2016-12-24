@@ -34,12 +34,23 @@
 	border-radius: 0;
 }
 
+
+.member .CodeMirror {
+	padding: 10px 0;
+	width: 800px;
+	margin: 0 auto;
+}
 .member .CodeMirror,.member .CodeMirror-scroll {
-	min-height: 350px !important;
+	min-height: 550px !important;
 	border-radius: 0;
+	border: none;
 }
 .member .editor-toolbar {
 	border-radius: 0;
+	border: none;
+	padding: 0;
+	width: 800px;
+	margin: 0 auto;
 }
 .member .editor-toolbar:before {
 	margin-bottom: 3px;

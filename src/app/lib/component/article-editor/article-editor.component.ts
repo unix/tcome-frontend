@@ -20,7 +20,7 @@ export class ArticleEditorComponent implements AfterViewInit {
         const simplemde = new SimpleMDE({
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
-            placeholder: 'markdown',
+            placeholder: '撰写正文内容',
         })
         simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
     }
