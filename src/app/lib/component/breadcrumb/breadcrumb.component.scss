@@ -26,10 +26,12 @@
 				color: #717171;
 				background: transparent;
 				display: block;
-				width: 75px;
+				width: 85px;
 				text-align: center;
 				position: relative;
 				z-index: 5;
+				text-decoration: none;
+				font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
 				&:after {
 					position: absolute;
 					top: 0;
@@ -38,7 +40,7 @@
 					height: 0;
 					content: '';
 					z-index: -1;
-					background: #04A777;
+					background: #3D596D;
 					-webkit-transition: all .5s;
 					-moz-transition: all .5s;
 					transition: all .5s;

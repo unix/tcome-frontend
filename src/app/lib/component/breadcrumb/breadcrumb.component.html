@@ -1,9 +1,9 @@
 <div class="breadcrumb">
     <ul>
-        <li><a routerLinkActive="active" routerLink="/welcome">Home</a></li>
-        <li><a routerLinkActive="active" routerLink="/articles">List</a></li>
-        <li *ngIf="user&& user.id"><a routerLinkActive="active" routerLink="/member">Overview</a></li>
-        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/login">Sign in</a></li>
-        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/register">Sign up</a></li>
+        <li><a routerLinkActive="active" routerLink="/welcome">首页</a></li>
+        <li><a routerLinkActive="active" routerLink="/articles">文章</a></li>
+        <li *ngIf="user&& user.id"><a routerLinkActive="active" routerLink="/member">总览</a></li>
+        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/login">登入</a></li>
+        <li *ngIf="!user|| !user.id"><a routerLinkActive="active" routerLink="/register">注册</a></li>
     </ul>
 </div>
