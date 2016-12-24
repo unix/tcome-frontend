@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
+import {Locker} from 'angular2-locker'
 import {Title} from '@angular/platform-browser'
 
 import {MdeditorComponent} from '../lib/component/mdeditor'
 import {ShowdownComponent} from '../lib/component/showdown'
+import {StaticService} from '../lib/service/static'
 import {BackComponent} from '../lib/component/back'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
@@ -23,6 +25,8 @@ export class DetailComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private titleService: Title,
+        private locker: Locker,
+        private staticService: StaticService
     ) {
     }
     public detail: Detail
@@ -46,7 +50,10 @@ export class DetailComponent implements OnInit {
             )
     }
     createComment (){
-        if (this.mdValue.length < 5) return ;
+        if (!this.locker.get('user') || !this.locker.get('user').id){
+            return this.staticService.toastyInfo('评论文章需要您先登录', '无法评论');
+        }
+        if (this.mdValue.length < 5) return this.staticService.toastyInfo('评论过短', '无法提交');
         this.detailService.postComment(this.detail.id, {
             content: this.mdValue
         })
@@ -55,7 +62,11 @@ export class DetailComponent implements OnInit {
                     this.getComment(this.detail.id)
                     this.field = ''
                 },
-                error => console.log(error)
+                errorStatus => {
+                    if (errorStatus == 401){
+                        return this.staticService.toastyInfo('评论文章需要您先登录', '无法评论')
+                    }
+                }
             )
 
     }

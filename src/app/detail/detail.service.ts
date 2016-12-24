@@ -34,7 +34,7 @@ export class DetailService {
 
     private handleError (error: any){
         if(error instanceof Response) {
-            return Observable.throw(error.json().message || '服务器错误');
+            return Observable.throw(error.status || '服务器错误');
         }
         return Observable.throw(error || '服务器错误')
     }
