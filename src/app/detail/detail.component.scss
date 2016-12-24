@@ -12,8 +12,9 @@
 	@extend %auto;
 	padding-bottom: .5rem;
 	border-bottom: 1px solid #EEE;
-	margin-bottom: 5px;
+	margin-bottom: 35px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	position: relative;
 	>h2 {
 		@include fontc(2rem, #555, 1.5);
 	}
@@ -31,6 +32,25 @@
 	.author {
 		color: #4094c7;
 	}
+	>.tag {
+		position: absolute;
+		left: 0;
+		height: 35px;
+		top: 100%;
+		margin-top: -5px;
+		line-height: 35px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		> li{
+			float: left;
+			margin-right: 12px;
+			color: #4094c7;
+			font-size: 15px;
+		}
+	}
 }
 
 .article-detail-content {
@@ -39,8 +59,6 @@
 	>.content-box {
 		@extend %auto;
 		border: 1px solid #EEE;
-		border-radius: 5px;
-
 		>.content-bar {
 			height: 1.9rem;
 			background-color: #F7F7F7;
@@ -67,8 +85,6 @@
 			width: 100%;
 			height: 35px;
 			border:1px solid #DDDDDD;
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
 			border-bottom: none;
 			color: #3D596D;
 			line-height: 35px;
@@ -105,7 +121,6 @@
 	.comment-box {
 		@extend %auto;
 		border: 1px solid #EEE;
-		border-radius: 5px;
 		.comment-bar {
 			height: 1.9rem;
 			background-color: #F7F7F7;

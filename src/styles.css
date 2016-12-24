@@ -28,7 +28,12 @@
 
 .article-detail .CodeMirror,.article-detail .CodeMirror-scroll {
 	min-height: 150px !important;
+	border-radius: 0;
 }
+.article-detail .editor-toolbar {
+	border-radius: 0;
+}
+
 .member .CodeMirror,.member .CodeMirror-scroll {
 	min-height: 350px !important;
 	border-radius: 0;
