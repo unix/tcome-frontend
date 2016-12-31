@@ -1,7 +1,7 @@
 <app-breadcrumb></app-breadcrumb>
 <div class="article-list-box">
     <ul class="article-list">
-        <li *ngFor="let item of list">
+        <li *ngFor="let item of list" (click)="goNext(item.id)">
             <div class="top">
                 <img src="assets/images/default_bg.jpeg" alt="" class="thumbnail">
                 <img src="assets/images/default_photo.png" alt="" class="avatar">

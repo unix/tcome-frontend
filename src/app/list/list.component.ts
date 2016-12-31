@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
+import {Router} from '@angular/router'
 
 import {List} from './list'
 import {ListService} from './list.service'
@@ -15,6 +16,7 @@ export class ListComponent implements OnInit {
     constructor(
         private listService: ListService,
         private titleService: Title,
+        private router: Router,
     ) {}
 
     list: List[]
@@ -28,6 +30,10 @@ export class ListComponent implements OnInit {
                     this.errorMessage = error.json().message
                 }
             )
+    }
+
+    goNext (path){
+        this.router.navigate(['/articles', path])
     }
 
     ngOnInit() {
