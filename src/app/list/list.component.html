@@ -2,12 +2,22 @@
 <div class="article-list-box">
     <ul class="article-list">
         <li *ngFor="let item of list">
-            <h2><a routerLink="/articles/{{item.id}}">{{item.title}}</a></h2>
-            <div class="mark">
-                <p>views:<span>{{item.readTotal? item.readTotal: 1}}</span></p>
-                <p>comments:<span>{{item.commentTotal? item.commentTotal: '0'}}</span></p>
-                <p>Last updated:<span >{{item.createdAt | amTimeAgo:true}}</span></p>
+            <div class="top">
+                <img src="assets/images/default_bg.jpeg" alt="" class="thumbnail">
+                <img src="assets/images/default_photo.png" alt="" class="avatar">
+                <span>{{item.readTotal? item.readTotal: 1}}</span>
             </div>
+            <div class="bottom">
+                <h3>{{item.title}}</h3>
+                <span></span>
+            </div>
+
+            <!--<h2><a routerLink="/articles/{{item.id}}">{{item.title}}</a></h2>-->
+            <!--<div class="mark">-->
+                <!--<p>views:<span>{{item.readTotal? item.readTotal: 1}}</span></p>-->
+                <!--<p>comments:<span>{{item.commentTotal? item.commentTotal: '0'}}</span></p>-->
+                <!--<p>Last updated:<span >{{item.createdAt | amTimeAgo:true}}</span></p>-->
+            <!--</div>-->
         </li>
     </ul>
 </div>
