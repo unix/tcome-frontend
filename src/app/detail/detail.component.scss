@@ -3,16 +3,16 @@
 
 .article-detail {
 	width: 900px;
-	margin:0 auto;
-	background-color: #fff;
-	padding-top: 1.5rem;
+	margin: 0 auto;
+	padding-top: 60px;
+	margin-top: -40px;
 }
 
 .article-detail-title {
 	@extend %auto;
 	padding-bottom: .5rem;
 	border-bottom: 1px solid #EEE;
-	margin-bottom: 35px;
+	margin-bottom: 15px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	position: relative;
 	&.no-tag {
@@ -145,12 +145,23 @@
 	@extend %auto;
 	>li {
 		padding: 5px 5px;
-		overflow: hidden;
-		border-bottom: 1px solid #CCCCCC;
 		position: relative;
 		min-height:70px;
+		background: #fff;
 		&:last-child {
-			border: none;
+			&:after {
+				display: none;
+			}
+		}
+		&:after {
+			position: absolute;
+			left: 20px;
+			right: 20px;
+			content: '';
+			bottom: 0.5px;
+			height: 1px;
+			background: #eee;
+			z-index: 5;
 		}
 		>img {
 			position: absolute;
