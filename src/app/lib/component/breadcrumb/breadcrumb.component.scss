@@ -1,8 +1,9 @@
 @import "../../../../assets/sass/variables";
+$bar-height: 40px;
 
 .breadcrumb {
 	width: 100%;
-	height: 45px;
+	height: $bar-height;
 	//border-bottom: 1px solid #ccc;
 	//box-shadow: 0 1px 4px #eee;
 	background: rgba(255, 255, 255, .45);
@@ -13,7 +14,7 @@
 		width: 100%;
 		overflow: hidden;
 		>li{
-			@include fontc(.85rem, #999, 35px);
+			@include fontc(.85rem, #999, $bar-height);
 			float: left;
 			-webkit-user-select: none;
 			-moz-user-select: none;
@@ -24,7 +25,7 @@
 				color: #0DB8C1;
 			}
 			a {
-				line-height: 35px;
+				line-height: $bar-height;
 				color: #717171;
 				background: transparent;
 				display: block;
@@ -33,7 +34,8 @@
 				position: relative;
 				z-index: 5;
 				text-decoration: none;
-				font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+				font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+
 				&:after {
 					position: absolute;
 					top: 0;
@@ -50,7 +52,7 @@
 				&.active {
 					color: #fff;
 					&:after {
-						height: 35px;
+						height: $bar-height;
 					}
 				}
 			}
