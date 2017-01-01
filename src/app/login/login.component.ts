@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Locker} from 'angular2-locker'
 import {Router} from '@angular/router'
+import {Title} from '@angular/platform-browser'
 
 import {MissionService} from '../lib/service/mission'
 import {LoginService} from './login.service'
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
         private loginService: LoginService,
         private locker: Locker,
         private router: Router,
-        private missionService: MissionService
+        private missionService: MissionService,
+        private titleService: Title,
     ){
     }
     public email:string = ''
@@ -53,6 +55,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit (){
+        this.titleService.setTitle('登录-维特博客')
     }
 
 }
