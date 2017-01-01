@@ -34,6 +34,7 @@ $theme: md-light-theme($primary, $accent);
 html {
 	-ms-text-size-adjust: 100%; // 2
 	-webkit-text-size-adjust: 100%; // 2
+	background: #EEEEEE;
 }
 
 body {
@@ -41,4 +42,6 @@ body {
 	font-size: 16px;
 	line-height: 1.4;
 	color: lighten(#000, 20%);
+	-webkit-font-smoothing: antialiased;
+	text-size-adjust: 100%;
 }
