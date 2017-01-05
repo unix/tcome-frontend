@@ -31,6 +31,8 @@ $ npm run start_pro
 ```sh
 * 仅在服务器运行 本地无需build
 $ npm run build
+* 将静态文件上传至qiniu静态服务器 并替换链接(需要配置qiniuKey)
+$ npm run build-static
 ```
 
 
