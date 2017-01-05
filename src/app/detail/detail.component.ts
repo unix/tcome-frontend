@@ -6,6 +6,7 @@ import {Title} from '@angular/platform-browser'
 import {MdeditorComponent} from '../lib/component/mdeditor'
 import {ShowdownComponent} from '../lib/component/showdown'
 import {StaticService} from '../lib/service/static'
+import {MissionService} from '../lib/service/mission'
 import {BackComponent} from '../lib/component/back'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
@@ -26,7 +27,8 @@ export class DetailComponent implements OnInit {
         private router: Router,
         private titleService: Title,
         private locker: Locker,
-        private staticService: StaticService
+        private staticService: StaticService,
+        private missionService: MissionService,
     ) {
     }
     public detail: Detail
@@ -64,7 +66,9 @@ export class DetailComponent implements OnInit {
                 },
                 errorStatus => {
                     if (errorStatus == 401){
-                        return this.staticService.toastyInfo('评论文章需要您先登录', '无法评论')
+                        this.staticService.toastyInfo('登录已过期, 请重新登录', '无法评论')
+                        this.staticService.clearAuthorization()
+                        return this.missionService.confirmMission({update: true})
                     }
                 }
             )
