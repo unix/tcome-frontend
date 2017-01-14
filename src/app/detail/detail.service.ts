@@ -17,17 +17,18 @@ export class DetailService {
     private detailUrl = this.staticService.makeApi('articles')
 
     getDetail (id: string): Observable<Detail> {
-        return this.http.get(`${this.detailUrl}/${id}`, this.staticService.options)
+        return this.http.get(`${this.detailUrl}/${id}`, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
     getComment (id: string): Observable<Comment[]> {
-        return this.http.get(`${this.detailUrl}/${id}/comment`, this.staticService.options)
+        return this.http.get(`${this.detailUrl}/${id}/comment`, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
     postComment (id: string, content: any): Observable<Comment> {
-        return this.http.post(`${this.detailUrl}/${id}/comment`, content, this.staticService.options)
+
+        return this.http.post(`${this.detailUrl}/${id}/comment`, content, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

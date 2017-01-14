@@ -15,7 +15,7 @@ export class MenuService {
     private session = this.staticService.makeApi('session')
 
     logout ():Observable<any> {
-        return this.http.delete(this.session, this.staticService.options)
+        return this.http.delete(this.session, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

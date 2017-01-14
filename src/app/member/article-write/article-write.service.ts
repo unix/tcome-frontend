@@ -18,7 +18,7 @@ export class ArticleWriteService {
     private article = this.staticService.makeApi('article')
 
     create (article: any): Observable<any>{
-        return this.http.post(this.article, article, this.staticService.options)
+        return this.http.post(this.article, article, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

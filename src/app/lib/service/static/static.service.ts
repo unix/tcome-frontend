@@ -18,12 +18,14 @@ export class StaticService {
 
     private host: string = environment.host
 
-    public options = new RequestOptions({
-        headers: new Headers({
-            'Content-Type': 'application/json',
-            'Authorization': this.locker.has('user')? this.locker.get('user').clientToken: ''
+    public options = () =>{
+        return new RequestOptions({
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.locker.has('user')? this.locker.get('user').clientToken: ''
+            })
         })
-    })
+    }
 
     public makeApi(path: string) {
         return this.host + path

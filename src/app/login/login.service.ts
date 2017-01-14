@@ -17,7 +17,7 @@ export class LoginService {
     private session = this.staticService.makeApi('session')
 
     login (member: any): Observable<any>{
-        return this.http.post(this.session, member, this.staticService.options)
+        return this.http.post(this.session, member, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
