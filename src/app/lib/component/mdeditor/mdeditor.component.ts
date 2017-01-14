@@ -21,7 +21,8 @@ export class MdeditorComponent implements AfterViewInit {
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
             placeholder: '@anyone & markdown',
-            toolbar: false
+            toolbar: false,
+            autoDownloadFontAwesome: false
         })
         simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
     }
