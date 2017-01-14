@@ -23,7 +23,8 @@ import { MemberComponent } from './member/member.component';
 import { ArticleCardComponent } from './member/article-card/article-card.component';
 import { ArticleWriteComponent } from './member/article-write/article-write.component';
 import { ArticleEditorComponent } from './lib/component/article-editor/article-editor.component';
-import { ShowdownComponent } from './lib/component/showdown/showdown.component'
+import { ShowdownComponent } from './lib/component/showdown/showdown.component';
+import { SanitizeHtmlPipePipe } from './lib/pipe/sanitize/sanitize-html-pipe.pipe'
 
 let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
 
@@ -43,7 +44,8 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         ArticleCardComponent,
         ArticleWriteComponent,
         ArticleEditorComponent,
-        ShowdownComponent
+        ShowdownComponent,
+        SanitizeHtmlPipePipe
     ],
     imports: [
         BrowserModule,
