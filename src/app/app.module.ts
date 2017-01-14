@@ -17,14 +17,14 @@ import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
 import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component';
-import {LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { MemberComponent } from './member/member.component';
-import { ArticleCardComponent } from './member/article-card/article-card.component';
-import { ArticleWriteComponent } from './member/article-write/article-write.component';
-import { ArticleEditorComponent } from './lib/component/article-editor/article-editor.component';
-import { ShowdownComponent } from './lib/component/showdown/showdown.component';
-import { SanitizeHtmlPipePipe } from './lib/pipe/sanitize/sanitize-html-pipe.pipe'
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {MemberComponent} from './member/member.component';
+import {ArticleCardComponent} from './member/article-card/article-card.component';
+import {ArticleWriteComponent} from './member/article-write/article-write.component';
+import {ArticleEditorComponent} from './lib/component/article-editor/article-editor.component';
+import {ShowdownComponent} from './lib/component/showdown/showdown.component';
+import {SanitizeHtmlPipe} from './lib/pipe/sanitize/sanitize-html.pipe'
 
 let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
 
@@ -45,7 +45,7 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         ArticleWriteComponent,
         ArticleEditorComponent,
         ShowdownComponent,
-        SanitizeHtmlPipePipe
+        SanitizeHtmlPipe
     ],
     imports: [
         BrowserModule,
@@ -57,12 +57,10 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         LockerModule.forRoot(lockerConfig),
         MomentModule,
     ],
-    providers: [
-    ],
+    providers: [],
     bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor (
-        private locker: Locker
-    ){}
+    constructor (private locker: Locker){
+    }
 }
