@@ -65,7 +65,7 @@ export class DetailComponent implements OnInit {
                     this.field = ''
                 },
                 errorStatus => {
-                    if (errorStatus == 4013){
+                    if (errorStatus == 403){
                         this.staticService.toastyInfo('登录已过期, 请重新登录', '无法评论')
                         this.staticService.clearAuthorization()
                         return this.missionService.confirmMission({update: true})
