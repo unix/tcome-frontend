@@ -21,7 +21,7 @@ export class StaticService {
     public options = new RequestOptions({
         headers: new Headers({
             'Content-Type': 'application/json',
-            'Authorization': this.locker.get('user')? this.locker.get('user').token: ''
+            'Authorization': this.locker.has('user')? this.locker.get('user').clientToken: ''
         })
     })
 
@@ -29,7 +29,7 @@ export class StaticService {
         return this.host + path
     }
     public authorization (){
-        return this.locker.get('user')? this.locker.get('user').token: ''
+        return this.locker.has('user')? this.locker.get('user').clientToken: ''
     }
     public clearAuthorization (){
         this.locker.clear()

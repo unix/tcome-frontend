@@ -22,6 +22,7 @@ export class DetailService {
             .catch(this.handleError)
     }
     getComment (id: string): Observable<Comment[]> {
+        console.log(this.staticService.options);
         return this.http.get(`${this.detailUrl}/${id}/comment`, this.staticService.options)
             .map(this.staticService.extractData)
             .catch(this.handleError)
