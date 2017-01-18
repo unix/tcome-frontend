@@ -22,6 +22,7 @@ export class ArticleEditorComponent implements AfterViewInit {
             showIcons: ["code", "table"],
             placeholder: '撰写正文内容',
             autoDownloadFontAwesome: false,
+            spellChecker: false,
             toolbar: [{
                 name: "bold",
                 action: SimpleMDE.toggleBold,
