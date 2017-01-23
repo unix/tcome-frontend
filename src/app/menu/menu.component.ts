@@ -39,7 +39,7 @@ export class MenuComponent implements OnInit {
                     this.missionService.confirmMission({update: true})
                 },
                 error =>{
-                    if (error.status == 401){
+                    if (error.status == 401|| error.status == 403){
                         this.locker.clear()
                         this.user = {}
                         this.missionService.confirmMission({update: true})
