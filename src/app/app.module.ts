@@ -24,7 +24,7 @@ import {ArticleCardComponent} from './member/article-card/article-card.component
 import {ArticleWriteComponent} from './member/article-write/article-write.component';
 import {ArticleEditorComponent} from './lib/component/article-editor/article-editor.component';
 import {ShowdownComponent} from './lib/component/showdown/showdown.component';
-import {SanitizeHtmlPipe} from './lib/pipe/sanitize/sanitize-html.pipe'
+import {SanitizeHtmlPipe} from './lib/pipe/sanitize/sanitize-html.pipe';
 
 let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
 

@@ -27,6 +27,8 @@ export class MenuComponent implements OnInit {
     }
 
     public user: any
+    public videoData: string [] = []
+    public videoNow: string = ''
 
     logout (){
         this.menuService.logout()
@@ -48,8 +50,22 @@ export class MenuComponent implements OnInit {
     goNext (path: string){
         this.router.navigate([`/${path}`])
     }
-    goMember (){
-        if (this.user&& this.user.id) this.goNext('member')
+    getVideo (){
+        ['http://static.wittsay.cc/homepage.mov'].forEach(v =>{
+            this.menuService.getVideo(v)
+                .subscribe(
+                    res =>{
+                        res.url? this.videoData.push(res.url): ''
+                        if (!this.videoNow) this.videoNow = res.url
+                    },
+                    error =>{
+                        console.log(error);
+                    }
+                )
+        })
+    }
+    ended (){
+        this.videoNow = this.videoData[~~(Math.random() * this.videoData.length)]
     }
 
 
@@ -59,6 +75,7 @@ export class MenuComponent implements OnInit {
 
     ngOnInit (){
         this.user = this.locker.get('user')
+        this.getVideo()
     }
 
 }

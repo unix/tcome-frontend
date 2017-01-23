@@ -1,18 +1,17 @@
-
-<div class="menu-bar">
-
-</div>
 <div class="menu-content">
-    <img class="bg" src="http://static.wittsay.cc/default_bg.jpeg" alt="" draggable="false">
+    <div class="bg" style="background-image:url('http://i1.wp.com/adventure.com/wp-content/uploads/2014/05/adcheroimage.jpg?resize=1435%2C777');"></div>
+    <div class="bg-video">
+        <video webkit-playsinline src="{{videoNow}}" autoplay="autoplay" (ended)="ended()"></video>
+    </div>
     <div class="photo">
-        <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false" (click)="goMember()">
+        <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false" (click)="goNext('member')">
         <span>{{user&& user.username? user.username: '游客'}}</span>
     </div>
     <ul class="menu">
-        <li>首页</li>
-        <li>文章</li>
-        <li>搜索</li>
-        <li>总览</li>
+        <li><a routerLinkActive="active" routerLink="/welcome">首页</a></li>
+        <li><a routerLinkActive="active" routerLink="/articles">文章</a></li>
+        <li><a routerLinkActive="active" routerLink="/articles">搜索</a></li>
+        <li><a routerLinkActive="active" routerLink="/member">{{user&& user.id? '总览': '登录'}}</a></li>
     </ul>
     <div class="session">
         <button *ngIf="user&& user.id" (click)="logout()">Sign out</button>

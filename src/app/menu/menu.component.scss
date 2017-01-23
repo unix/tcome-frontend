@@ -1,26 +1,55 @@
-
-.menu-bar {
-	width: 32px;
-	height: 100%;
-	background-color: #2A2A2A;
-	float: left;
-}
-
-
 .menu-content {
 	position: fixed;
 	top: 0;
-	left: 32px;
+	left: 0;
 	bottom: 0;
-	width: 260px;
+	width: 300px;
+	overflow: hidden;
 	z-index: 5;
-	>.bg {
+	&:after {
+		content: "";
+		display: block;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: -1;
+		z-index: 1;
+		background-image: linear-gradient(-135deg, rgba(62, 65, 78, 0.42) 0%, #75777C 100%);
+	}
+	>.bg-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		video {
+			transform: scale(1.05, 1.05);
+			left: 0;
+			right: 0;
+			height: 100%;
+			bottom: 0;
+			top: 0;
+			visibility: visible;
+			opacity: 1;
+		}
+
+	}
+	>.bg {
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+		z-index: 0;
+		background-size: cover;
+		background-position: center;
+		-webkit-filter: blur(6px);
+		-ms-filter: blur(6px);
+		filter: url(#blur);
+		user-select: none;
+		cursor: default;
 	}
 	.photo {
 		width: 100%;
@@ -32,6 +61,8 @@
 		-ms-user-select: none;
 		user-select: none;
 		cursor: pointer;
+		position: relative;
+		z-index: 20;
 		img {
 			width: 70px;
 			border-radius: 50%;
@@ -58,6 +89,7 @@
 		margin:0 auto;
 		position: relative;
 		top: 40px;
+		z-index: 20;
 		> li{
 			width: 22%;
 			margin: 0 1%;
@@ -72,6 +104,10 @@
 			cursor: pointer;
 			border: 1px solid rgba(255,255,255,.75);
 			transition: all .3s;
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
 			&:hover {
 				border: 1px solid rgba(255,255,255,.75);
 				background: transparent;
@@ -91,6 +127,7 @@
 	width: 260px;
 	left: 50%;
 	margin-left: -130px;
+	z-index: 20;
 	button {
 		padding: 0;
 		background: transparent;

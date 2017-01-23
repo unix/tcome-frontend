@@ -19,6 +19,11 @@ export class MenuService {
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
+    getVideo (videoLink):Observable<any> {
+        return this.http.get(videoLink)
+            .map((res: Response) => res || {})
+            .catch(this.handleError)
+    }
 
     private handleError (error: any){
         return Observable.throw(error || '服务器错误')
