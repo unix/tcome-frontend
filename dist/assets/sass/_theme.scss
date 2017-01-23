@@ -1,5 +1,10 @@
 @import '../../../node_modules/@angular/material/core/theming/all-theme';
 
+@font-face {
+	font-family: futura-pt;
+	src: url('../fonts/futura.ttf');
+}
+
 @include md-core();
 
 $primary: md-palette($md-cyan);
@@ -34,7 +39,7 @@ $theme: md-light-theme($primary, $accent);
 html {
 	-ms-text-size-adjust: 100%; // 2
 	-webkit-text-size-adjust: 100%; // 2
-	background: #EEEEEE;
+	background: #F5F5F5;
 }
 
 body {
