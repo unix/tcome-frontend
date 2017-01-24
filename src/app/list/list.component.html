@@ -8,8 +8,7 @@
             </div>
             <div class="bottom">
                 <h3>{{item.title}}</h3>
-                <span>{{item.authorName}}</span>
-                <p>{{item.createdAt | amTimeAgo:true}}</p>
+                <p>{{item.createdAt | amTimeAgo:true}} {{item.authorName}}</p>
             </div>
 
             <!--<h2><a routerLink="/articles/{{item.id}}">{{item.title}}</a></h2>-->
