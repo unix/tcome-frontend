@@ -2,88 +2,49 @@
 
 
 .article-detail {
-	width: 900px;
+	width: 1000px;
 	margin: 0 auto;
-	padding-top: 60px;
-	margin-top: -40px;
+	padding: 20px 40px 0 40px;
+	background: #FFF;
 }
 
 .article-detail-title {
 	@extend %auto;
-	padding-bottom: .5rem;
 	border-bottom: 1px solid #EEE;
 	margin-bottom: 15px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	position: relative;
-	&.no-tag {
-		margin-bottom: 10px;
-	}
-	>h2 {
-		@include fontc(2rem, #555, 1.5);
-	}
-	>p {
-		@include fontc(.9rem, #3D596D);
-		>span {
-			padding-left: 9px;
-		}
-		span.box {
-			background: #3D596D;
-			padding: 0 6px;
-			color: #fff;
-		}
-	}
-	.author {
-		color: #4094c7;
-	}
-	>.tag {
+	img.photo {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
 		position: absolute;
+		top: 50%;
 		left: 0;
-		height: 35px;
-		top: 100%;
-		margin-top: -5px;
-		line-height: 35px;
-		&:before {
-			content: 'tags:';
-			float: left;
-			font-size: 0.9rem;
-			color: #3D596D;
-			padding-right: 10px;
-			line-height: 35px;
+		margin-top: -24px;
+	}
+	.title {
+		margin-left: 55px;
+		padding: 10px 0;
+		h2 {
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 1;
 		}
-		> li{
-			float: left;
-			margin-right: 12px;
-			color: #4094c7;
-			font-size: 15px;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			cursor: pointer;
+		span {
+			font-weight: 300;
+			color: #373a3c;
+			font-size: 13px;
 		}
 	}
 }
 
 .article-detail-content {
 	@extend %auto;
-	padding: .6rem 0;
-	>.content-box {
-		@extend %auto;
-		border: 1px solid #EEE;
-		>.content-bar {
-			height: 1.9rem;
-			background-color: #F7F7F7;
-			padding-left: 1rem;
-			@include fontc(.85rem, #555, 1.9rem);
-			border-bottom: 1px solid #EEE;
-		}
-		>.content-show {
-			@extend %auto;
-			min-height: 100px;
-			background-color: #fff;
-			padding:  .5rem 1.5rem;
-		}
-	}
+	min-height: 100px;
+	background-color: #fff;
+	padding:  10px 15px;
+	margin: 50px 0;
 }
 
 .editor {
@@ -128,17 +89,21 @@
 }
 .comment {
 	@extend %auto;
-	padding: .4rem 0;
-	.comment-box {
+	.comment-bar {
+		height: 1.9rem;
+		background-color: #F7F7F7;
+		padding-left: 1rem;
+		@include fontc(.85rem, #555, 1.9rem);
+		border-bottom: 1px solid #EEE;
+	}
+	.line {
+		font-family: "futura-pt",sans-serif;
 		@extend %auto;
-		border: 1px solid #EEE;
-		.comment-bar {
-			height: 1.9rem;
-			background-color: #F7F7F7;
-			padding-left: 1rem;
-			@include fontc(.85rem, #555, 1.9rem);
-			border-bottom: 1px solid #EEE;
-		}
+		font-size: 25px;
+		line-height: 1.5;
+		border-bottom: 1px solid #ccc;
+		padding-left: 5px;
+		margin: 10px auto;
 	}
 }
 .comment-list {
