@@ -23,7 +23,7 @@ const uploadFile = (token, key, filePath) =>{
 }
 fs.readdir('./dist', (err, files) =>{
 	files.forEach(v =>{
-		if (v.includes('.js') || v.includes('.css')){
+		if (v.includes('.js') || v.includes('.css') || v.includes('.ttf')){
 			uploadFile(getToken(v), v, `./dist/${v}`)
 		}
 	})
