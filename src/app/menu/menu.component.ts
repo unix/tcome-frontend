@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, OnInit, OnDestroy} from '@angular/core'
 import {Locker} from 'angular2-locker'
 import {Router} from '@angular/router'
 
@@ -11,7 +11,7 @@ import {MenuService} from './menu.service'
     styleUrls: ['./menu.component.scss'],
     providers: [MenuService]
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
 
     constructor (
         private menuService: MenuService,
@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
     public user: any
     public videoData: string [] = []
     public videoNow: string = ''
+    private timer: any
 
     logout (){
         this.menuService.logout()
@@ -65,7 +66,14 @@ export class MenuComponent implements OnInit {
         })
     }
     ended (){
-        this.videoNow = this.videoData[~~(Math.random() * this.videoData.length)]
+        if (this.timer) return this.videoNow = '';
+        this.timer = setInterval(() =>{
+            if (this.videoNow) {
+                this.videoNow = ''
+                return ;
+            }
+            this.videoNow = this.videoData[~~(Math.random() * this.videoData.length)]
+        }, 30000)
     }
 
 
@@ -76,6 +84,9 @@ export class MenuComponent implements OnInit {
     ngOnInit (){
         this.user = this.locker.get('user')
         this.getVideo()
+    }
+    ngOnDestroy (){
+        this.timer&& clearInterval(this.timer)
     }
 
 }
