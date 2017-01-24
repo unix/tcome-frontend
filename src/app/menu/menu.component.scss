@@ -6,6 +6,10 @@
 	width: 300px;
 	overflow: hidden;
 	z-index: 5;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	&:after {
 		content: "";
 		display: block;
@@ -56,10 +60,6 @@
 		height: auto;
 		padding-top: 50px;
 		text-align: center;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
 		cursor: pointer;
 		position: relative;
 		z-index: 20;
