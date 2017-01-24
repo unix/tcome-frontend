@@ -1,7 +1,7 @@
 <!--<app-breadcrumb></app-breadcrumb>-->
 <div class="article-detail" *ngIf="detail&& detail.id">
     <div class="article-detail-title">
-        <img src="../../assets/images/default_photo.png" alt="" class="photo">
+        <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" class="photo">
         <div class="title">
             <h2>{{detail.title}}</h2>
             <p>

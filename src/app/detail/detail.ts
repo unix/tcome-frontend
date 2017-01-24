@@ -4,17 +4,16 @@
  */
 
 export class Detail {
-    constructor(
-        public id: string,              // id
-        public title: string,           // 标题
-        public content: string,         // 详情
-        public authorId: string,        // 作者id
-        public authorName: string,      // 作者名
+    id: string;              // id
+    title: string;           // 标题
+    content: string;         // 详情
+    authorId: string;        // 作者id
+    authorName: string;      // 作者名
+    avatar?: string;
 
-        public createdAt: string,       // 创建日期
-        public updatedAt: string,       // 更新日期
-        public tags: string[],          // 标签
-        public readTotal: number,       // 阅读数
-        public commentTotal: number    // 评论数
-    ){}
+    createdAt: string;       // 创建日期
+    updatedAt: string;       // 更新日期
+    tags: string[];          // 标签
+    readTotal: number;       // 阅读数
+    commentTotal: number;    // 评论数
 }
