@@ -1,4 +1,4 @@
-$titleHeight: -27px;
+$titleHeight: -12px;
 $titleLeft: 30px;
 $titleFontSize: 50px;
 
@@ -23,6 +23,7 @@ $titleFontSize: 50px;
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+		line-height: 50px;
 	}
 	.itellu {
 		position: relative;
@@ -41,6 +42,7 @@ $titleFontSize: 50px;
 			-moz-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+			line-height: 50px;
 		}
 		.text {
 			margin-top: 90px;
