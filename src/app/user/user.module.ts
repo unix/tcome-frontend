@@ -31,7 +31,7 @@ import {ArticleWriteComponent} from './user-console/article-write/article-write.
         MomentModule,
         UserRoutingModule
     ],
-    exports: [LoginComponent],
+    exports: [UserMainComponent],
     providers: []
 })
 export class UserModule {

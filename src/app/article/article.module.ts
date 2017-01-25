@@ -26,7 +26,7 @@ import {DetailComponent} from './detail/detail.component'
         MomentModule,
         ArticleRoutingModule
     ],
-    exports: [],
+    exports: [ArticleMainComponent],
     providers: []
 })
 export class ArticleModule {

@@ -18,7 +18,14 @@ import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
         SanitizeHtmlPipe,
         BreadcrumbComponent,
     ],
-    exports: [CommonModule, FormsModule]
+    exports: [
+        CommonModule,
+        FormsModule,
+        BackComponent,
+        MdeditorComponent,
+        SanitizeHtmlPipe,
+        BreadcrumbComponent
+    ]
 })
 
 export class SharedModule {
