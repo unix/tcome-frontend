@@ -20,10 +20,8 @@ import {HomeComponent} from './home/home.component'
         RouterModule,
         HttpModule,
         SharedModule,
-        AppRoutingModule,
-        // MaterialModule.forRoot(),
-
         MomentModule,
+        AppRoutingModule,
     ],
     declarations: [
         AppComponent,

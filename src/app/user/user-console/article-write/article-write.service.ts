@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable'
 import {Headers, RequestOptions} from '@angular/http'
 import 'rxjs/add/observable/throw'
 
-import {StaticService} from '../../lib/service/static'
+import {StaticService} from '../../../shared/service/static'
 
 @Injectable()
 export class ArticleWriteService {

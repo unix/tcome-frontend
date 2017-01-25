@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
 
 import {ArticleWriteService} from './article-write.service'
-import {StaticService} from '../../lib/service/static'
+import {StaticService} from '../../../shared/service/static'
 
 @Component({
     selector: 'app-article-write',
