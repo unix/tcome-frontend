@@ -10,6 +10,7 @@ import {MomentModule} from 'angular2-moment'
 
 import {LoginComponent} from './user-login/login.component'
 import {MemberComponent} from './user-console/member.component'
+import {ArticleEditorComponent} from './user-console/article-editor/article-editor.component'
 import {ArticleCardComponent} from './user-console/article-card/article-card.component'
 import {ArticleWriteComponent} from './user-console/article-write/article-write.component'
 
@@ -18,6 +19,7 @@ import {ArticleWriteComponent} from './user-console/article-write/article-write.
     declarations: [
         LoginComponent,
         MemberComponent,
+        ArticleEditorComponent,
         ArticleCardComponent,
         ArticleWriteComponent
     ],

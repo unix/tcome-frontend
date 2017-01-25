@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
+import {ArticleEditorComponent} from './article-editor'
 
 @Component({
     selector: 'app-member',

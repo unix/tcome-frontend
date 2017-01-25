@@ -17,9 +17,9 @@ import {HomeComponent} from './home/home.component'
     imports: [
         ToastyModule.forRoot(),
         BrowserModule,
+        SharedModule,
         RouterModule,
         HttpModule,
-        SharedModule,
         MomentModule,
         AppRoutingModule,
     ],
