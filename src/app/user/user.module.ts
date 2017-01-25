@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms'
 import {UserRoutingModule} from './user.routing'
 import {MomentModule} from 'angular2-moment'
 
+import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
 import {MemberComponent} from './user-console/member.component'
 import {ArticleEditorComponent} from './user-console/article-editor/article-editor.component'
@@ -17,6 +18,7 @@ import {ArticleWriteComponent} from './user-console/article-write/article-write.
 
 @NgModule({
     declarations: [
+        UserMainComponent,
         LoginComponent,
         MemberComponent,
         ArticleEditorComponent,

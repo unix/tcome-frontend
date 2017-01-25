@@ -27,8 +27,6 @@ import {HomeComponent} from './home/home.component'
         AppComponent,
         MenuComponent,
         HomeComponent,
-        // ArticleModule,
-        // UserModule
     ],
     providers: [],
     bootstrap: [AppComponent],

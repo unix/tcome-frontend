@@ -5,7 +5,6 @@ import {Title} from '@angular/platform-browser'
 
 import {MissionService} from '../../shared/service/mission'
 import {LoginService} from './login.service'
-
 import {User} from './user'
 
 @Component({

@@ -5,14 +5,22 @@
 import {NgModule} from '@angular/core'
 import {Routes, RouterModule} from '@angular/router'
 
+import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
+import {RegisterComponent} from './user-register/register.component'
 import {MemberComponent} from './user-console/member.component'
 
 
 export const userRoutes: Routes = [{
-    path: '', component: MemberComponent,
+    path: '', component: UserMainComponent,
     children: [{
+        path: '', redirectTo:'login',pathMatch:'full'
+    },{
         path: 'login', component: LoginComponent
+    },{
+        path: 'register', component: RegisterComponent
+    },{
+        path: 'console', component: MemberComponent
     }]
 }]
 
