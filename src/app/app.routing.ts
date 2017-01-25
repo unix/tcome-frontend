@@ -13,10 +13,6 @@ import {RegisterComponent} from './register/register.component'
 import {MemberComponent} from './member/member.component'
 
 
-/**
- *
- * @type {{path: string; component: SessionComponent}[]}
- */
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'articles', component: ListComponent},
@@ -25,13 +21,9 @@ const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'register/:id/:token', component: RegisterComponent},
-    {path: 'member', component: MemberComponent}
+    {path: 'user', loadChildren: 'app/user/user.module#UserModule'}
 ]
 
-/**
- *
- * @type {Array}
- */
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]

@@ -1,0 +1,55 @@
+.member {
+	width: 100%;
+	height: auto;
+	font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+	margin-top: -40px;
+	padding-top: 40px;
+	.bar {
+		width: auto;
+		height: auto;
+		overflow: hidden;
+		margin-top: 35px;
+		padding: 0 26px;
+		>li {
+			float: left;
+			width: 75px;
+			text-align: center;
+			color: #000;
+			font-size: 16px;
+			border-bottom: 1px solid #ccc;
+			height: 35px;
+			line-height: 35px;
+			position: relative;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
+			z-index: 5;
+			display: block;
+			transition: all .3s;
+			&.active {
+				color: #fff;
+				&:after {
+					width: 100%;
+				}
+			}
+			&:after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 0;
+				background: #3D596D;
+				content: '';
+				transition: all .3s;
+				z-index: -1;
+			}
+		}
+	}
+	.content {
+		width: 100%;
+		height: auto;
+		padding: 30px 40px;
+	}
+}
