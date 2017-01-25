@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http'
 import {MaterialModule} from '@angular/material'
 import {MomentModule} from 'angular2-moment'
 import {ToastyModule} from 'ng2-toasty';
-import {LockerModule, Locker, LockerConfig, DRIVERS} from 'angular2-locker'
+import {LockerModule, DRIVERS, Locker} from 'angular-safeguard'
 
 import {MdeditorComponent} from './lib/component/mdeditor';
 import {BackComponent} from './lib/component/back'
@@ -26,8 +26,11 @@ import {ArticleEditorComponent} from './lib/component/article-editor/article-edi
 import {ShowdownComponent} from './lib/component/showdown/showdown.component';
 import {SanitizeHtmlPipe} from './lib/pipe/sanitize/sanitize-html.pipe';
 
-let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
-
+const lockerConfig = {
+    driverNamespace: 'blog',
+    defaultDriverType: DRIVERS.LOCAL,
+    namespaceSeperator: '-'
+}
 @NgModule({
     declarations: [
         AppComponent,
@@ -54,13 +57,13 @@ let lockerConfig = new LockerConfig('blog', DRIVERS.LOCAL, '-')
         AppRoutingModule,
         MaterialModule.forRoot(),
         ToastyModule.forRoot(),
-        LockerModule.forRoot(lockerConfig),
+        LockerModule.withConfig(lockerConfig),
         MomentModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor (private locker: Locker){
+    constructor (protected locker: Locker){
     }
 }

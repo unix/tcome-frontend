@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Response, Headers, RequestOptions} from '@angular/http'
 import {Observable} from "rxjs"
-import {Locker} from 'angular2-locker'
+import {Locker} from 'angular-safeguard'
 import {ToastyService, ToastOptions} from 'ng2-toasty'
 
 import 'rxjs/add/observable/throw'

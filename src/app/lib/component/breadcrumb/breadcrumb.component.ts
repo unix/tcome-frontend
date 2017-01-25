@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {Locker} from 'angular2-locker'
+import {Locker} from 'angular-safeguard'
 
 import {MissionService} from '../../service/mission'
 

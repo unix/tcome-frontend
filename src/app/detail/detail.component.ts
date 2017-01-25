@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
-import {Locker} from 'angular2-locker'
+import {Locker} from 'angular-safeguard'
 import {Title} from '@angular/platform-browser'
 
 import {MdeditorComponent} from '../lib/component/mdeditor'

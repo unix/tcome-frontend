@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
-import {Locker} from 'angular2-locker'
+import {Locker} from 'angular-safeguard'
 
 import {RegisterService} from './register.service'
 
