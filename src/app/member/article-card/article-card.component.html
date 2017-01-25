@@ -1,7 +1,0 @@
-<div class="article-card">
-    <div class="box" *ngFor="let item of list" (click)="goNext(item.id)">
-        <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" draggable="false">
-        <p>{{item.title}}</p>
-        <span>{{item.createdAt | amTimeAgo:true}}</span>
-    </div>
-</div>

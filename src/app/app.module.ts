@@ -1,30 +1,18 @@
 import {BrowserModule} from '@angular/platform-browser'
 import {NgModule} from '@angular/core'
-import {FormsModule} from '@angular/forms'
 import {HttpModule} from '@angular/http'
+import { RouterModule } from '@angular/router'
 import {MaterialModule} from '@angular/material'
 import {MomentModule} from 'angular2-moment'
 import {ToastyModule} from 'ng2-toasty';
 import {LockerModule, DRIVERS, Locker} from 'angular-safeguard'
-
-import {MdeditorComponent} from './lib/component/mdeditor';
-import {BackComponent} from './lib/component/back'
-import {BreadcrumbComponent} from './lib/component/breadcrumb'
+import {SharedModule} from './shared/shared.module'
 
 import {AppComponent} from './app.component'
 import {AppRoutingModule} from './app.routing'
-import {ListComponent} from './list/list.component'
 import {MenuComponent} from './menu/menu.component'
-import {DetailComponent} from './detail/detail.component'
 import {HomeComponent} from './home/home.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
-import {MemberComponent} from './member/member.component';
-import {ArticleCardComponent} from './member/article-card/article-card.component';
-import {ArticleWriteComponent} from './member/article-write/article-write.component';
-import {ArticleEditorComponent} from './lib/component/article-editor/article-editor.component';
-import {ShowdownComponent} from './lib/component/showdown/showdown.component';
-import {SanitizeHtmlPipe} from './lib/pipe/sanitize/sanitize-html.pipe';
+
 
 const lockerConfig = {
     driverNamespace: 'blog',
@@ -32,33 +20,21 @@ const lockerConfig = {
     namespaceSeperator: '-'
 }
 @NgModule({
-    declarations: [
-        AppComponent,
-        ListComponent,
-        MenuComponent,
-        MdeditorComponent,
-        DetailComponent,
-        BackComponent,
-        HomeComponent,
-        BreadcrumbComponent,
-        LoginComponent,
-        RegisterComponent,
-        MemberComponent,
-        ArticleCardComponent,
-        ArticleWriteComponent,
-        ArticleEditorComponent,
-        ShowdownComponent,
-        SanitizeHtmlPipe
-    ],
     imports: [
+        SharedModule,
         BrowserModule,
-        FormsModule,
         HttpModule,
+        RouterModule,
         AppRoutingModule,
         MaterialModule.forRoot(),
         ToastyModule.forRoot(),
         LockerModule.withConfig(lockerConfig),
         MomentModule,
+    ],
+    declarations: [
+        AppComponent,
+        MenuComponent,
+        HomeComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -2,7 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core'
 import {Locker} from 'angular-safeguard'
 import {Router} from '@angular/router'
 
-import {MissionService} from '../lib/service/mission'
+import {MissionService} from '../shared/service/mission'
 import {MenuService} from './menu.service'
 
 @Component({

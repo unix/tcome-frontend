@@ -7,7 +7,7 @@ const Showdown:any = require('showdown')
     templateUrl: './showdown.component.html',
     styleUrls: ['./showdown.component.scss']
 })
-export class ShowdownComponent implements OnInit {
+export class ShowdownComponent implements AfterViewInit {
 
     constructor (){
     }
@@ -15,8 +15,8 @@ export class ShowdownComponent implements OnInit {
     @Input() html: any
     public innerHTML: any
 
-    ngOnInit (){
-        let converter = new Showdown.Converter()
+    ngAfterViewInit (){
+        const converter = new Showdown.Converter()
         this.innerHTML = converter.makeHtml(this.html);
     }
 

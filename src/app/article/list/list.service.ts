@@ -4,29 +4,27 @@ import {Observable} from 'rxjs/Observable'
 import {Headers, RequestOptions} from '@angular/http'
 import 'rxjs/add/observable/throw'
 
-import {StaticService} from '../../lib/service/static'
+import {List} from './list'
+import {StaticService} from '../../shared/service/static'
 
 @Injectable()
-export class ArticleWriteService {
+export class ListService {
 
     constructor (
         private http: Http,
-        private staticService: StaticService
-    ){
+        private staticService: StaticService){
     }
 
-    private article = this.staticService.makeApi('article')
+    private listUrl = this.staticService.makeApi('articles')
 
-    create (article: any): Observable<any>{
-        return this.http.post(this.article, article, this.staticService.options())
+    getList (): Observable<List[]>{
+        return this.http.get(this.listUrl)
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
     private handleError (error: any){
-        if(error instanceof Response) {
-            return Observable.throw(error.json().message || '服务器错误');
-        }
         return Observable.throw(error || '服务器错误')
     }
+
 
 }

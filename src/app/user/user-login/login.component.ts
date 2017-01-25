@@ -3,7 +3,7 @@ import {Locker} from 'angular-safeguard'
 import {Router} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
-import {MissionService} from '../lib/service/mission'
+import {MissionService} from '../../shared/service/mission'
 import {LoginService} from './login.service'
 
 import {User} from './user'

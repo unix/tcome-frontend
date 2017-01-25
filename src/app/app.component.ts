@@ -1,8 +1,8 @@
 import {Component, AfterViewInit, ViewChild} from '@angular/core'
 import {Title} from '@angular/platform-browser'
 
-import {MissionService} from './lib/service/mission'
-import {StaticService} from './lib/service/static'
+import {MissionService} from './shared/service/mission'
+import {StaticService} from './shared/service/static'
 
 @Component({
     selector: 'app-root',
