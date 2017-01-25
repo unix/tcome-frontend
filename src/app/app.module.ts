@@ -1,12 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser'
 import {NgModule} from '@angular/core'
 import {HttpModule} from '@angular/http'
-import { RouterModule } from '@angular/router'
+import {RouterModule} from '@angular/router'
 import {MaterialModule} from '@angular/material'
 import {MomentModule} from 'angular2-moment'
 import {ToastyModule} from 'ng2-toasty';
 import {LockerModule, DRIVERS, Locker} from 'angular-safeguard'
 import {SharedModule} from './shared/shared.module'
+
+import {ArticleModule} from './article/article.module'
+import {UserModule} from './user/user.module'
 
 import {AppComponent} from './app.component'
 import {AppRoutingModule} from './app.routing'
@@ -23,10 +26,10 @@ const lockerConfig = {
     imports: [
         SharedModule,
         BrowserModule,
-        HttpModule,
         RouterModule,
+        HttpModule,
         AppRoutingModule,
-        MaterialModule.forRoot(),
+        // MaterialModule.forRoot(),
         ToastyModule.forRoot(),
         LockerModule.withConfig(lockerConfig),
         MomentModule,
@@ -35,11 +38,13 @@ const lockerConfig = {
         AppComponent,
         MenuComponent,
         HomeComponent,
+        // ArticleModule,
+        // UserModule
     ],
     providers: [],
     bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor (protected locker: Locker){
+    constructor (private locker: Locker){
     }
 }

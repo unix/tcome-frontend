@@ -8,15 +8,15 @@ import {Routes, RouterModule} from '@angular/router'
 import {HomeComponent} from './home/home.component'
 
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'welcome', component: HomeComponent},
     // {path: 'articles/:id', component: DetailComponent},
     // {path: 'login', component: LoginComponent},
     // {path: 'register', component: RegisterComponent},
     // {path: 'register/:id/:token', component: RegisterComponent},
-    {path: 'articles', loadChildren: 'app/article/article.module#ArticleModule'},
-    {path: 'user', loadChildren: 'app/user/user.module#UserModule'},
+    {path: 'articles', loadChildren: 'app/article/article.module#ArticleModule', data: {preload: true}},
+    {path: 'user', loadChildren: 'app/user/user.module#UserModule', data: {preload: true}},
 ]
 
 @NgModule({

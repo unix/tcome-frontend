@@ -9,7 +9,7 @@ import {LoginComponent} from './user-login/login.component'
 import {MemberComponent} from './user-console/member.component'
 
 
-const userRoutes: Routes = [{
+export const userRoutes: Routes = [{
     path: '', component: MemberComponent,
     children: [{
         path: 'login', component: LoginComponent

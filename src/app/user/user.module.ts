@@ -20,7 +20,7 @@ import {MemberComponent} from './user-console/member.component'
         CommonModule,
         UserRoutingModule
     ],
-    exports: [],
+    exports: [LoginComponent],
     providers: []
 })
 export class UserModule {
