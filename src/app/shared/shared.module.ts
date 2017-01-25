@@ -8,7 +8,6 @@ import {FormsModule} from '@angular/forms'
 import {MdeditorComponent} from './component/mdeditor'
 import {BackComponent} from './component/back'
 import {BreadcrumbComponent} from './component/breadcrumb'
-import {ShowdownComponent} from './component/showdown/showdown.component'
 import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
 
 @NgModule({
@@ -16,7 +15,6 @@ import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
     declarations: [
         BackComponent,
         MdeditorComponent,
-        ShowdownComponent,
         SanitizeHtmlPipe,
         BreadcrumbComponent,
     ],

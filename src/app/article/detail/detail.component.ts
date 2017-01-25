@@ -3,7 +3,6 @@ import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
 import {MdeditorComponent} from '../../shared/component/mdeditor'
-import {ShowdownComponent} from '../../shared/component/showdown'
 import {StaticService} from '../../shared/service/static'
 import {MissionService} from '../../shared/service/mission'
 import {LockerService} from '../../shared/service/locker'
