@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {Locker} from 'angular-safeguard'
+import {LockerService} from '../../shared/service/locker'
 import {Router} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
     constructor (
         private loginService: LoginService,
-        private locker: Locker,
+        private locker: LockerService,
         private router: Router,
         private missionService: MissionService,
         private titleService: Title,
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     }
 
     loginSuccessful (user){
-        this.locker.set('user', user)
+        this.locker.set({user: user})
         this.router.navigate(['/welcome'])
     }
 

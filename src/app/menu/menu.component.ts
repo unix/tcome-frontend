@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core'
-import {Locker} from 'angular-safeguard'
+import {LockerService} from '../shared/service/locker'
 import {Router} from '@angular/router'
 
 import {MissionService} from '../shared/service/mission'
@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     constructor (
         private menuService: MenuService,
-        private locker: Locker,
+        private locker: LockerService,
         private missionService: MissionService,
         private router: Router,
     ){
@@ -83,7 +83,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     ngOnInit (){
         this.user = this.locker.get('user')
-        this.getVideo()
+        // this.getVideo()
     }
     ngOnDestroy (){
         this.timer&& clearInterval(this.timer)

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {Locker} from 'angular-safeguard'
+import {LockerService} from '../../../shared/service/locker'
 import {Router} from '@angular/router'
 
 import {ArticleCardService} from './article-card.service'
@@ -15,7 +15,7 @@ export class ArticleCardComponent implements OnInit {
 
     constructor (
         private articleCardService: ArticleCardService,
-        private locker: Locker,
+        private locker: LockerService,
         private router: Router,
     ){
     }

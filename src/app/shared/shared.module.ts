@@ -12,7 +12,7 @@ import {ShowdownComponent} from './component/showdown/showdown.component'
 import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     declarations: [
         BackComponent,
         MdeditorComponent,

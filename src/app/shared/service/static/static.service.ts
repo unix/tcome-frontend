@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Response, Headers, RequestOptions} from '@angular/http'
 import {Observable} from "rxjs"
-import {Locker} from 'angular-safeguard'
+import {LockerService} from '../locker'
 import {ToastyService, ToastOptions} from 'ng2-toasty'
 
 import 'rxjs/add/observable/throw'
@@ -11,7 +11,7 @@ import {environment} from '../../../../environments/environment'
 export class StaticService {
 
     constructor(
-        private locker: Locker,
+        private locker: LockerService,
         private toastyService:ToastyService,
     ) {
     }
@@ -22,7 +22,7 @@ export class StaticService {
         return new RequestOptions({
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.locker.has('user')? this.locker.get('user').clientToken: ''
+                'Authorization': this.locker.get('user')? this.locker.get('user').clientToken: ''
             })
         })
     }
@@ -31,7 +31,7 @@ export class StaticService {
         return this.host + path
     }
     public authorization (){
-        return this.locker.has('user')? this.locker.get('user').clientToken: ''
+        return this.locker.get('user')? this.locker.get('user').clientToken: ''
     }
     public clearAuthorization (){
         this.locker.clear()

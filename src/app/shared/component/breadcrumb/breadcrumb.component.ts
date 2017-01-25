@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {Locker} from 'angular-safeguard'
+import {LockerService} from '../../service/locker'
 
 import {MissionService} from '../../service/mission'
 
@@ -11,7 +11,7 @@ import {MissionService} from '../../service/mission'
 export class BreadcrumbComponent implements OnInit {
 
     constructor (
-        private locker: Locker,
+        private locker: LockerService,
         private missionService: MissionService
     ){
         missionService.missionAnnounced$.subscribe(

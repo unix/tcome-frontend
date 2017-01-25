@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
-import {Locker} from 'angular-safeguard'
 import {Title} from '@angular/platform-browser'
 
 import {MdeditorComponent} from '../../shared/component/mdeditor'
 import {ShowdownComponent} from '../../shared/component/showdown'
 import {StaticService} from '../../shared/service/static'
 import {MissionService} from '../../shared/service/mission'
+import {LockerService} from '../../shared/service/locker'
 import {DetailService} from './detail.service'
 import {Detail} from './detail'
 import {Comment} from './comment'
@@ -25,9 +25,9 @@ export class DetailComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private titleService: Title,
-        private locker: Locker,
         private staticService: StaticService,
         private missionService: MissionService,
+        private locker: LockerService
     ) {
     }
     public detail: Detail
