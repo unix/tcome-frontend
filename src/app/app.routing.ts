@@ -11,8 +11,8 @@ import {HomeComponent} from './home/home.component'
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'welcome', component: HomeComponent},
-    {path: 'articles', loadChildren: 'app/article/article.module#ArticleModule', data: {preload: true}},
-    {path: 'user', loadChildren: 'app/user/user.module#UserModule', data: {preload: true}},
+    {path: 'articles', loadChildren: './article/article.module#ArticleModule', data: {preload: true}},
+    {path: 'user', loadChildren: './user/user.module#UserModule', data: {preload: true}},
 ]
 
 @NgModule({

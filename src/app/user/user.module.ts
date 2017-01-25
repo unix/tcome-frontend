@@ -5,8 +5,8 @@
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 import {FormsModule} from '@angular/forms'
-import {UserRoutingModule} from './user.routing'
 import {MomentModule} from 'angular2-moment'
+import {UserRoutingModule} from './user.routing'
 
 import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
