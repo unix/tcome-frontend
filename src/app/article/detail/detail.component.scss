@@ -44,9 +44,29 @@
 	min-height: 100px;
 	background-color: #fff;
 	padding:  10px 15px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
-
+.copyright {
+	width: 95%;
+	margin: 30px auto;
+	padding: 12px 18px;
+	background: #EFEFEF;
+	border-radius: 3px;
+	font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	h2 {
+		font-size: 20px;
+		font-weight: normal;
+		line-height: 30px;
+	}
+	p {
+		font-size: 16px;
+		font-weight: normal;
+	}
+	a {
+		color: #4094C7;
+		text-decoration: none;
+	}
+}
 .editor {
 	@extend %auto;
 	padding: .4rem 0;
@@ -106,6 +126,11 @@
 		margin: 10px auto;
 		span {
 			color: #4094C7;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
 		}
 	}
 }
