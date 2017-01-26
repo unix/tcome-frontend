@@ -70,40 +70,25 @@
 .editor {
 	@extend %auto;
 	padding: .4rem 0;
-	margin-top: 20px;
-	.editor-box {
-		@extend %auto;
-		.title {
-			width: 100%;
-			height: 35px;
-			border:1px solid #DDDDDD;
-			border-bottom: none;
-			color: #3D596D;
-			line-height: 35px;
-			padding-left: 10px;
-			font-size: 13px;
-			overflow: hidden;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			span {
-				padding: 5px 10px;
-				cursor: no-drop;
-				border:1px solid #eee;
-				margin-right: 4px;
-				border-radius: 3px;
-				background-color: #F5F5F5;
-				color: #A2A2A2;
-				&.active {
-					background-color: #8AD768;
-					color: #fff;
-					cursor: pointer;
-				}
-			}
-		}
-		.md {
-			height: 200px;
+	margin: 50px auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	.submit {
+		background: #EEE;
+		padding: 6px 15px;
+		border-radius: 2px;
+		margin: 10px 0;
+		font-size: 18px;
+		color: #4094C7;
+		display: inline-block;
+		font-family: "futura-pt",sans-serif;
+		cursor: pointer;
+		transition: all, .2s;
+		&:hover {
+			background: #4094C7;
+			color: #FFF;
 		}
 	}
 }
@@ -194,9 +179,12 @@
 				word-break: normal;
 				padding-right:5px;
 				padding-top: 10px;
-				color: #3a3a3a;
 				line-height: 16px;
 				font-size: 15px;
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+				font-weight: 300;
+				color: #060708;
+				letter-spacing: .01em;
 			}
 		}
 	}

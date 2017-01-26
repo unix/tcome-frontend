@@ -20,10 +20,16 @@ export class MdeditorComponent implements AfterViewInit {
         const simplemde = new SimpleMDE({
             element: this.textarea.nativeElement,
             showIcons: ["code", "table"],
-            placeholder: '@anyone & markdown',
+            placeholder: '开始一次评论',
             toolbar: false,
             autoDownloadFontAwesome: false,
-            spellChecker: false
+            spellChecker: false,
+            autosave: {
+                enabled: true,
+                uniqueId: "blogComment",
+                delay: 1000,
+            },
+            status: false,
         })
         simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
     }

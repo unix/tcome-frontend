@@ -27,11 +27,24 @@
 }
 
 .article-detail .CodeMirror,.article-detail .CodeMirror-scroll {
-	min-height: 150px !important;
+	min-height: 120px !important;
 	border-radius: 0;
 }
 .article-detail .editor-toolbar {
 	border-radius: 0;
+}
+.article-detail .CodeMirror {
+	border: none;
+	background: #ececec;
+	border-radius: 2px;
+}
+.article-detail .CodeMirror pre{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	-webkit-locale: "zh";
+	font-weight: 300;
+	font-size: 20px;
+	color: #3E4347;
+	letter-spacing: .01em;
 }
 
 
