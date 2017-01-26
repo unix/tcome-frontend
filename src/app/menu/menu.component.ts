@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit, OnDestroy {
             )
     }
     goNext (path: string){
-        this.router.navigate([`/${path}`])
+        this.router.navigate([`/user/${path}`])
     }
     getVideo (){
         ['http://static.wittsay.cc/homepage.mov'].forEach(v =>{
