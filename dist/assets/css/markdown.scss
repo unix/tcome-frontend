@@ -1,4 +1,4 @@
-.content-show {
+.article-detail-content {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
 	}
@@ -6,16 +6,19 @@
 	h1 {
 		color: #000000;
 		font-size: 28pt;
+		margin: 40px 0 10px 0;
 	}
 
 	h2 {
 		border-bottom: 1px solid #CCCCCC;
 		color: #000000;
 		font-size: 24px;
+		margin: 40px 0 10px 0;
 	}
 
 	h3 {
 		font-size: 18px;
+		margin: 20px 0;
 	}
 
 	h4 {
