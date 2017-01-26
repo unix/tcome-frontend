@@ -33,7 +33,7 @@ export class ListComponent implements OnInit {
     }
 
     goNext (path){
-        this.router.navigate(['/articles', path])
+        this.router.navigate(['/articles/list', path])
     }
 
     ngOnInit() {
