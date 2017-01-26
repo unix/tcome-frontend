@@ -27,7 +27,7 @@ export class ArticleWriteComponent implements OnInit {
     }
     submit (){
         if (!this.titleValue) return this.staticService.toastyInfo('需要补全标题', '无法提交')
-        if (this.titleValue.length < 5 || this.titleValue.length > 20){
+        if (this.titleValue.length < 5 || this.titleValue.length > 40){
             return this.staticService.toastyInfo('标题长度不符合规范', '无法提交')
         }
         if (!this.mdValue) return this.staticService.toastyInfo('需要补全正文内容', '无法提交')
@@ -42,7 +42,7 @@ export class ArticleWriteComponent implements OnInit {
                 res => {
                     if (res && res.id){
                         this.staticService.toastyInfo('文章已发表!', '发表成功')
-                        this.router.navigate(['/articles', res.id])
+                        this.router.navigate(['/articles/list', res.id])
                     }
                 },
                 error => {

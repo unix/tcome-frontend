@@ -5,7 +5,7 @@ export class LockerService {
 
     constructor (){
     }
-    private keyname: string = ''
+    private keyname: string = 'blog'
 
     get (key?: string){
         const itemString = window.localStorage.getItem(this.keyname)
