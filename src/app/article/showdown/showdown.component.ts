@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild, Input, Output, AfterViewInit, EventEmitter, OnInit} from '@angular/core'
+import {Component, Input, AfterViewInit, OnInit} from '@angular/core'
 
 const Showdown:any = require('showdown')
 
@@ -7,15 +7,15 @@ const Showdown:any = require('showdown')
     templateUrl: './showdown.component.html',
     styleUrls: ['./showdown.component.scss']
 })
-export class ShowdownComponent implements AfterViewInit {
+export class ShowdownComponent implements OnInit {
 
     constructor (){
     }
 
-    @Input() html: any
+    @Input() html: string = ''
     public innerHTML: any
 
-    ngAfterViewInit (){
+    ngOnInit (){
         const converter = new Showdown.Converter()
         this.innerHTML = converter.makeHtml(this.html);
     }

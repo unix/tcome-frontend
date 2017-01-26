@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
 import {Title} from '@angular/platform-browser'
 
-import {MdeditorComponent} from '../../shared/component/mdeditor'
 import {StaticService} from '../../shared/service/static'
 import {MissionService} from '../../shared/service/mission'
 import {LockerService} from '../../shared/service/locker'
@@ -63,7 +62,7 @@ export class DetailComponent implements OnInit {
                     this.field = ''
                 },
                 errorStatus => {
-                    if (errorStatus == 403){
+                    if (errorStatus == 403 || errorStatus == 401){
                         this.staticService.toastyInfo('登录已过期, 请重新登录', '无法评论')
                         this.staticService.clearAuthorization()
                         return this.missionService.confirmMission({update: true})
