@@ -11,7 +11,7 @@ export class LockerService {
         const itemString = window.localStorage.getItem(this.keyname)
         if (!itemString) return null;
         const itemObj = JSON.parse(itemString)
-        if (!key) return itemObj;
+        if (!key|| !itemObj) return itemObj;
         return itemObj[key]? itemObj[key]: itemObj
     }
 

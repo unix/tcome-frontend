@@ -35,18 +35,14 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.menuService.logout()
             .subscribe(
                 res =>{
-                    this.locker.clear()
-                    this.user = {}
-                    this.missionService.confirmMission({update: true})
                 },
                 error =>{
-                    if (error.status == 401|| error.status == 403){
-                        this.locker.clear()
-                        this.user = {}
-                        this.missionService.confirmMission({update: true})
-                    }
                 }
             )
+        this.locker.clear()
+        this.user = {}
+        this.router.navigate(['/user/login'])
+        this.missionService.confirmMission({update: true})
     }
     goNext (path: string){
         this.router.navigate([`/user/${path}`])
