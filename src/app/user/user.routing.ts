@@ -10,6 +10,8 @@ import {LoginComponent} from './user-login/login.component'
 import {RegisterComponent} from './user-register/register.component'
 import {MemberComponent} from './user-console/member.component'
 
+import {AuthService} from '../shared/service/auth'
+
 
 export const userRoutes: Routes = [{
     path: '', component: UserMainComponent,
@@ -20,7 +22,7 @@ export const userRoutes: Routes = [{
     },{
         path: 'register', component: RegisterComponent
     },{
-        path: 'console', component: MemberComponent
+        path: 'console', component: MemberComponent, canActivate: [AuthService],
     }]
 }]
 

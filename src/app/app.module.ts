@@ -12,6 +12,8 @@ import {AppComponent} from './app.component'
 import {AppRoutingModule} from './app.routing'
 import {MenuComponent} from './menu/menu.component'
 import {HomeComponent} from './home/home.component'
+import {AuthService} from './shared/service/auth'
+import {LockerService} from './shared/service/locker'
 
 @NgModule({
     imports: [
@@ -30,7 +32,10 @@ import {HomeComponent} from './home/home.component'
         MenuComponent,
         HomeComponent,
     ],
-    providers: [],
+    providers: [
+        LockerService,
+        AuthService
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {
