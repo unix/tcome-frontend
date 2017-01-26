@@ -1,4 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser'
+import {CommonModule} from '@angular/common'
+import {FormsModule} from '@angular/forms'
 import {NgModule} from '@angular/core'
 import {HttpModule} from '@angular/http'
 import {RouterModule} from '@angular/router'
@@ -11,15 +13,15 @@ import {AppRoutingModule} from './app.routing'
 import {MenuComponent} from './menu/menu.component'
 import {HomeComponent} from './home/home.component'
 
-
-
 @NgModule({
     imports: [
         ToastyModule.forRoot(),
         BrowserModule,
-        SharedModule,
+        CommonModule,
+        FormsModule,
         RouterModule,
         HttpModule,
+        SharedModule,
         MomentModule,
         AppRoutingModule,
     ],

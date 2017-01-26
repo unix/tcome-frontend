@@ -4,7 +4,7 @@ import {Observable} from "rxjs"
 import {LockerService} from '../locker'
 import {ToastyService, ToastOptions} from 'ng2-toasty'
 
-import 'rxjs/add/observable/throw'
+import 'rxjs/Rx'
 import {environment} from '../../../../environments/environment'
 
 @Injectable()

@@ -11,23 +11,23 @@ import {BreadcrumbComponent} from './component/breadcrumb'
 import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
 
 @NgModule({
-    imports: [CommonModule, FormsModule],
+    imports: [
+        CommonModule,
+        FormsModule
+    ],
     declarations: [
+        SanitizeHtmlPipe,
         BackComponent,
         MdeditorComponent,
-        SanitizeHtmlPipe,
         BreadcrumbComponent,
     ],
     exports: [
-        CommonModule,
-        FormsModule,
+        SanitizeHtmlPipe,
         BackComponent,
         MdeditorComponent,
-        SanitizeHtmlPipe,
         BreadcrumbComponent
     ]
 })
 
 export class SharedModule {
-
 }

@@ -5,7 +5,9 @@
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {FormsModule} from '@angular/forms'
+import {HttpModule} from '@angular/http'
 import {MomentModule} from 'angular2-moment'
+import {SharedModule} from '../shared/shared.module'
 
 import {ArticleRoutingModule} from './article.routing'
 import {ShowdownComponent} from './showdown/showdown.component'
@@ -23,6 +25,8 @@ import {DetailComponent} from './detail/detail.component'
     imports: [
         CommonModule,
         FormsModule,
+        HttpModule,
+        SharedModule,
         MomentModule,
         ArticleRoutingModule
     ],
