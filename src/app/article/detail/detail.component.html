@@ -27,7 +27,7 @@
 
     <div class="comment">
         <div class="line">
-            评论
+            评论, <span>发表</span>
         </div>
         <ul class="comment-list" *ngIf="comment&& comment.length">
             <li *ngFor="let c of comment" >
@@ -35,6 +35,7 @@
                 <div class="right">
                     <div class="name">
                         <p>{{c.authorName}}</p>
+                        <span>{{c.createdAt | amDateFormat:'LL'}}</span>
                     </div>
                     <div class="content">
 

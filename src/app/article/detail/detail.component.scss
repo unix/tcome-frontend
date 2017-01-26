@@ -101,15 +101,18 @@
 		@extend %auto;
 		font-size: 25px;
 		line-height: 1.5;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #EEE;
 		padding-left: 5px;
 		margin: 10px auto;
+		span {
+			color: #4094C7;
+		}
 	}
 }
 .comment-list {
 	@extend %auto;
 	>li {
-		padding: 5px 5px;
+		padding: 5px 0;
 		position: relative;
 		min-height:70px;
 		background: #fff;
@@ -120,8 +123,8 @@
 		}
 		&:after {
 			position: absolute;
-			left: 20px;
-			right: 20px;
+			left: 5px;
+			right: 5px;
 			content: '';
 			bottom: 0.5px;
 			height: 1px;
@@ -132,11 +135,11 @@
 			position: absolute;
 			top: 5px;
 			left: 5px;
-			width: 50px;
+			width: 45px;
+			height: 45px;
 			border-radius: 50%;
 			float: left;
-			margin: 5px;
-			min-height: 50px;
+			margin: 5px 10px;
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -146,17 +149,29 @@
 		>.right {
 			width: 100%;
 			padding-left: 70px;
+			padding-top: 6px;
+			padding-bottom: 10px;
 			.name {
-				color: #778087;
-				font-size: 15px;
-				line-height: 30px;
+				color: #4094C7;
+				font-size: 16px;
+				line-height: 1.3;
 				cursor: pointer;
+				span {
+					color: #ccc;
+					font-size: 13px;
+					display: block;
+					line-height: 1;
+					transform: skewX(-10deg);
+				}
 			}
 			>.content {
 				word-wrap: break-word;
 				word-break: normal;
 				padding-right:5px;
-				padding-bottom: 3px;
+				padding-top: 10px;
+				color: #3a3a3a;
+				line-height: 16px;
+				font-size: 15px;
 			}
 		}
 	}
