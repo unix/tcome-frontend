@@ -24,11 +24,6 @@ export class MdeditorComponent implements AfterViewInit {
             toolbar: false,
             autoDownloadFontAwesome: false,
             spellChecker: false,
-            autosave: {
-                enabled: true,
-                uniqueId: "blogComment",
-                delay: 1000,
-            },
             status: false,
         })
         simplemde.codemirror.on("change", () => this.mdChange.emit(simplemde.value()));
