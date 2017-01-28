@@ -45,9 +45,19 @@ export class ArticleDetailComponent implements OnInit {
             )
     }
     getComment (id: string){
+        let h
         this.detailService.getComment(id)
             .subscribe(
-                comment => this.comment = comment,
+                comment => {
+                    this.comment = comment
+                    this.route.fragment.subscribe(hash =>{
+                        if (hash&& hash.includes('-comment')){
+                            setTimeout(() =>{
+                                window.location.hash = hash.split('-comment')[0]
+                            }, 300)
+                        }
+                    })
+                },
                 error => console.log(error)
             )
     }
@@ -91,7 +101,6 @@ export class ArticleDetailComponent implements OnInit {
             const id = params['id']
             if (id) this.getDetail(id)
         })
-        this.route.fragment.subscribe(hash => hash&& (window.location.hash = hash))
     }
 
 }

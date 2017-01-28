@@ -1,12 +1,9 @@
 <ul class="reply">
-    <li>
-        <h4>如何评价.NET Core 1.0称使用.NET Core运行速度是Node.js的八倍，Go的三倍？</h4>
+    <li *ngFor="let item of reply">
+        <h4 (click)="goNext(item.articleId, item.id)" >{{item.articleName}}</h4>
         <div class="reply-quote">
-            和速度这些无关。为什么有人讨厌.net这一套？
-            看看排名前几的赵x的语气就知道了
-
-            不是我拿出来说，和rubychina或者其他社区里知名的程序员比起来，真是高下立判
-            <span class="time">发布于2010/10/03</span>
+            {{item.content}}
+            <span class="time">发布于 {{item.createdAt | amDateFormat:'LL'}}</span>
         </div>
     </li>
 </ul>

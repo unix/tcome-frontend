@@ -31,6 +31,9 @@ export class ConsoleReplyComponent implements OnInit {
                 }
             )
     }
+    goNext (path, id){
+        this.router.navigate([`/articles/list`, path], {fragment: `${id}-comment`})
+    }
 
     ngOnInit (){
         this.user = this.locker.get('user')
