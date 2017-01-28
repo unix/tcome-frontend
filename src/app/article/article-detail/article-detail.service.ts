@@ -8,7 +8,7 @@ import {Detail} from './detail'
 import {Comment} from './comment'
 
 @Injectable()
-export class DetailService {
+export class ArticleDetailService {
 
     constructor(private http: Http,
                 private staticService: StaticService) {

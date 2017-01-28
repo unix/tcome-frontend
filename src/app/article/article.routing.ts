@@ -7,7 +7,7 @@ import {Routes, RouterModule} from '@angular/router'
 
 import {ArticleMainComponent} from './article-main/article-main.component'
 import {ArticleListComponent} from './article-list/article-list.component'
-import {DetailComponent} from './detail/detail.component'
+import {ArticleDetailComponent} from './article-detail/article-detail.component'
 
 const userRoutes: Routes = [{
     path: '', component: ArticleMainComponent,
@@ -16,7 +16,7 @@ const userRoutes: Routes = [{
     },{
         path: 'list', component: ArticleListComponent
     },{
-        path: 'list/:id', component: DetailComponent
+        path: 'list/:id', component: ArticleDetailComponent
     }]
 }]
 

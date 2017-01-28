@@ -13,14 +13,14 @@ import {ArticleRoutingModule} from './article.routing'
 import {ShowdownComponent} from './showdown/showdown.component'
 import {ArticleMainComponent} from './article-main/article-main.component'
 import {ArticleListComponent} from './article-list/article-list.component'
-import {DetailComponent} from './detail/detail.component'
+import {ArticleDetailComponent} from './article-detail/article-detail.component'
 
 @NgModule({
     declarations: [
         ArticleMainComponent,
         ShowdownComponent,
         ArticleListComponent,
-        DetailComponent
+        ArticleDetailComponent
     ],
     imports: [
         CommonModule,

@@ -5,21 +5,21 @@ import {Title} from '@angular/platform-browser'
 import {StaticService} from '../../shared/service/static'
 import {MissionService} from '../../shared/service/mission'
 import {LockerService} from '../../shared/service/locker'
-import {DetailService} from './detail.service'
+import {ArticleDetailService} from './article-detail.service'
 import {Detail} from './detail'
 import {Comment} from './comment'
 
 
 @Component({
-    selector: 'app-detail',
-    templateUrl: './detail.component.html',
-    styleUrls: ['./detail.component.scss'],
-    providers: [DetailService]
+    selector: 'app-article-detail',
+    templateUrl: './article-detail.component.html',
+    styleUrls: ['./article-detail.component.scss'],
+    providers: [ArticleDetailService]
 })
-export class DetailComponent implements OnInit {
+export class ArticleDetailComponent implements OnInit {
 
     constructor(
-        private detailService: DetailService,
+        private detailService: ArticleDetailService,
         private route: ActivatedRoute,
         private router: Router,
         private titleService: Title,
