@@ -1,6 +1,6 @@
 <!--<app-breadcrumb></app-breadcrumb>-->
 <div class="article-list-box">
-    <ul class="article-list">
+    <ul class="article-list" *ngIf="list&& list[0]">
         <li *ngFor="let item of list" (click)="goNext(item.id)">
             <div class="top">
                 <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" class="thumbnail">
@@ -10,13 +10,6 @@
                 <h3>{{item.title}}</h3>
                 <p>{{item.createdAt | amTimeAgo:true}} {{item.authorName}}</p>
             </div>
-
-            <!--<h2><a routerLink="/articles/{{item.id}}">{{item.title}}</a></h2>-->
-            <!--<div class="mark">-->
-                <!--<p>views:<span>{{item.readTotal? item.readTotal: 1}}</span></p>-->
-                <!--<p>comments:<span>{{item.commentTotal? item.commentTotal: '0'}}</span></p>-->
-                <!--<p>Last updated:<span >{{item.createdAt | amTimeAgo:true}}</span></p>-->
-            <!--</div>-->
         </li>
     </ul>
 </div>

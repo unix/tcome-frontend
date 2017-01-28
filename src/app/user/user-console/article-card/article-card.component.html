@@ -1,7 +1,13 @@
-<div class="article-card">
-    <div class="box" *ngFor="let item of list" (click)="goNext(item.id)">
-        <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" draggable="false">
-        <p>{{item.title}}</p>
-        <span>{{item.createdAt | amTimeAgo:true}}</span>
-    </div>
-</div>
+<h3 class="article-card-tips" *ngIf="!list|| !list[0]">第一次投稿，请从[撰写]开始尝试。</h3>
+<ul class="article-list" *ngIf="list&& list[0]">
+    <li *ngFor="let item of list" (click)="goNext(item.id)">
+        <div class="top">
+            <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" class="thumbnail">
+            <img src="http://static.wittsay.cc/default_photo.png" alt="" class="avatar">
+        </div>
+        <div class="bottom">
+            <h3>{{item.title}}</h3>
+            <p>{{item.createdAt | amTimeAgo:true}} {{item.authorName}}</p>
+        </div>
+    </li>
+</ul>
