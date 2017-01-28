@@ -3,7 +3,7 @@
  * List Model
  */
 
-export class List {
+export class Subject {
     constructor(
         public id: string,          // id
         public title: string,       // 标题

@@ -5,6 +5,7 @@ import {NgModule} from '@angular/core'
 import {Routes, RouterModule} from '@angular/router'
 
 import {ConsoleMainComponent} from './console-main/console-main.component'
+import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
 
 
 export const consoleRoutes: Routes = [{
@@ -12,11 +13,7 @@ export const consoleRoutes: Routes = [{
     children: [{
         path: '', redirectTo:'login',pathMatch:'full'
     },{
-        path: 'login', component: LoginComponent
-    },{
-        path: 'register', component: RegisterComponent
-    },{
-        path: 'console', component: MemberComponent, canActivate: [AuthService],
+        path: 'subject', component: ConsoleSubjectComponent
     }]
 }]
 

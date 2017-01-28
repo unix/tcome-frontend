@@ -2,29 +2,29 @@ import {Component, OnInit} from '@angular/core'
 import {LockerService} from '../../../shared/service/locker'
 import {Router} from '@angular/router'
 
-import {ArticleCardService} from './article-card.service'
-import {List} from './list'
+import {ConsoleSubjectService} from './console-subject.service'
+import {Subject} from './subject'
 
 @Component({
-    selector: 'app-article-card',
-    templateUrl: './article-card.component.html',
-    styleUrls: ['./article-card.component.scss'],
-    providers: [ArticleCardService]
+    selector: 'app-console-subject',
+    templateUrl: './console-subject.component.html',
+    styleUrls: ['./console-subject.component.scss'],
+    providers: [ConsoleSubjectService]
 })
-export class ArticleCardComponent implements OnInit {
+export class ConsoleSubjectComponent implements OnInit {
 
     constructor (
-        private articleCardService: ArticleCardService,
+        private consoleSubjectService: ConsoleSubjectService,
         private locker: LockerService,
         private router: Router,
     ){
     }
 
-    public list: List[]
+    public list: Subject[]
     private user: any
 
     getList(id) {
-        this.articleCardService.getList(id)
+        this.consoleSubjectService.getList(id)
             .subscribe(
                 list => this.list = list,
                 error => {

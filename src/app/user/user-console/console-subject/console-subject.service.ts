@@ -4,11 +4,11 @@ import {Observable} from 'rxjs/Observable'
 import {Headers, RequestOptions} from '@angular/http'
 import 'rxjs/Rx'
 
-import {List} from './list'
+import {Subject} from './subject'
 import {StaticService} from '../../../shared/service/static'
 
 @Injectable()
-export class ArticleCardService {
+export class ConsoleSubjectService {
 
     constructor (
         private http: Http,
@@ -18,7 +18,7 @@ export class ArticleCardService {
 
     private listUrl = this.staticService.makeApi('users')
 
-    getList (id): Observable<List[]>{
+    getList (id): Observable<Subject[]>{
         return this.http.get(`${this.listUrl}/${id}/article`)
             .map(this.staticService.extractData)
             .catch(this.handleError)
