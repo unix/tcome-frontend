@@ -4,7 +4,7 @@
         <video webkit-playsinline [src]="videoNow" autoplay="autoplay" (ended)="ended()"></video>
     </div>
     <div class="photo">
-        <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false" (click)="goNext('console')">
+        <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false" (click)="goNext('console/subject')">
         <span>{{user&& user.username? user.username: '游客'}}</span>
     </div>
     <ul class="menu">
