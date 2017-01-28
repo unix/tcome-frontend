@@ -8,6 +8,7 @@ import {MomentModule} from 'angular2-moment'
 
 import {ConsoleRoutingModule} from './console.routing'
 import {ConsoleMainComponent} from './console-main/console-main.component'
+import {ConsoleEditorComponent} from './console-editor/console-editor.component'
 import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
 import {ConsoleWriteComponent} from './console-write/console-write.component'
 
@@ -15,6 +16,7 @@ import {ConsoleWriteComponent} from './console-write/console-write.component'
 @NgModule({
     declarations: [
         ConsoleMainComponent,
+        ConsoleEditorComponent,
         ConsoleSubjectComponent,
         ConsoleWriteComponent
     ],

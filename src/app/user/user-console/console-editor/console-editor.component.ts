@@ -2,11 +2,11 @@ import {Component, ElementRef, ViewChild, Input, Output, AfterViewInit, EventEmi
 const SimpleMDE: any = require('simplemde')
 
 @Component({
-    selector: 'app-article-editor',
-    templateUrl: './article-editor.component.html',
-    styleUrls: ['./article-editor.component.scss']
+    selector: 'app-console-editor',
+    templateUrl: './console-editor.component.html',
+    styleUrls: ['./console-editor.component.scss']
 })
-export class ArticleEditorComponent implements AfterViewInit {
+export class ConsoleEditorComponent implements AfterViewInit {
 
     constructor (){
     }
