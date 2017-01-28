@@ -48,7 +48,7 @@
 }
 .copyright {
 	width: 95%;
-	margin: 30px auto;
+	margin: 40px auto;
 	padding: 12px 18px;
 	background: #EFEFEF;
 	border-radius: 3px;
@@ -76,6 +76,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	position: relative;
 	.submit {
 		background: #EEE;
 		padding: 6px 15px;
@@ -92,9 +93,36 @@
 			color: #FFF;
 		}
 	}
+	.submit-loading {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 20;
+		background: rgba(119, 119, 119, 0.8);
+	}
+}
+.editor-empty {
+	@extend %auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: "futura-pt",sans-serif;
+	p {
+		font-size: 18px;
+	}
+	span {
+		font-size: 12px;
+		color: #ccc;
+	}
 }
 .comment {
 	@extend %auto;
+	margin-top: 100px;
 	.comment-bar {
 		height: 1.9rem;
 		background-color: #F7F7F7;
@@ -118,6 +146,12 @@
 			user-select: none;
 			cursor: pointer;
 		}
+	}
+	.empty {
+		font-size: 17px;
+		text-align: center;
+		padding: 40px 0;
+		font-family: "futura-pt",sans-serif;
 	}
 }
 .comment-list {
@@ -194,4 +228,133 @@
 	margin-top: 10px;
 	margin-left: 10px;
 
+}
+
+.cssload-wrench {
+	background: rgb(142, 142, 142);
+	color: rgb(0,0,0);
+	font: 16px "Helvetica Neue", sans-serif;
+	line-height: 97px;
+	margin: 97px auto;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	display: block;
+	height: 14px;
+	position: relative;
+	width: 14px;
+}
+.cssload-wrench::before, .cssload-wrench::after {
+	position: absolute;
+	font-smoothing: none;
+	-o-font-smoothing: none;
+	-ms-font-smoothing: none;
+	-webkit-font-smoothing: none;
+	-moz-font-smoothing: none;
+}
+.cssload-wrench::before {
+	animation: cssload-spin 1.15s linear infinite;
+	-o-animation: cssload-spin 1.15s linear infinite;
+	-ms-animation: cssload-spin 1.15s linear infinite;
+	-webkit-animation: cssload-spin 1.15s linear infinite;
+	-moz-animation: cssload-spin 1.15s linear infinite;
+	box-shadow: 0 0 0 1px rgb(0,0,0);
+	color: rgb(142, 142, 142);
+	content: "+";
+	font-size: 103px;
+	height: 25px;
+	line-height: 0;
+	left: 0;
+	top: 0;
+	text-indent: -17px;
+	transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	width: 25px;
+}
+.cssload-wrench::after {
+	content: "";
+	background: rgb(0,0,0);
+	height: 14px;
+	width: 14px;
+	position: absolute;
+	top: 6px;
+	left: 6px;
+}
+
+@keyframes cssload-spin {
+	0% {
+		transform: scale(1) rotate(0deg) translateZ(0);
+	}
+	10%, 20% {
+		transform: scale(1.4) rotate(0deg) translateZ(0);
+	}
+	30%, 45% {
+		transform: scale(1.4) rotate(-90deg) translateZ(0);
+	}
+	55%, 100% {
+		transform: scale(1) rotate(-90deg) translateZ(0);
+	}
+}
+
+@-o-keyframes cssload-spin {
+	0% {
+		-o-transform: scale(1) rotate(0deg) translateZ(0);
+	}
+	10%, 20% {
+		-o-transform: scale(1.4) rotate(0deg) translateZ(0);
+	}
+	30%, 45% {
+		-o-transform: scale(1.4) rotate(-90deg) translateZ(0);
+	}
+	55%, 100% {
+		-o-transform: scale(1) rotate(-90deg) translateZ(0);
+	}
+}
+
+@-ms-keyframes cssload-spin {
+	0% {
+		-ms-transform: scale(1) rotate(0deg) translateZ(0);
+	}
+	10%, 20% {
+		-ms-transform: scale(1.4) rotate(0deg) translateZ(0);
+	}
+	30%, 45% {
+		-ms-transform: scale(1.4) rotate(-90deg) translateZ(0);
+	}
+	55%, 100% {
+		-ms-transform: scale(1) rotate(-90deg) translateZ(0);
+	}
+}
+
+@-webkit-keyframes cssload-spin {
+	0% {
+		-webkit-transform: scale(1) rotate(0deg) translateZ(0);
+	}
+	10%, 20% {
+		-webkit-transform: scale(1.4) rotate(0deg) translateZ(0);
+	}
+	30%, 45% {
+		-webkit-transform: scale(1.4) rotate(-90deg) translateZ(0);
+	}
+	55%, 100% {
+		-webkit-transform: scale(1) rotate(-90deg) translateZ(0);
+	}
+}
+
+@-moz-keyframes cssload-spin {
+	0% {
+		-moz-transform: scale(1) rotate(0deg) translateZ(0);
+	}
+	10%, 20% {
+		-moz-transform: scale(1.4) rotate(0deg) translateZ(0);
+	}
+	30%, 45% {
+		-moz-transform: scale(1.4) rotate(-90deg) translateZ(0);
+	}
+	55%, 100% {
+		-moz-transform: scale(1) rotate(-90deg) translateZ(0);
+	}
 }

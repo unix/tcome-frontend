@@ -1,7 +1,7 @@
 <div class="article-detail" *ngIf="detail&& detail.id">
     <div class="article-detail-title">
         <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" class="photo">
-        <div class="title">
+        <div class="title" id="title">
             <h2>{{detail.title}}</h2>
             <p>
                 <span>{{detail.authorName}}</span> -
@@ -9,16 +9,6 @@
                 <span>{{detail.readTotal}} viewed</span>
             </p>
         </div>
-        <!--<h2>测试测试</h2>-->
-        <!--<p>-->
-            <!--来自:<span class="author">{{detail.authorName}}</span>-->
-            <!--<span class="date">{{detail.createdAt | amDateFormat:'LL'}}</span>-->
-            <!--<span class="date">标签: 生活</span>-->
-           <!--&lt;!&ndash;<span class="read box">{{detail.readTotal}} viewed &nbsp;&nbsp;&nbsp;{{detail.commentTotal}} Comments</span>&ndash;&gt;-->
-        <!--</p>-->
-        <!--<ul class="tag">-->
-            <!--<li *ngFor="let tag of detail.tags">{{tag}}</li>-->
-        <!--</ul>-->
     </div>
 
     <div class="article-detail-content">
@@ -33,10 +23,10 @@
 
     <div class="comment">
         <div class="line">
-            {{detail.commentTotal&& detail.commentTotal > 0? detail.commentTotal: '暂无'}} 评论
+            {{comment&& comment.length > 0? comment.length: '暂无'}} 评论
         </div>
         <ul class="comment-list" *ngIf="comment&& comment.length">
-            <li *ngFor="let c of comment" >
+            <li *ngFor="let c of comment" id="{{c.id}}">
                 <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false">
                 <div class="right">
                     <div class="name">
@@ -50,11 +40,20 @@
                 </div>
             </li>
         </ul>
+        <div class="empty" *ngIf="!comment|| !comment.length >0">
+            暂时还未有评论
+        </div>
     </div>
 
-    <div class="editor">
+    <div class="editor" id="editor" *ngIf="!submitBoxHide">
         <app-mdeditor [text]="field" (mdChange)="mdChange($event)"></app-mdeditor>
         <span class="submit" (click)="createComment()" [class.active]="mdValue.length > 5">提交回复</span>
-
+        <div class="submit-loading" *ngIf="submitLoadingShow">
+            <div class="cssload-wrench"></div>
+        </div>
+    </div>
+    <div class="editor-empty" *ngIf="submitBoxHide">
+        <p>已提交评论。</p>
+        <span>我们希望每一次评论都是深思熟虑的，所以对连续评论作出了一些限制。</span>
     </div>
 </div>

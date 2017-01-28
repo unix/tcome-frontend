@@ -33,6 +33,9 @@ export class ArticleDetailComponent implements OnInit {
     public field = ''
     public mdValue: any = ''
 
+    public submitLoadingShow: boolean = false
+    public submitBoxHide: boolean = false
+
     getDetail (id: string){
         this.getComment(id)
         this.detailService.getDetail(id)
@@ -53,6 +56,7 @@ export class ArticleDetailComponent implements OnInit {
             return this.staticService.toastyInfo('评论文章需要您先登录', '无法评论');
         }
         if (this.mdValue.length < 5) return this.staticService.toastyInfo('评论过短', '无法提交');
+        this.submitLoadingShow = true
         this.detailService.postComment(this.detail.id, {
             content: this.mdValue
         })
@@ -60,8 +64,13 @@ export class ArticleDetailComponent implements OnInit {
                 comment => {
                     this.getComment(this.detail.id)
                     this.field = ''
+                    // 提交评论后 关闭loading框体 隐藏评论框体
+                    this.submitLoadingShow = false
+                    this.submitBoxHide = true
+                    window.location.hash = comment.id
                 },
                 errorStatus => {
+                    this.submitLoadingShow = false
                     if (errorStatus == 403 || errorStatus == 401){
                         this.staticService.toastyInfo('登录已过期, 请重新登录', '无法评论')
                         this.staticService.clearAuthorization()
@@ -82,6 +91,7 @@ export class ArticleDetailComponent implements OnInit {
             const id = params['id']
             if (id) this.getDetail(id)
         })
+        this.route.fragment.subscribe(hash => hash&& (window.location.hash = hash))
     }
 
 }
