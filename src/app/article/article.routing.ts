@@ -6,7 +6,7 @@ import {NgModule} from '@angular/core'
 import {Routes, RouterModule} from '@angular/router'
 
 import {ArticleMainComponent} from './article-main/article-main.component'
-import {ListComponent} from './list/list.component'
+import {ArticleListComponent} from './article-list/article-list.component'
 import {DetailComponent} from './detail/detail.component'
 
 const userRoutes: Routes = [{
@@ -14,7 +14,7 @@ const userRoutes: Routes = [{
     children: [{
         path: '', redirectTo:'list',pathMatch:'full'
     },{
-        path: 'list', component: ListComponent
+        path: 'list', component: ArticleListComponent
     },{
         path: 'list/:id', component: DetailComponent
     }]

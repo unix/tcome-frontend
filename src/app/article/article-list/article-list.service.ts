@@ -8,7 +8,7 @@ import {List} from './list'
 import {StaticService} from '../../shared/service/static'
 
 @Injectable()
-export class ListService {
+export class ArticleListService {
 
     constructor (
         private http: Http,

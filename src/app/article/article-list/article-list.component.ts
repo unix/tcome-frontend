@@ -3,18 +3,18 @@ import {Title} from '@angular/platform-browser'
 import {Router} from '@angular/router'
 
 import {List} from './list'
-import {ListService} from './list.service'
+import {ArticleListService} from './article-list.service'
 
 @Component({
-    selector: 'app-list',
-    templateUrl: './list.component.html',
-    styleUrls: ['./list.component.scss'],
-    providers: [ListService]
+    selector: 'app-article-list',
+    templateUrl: './article-list.component.html',
+    styleUrls: ['./article-list.component.scss'],
+    providers: [ArticleListService]
 })
-export class ListComponent implements OnInit {
+export class ArticleListComponent implements OnInit {
 
     constructor(
-        private listService: ListService,
+        private listService: ArticleListService,
         private titleService: Title,
         private router: Router,
     ) {}

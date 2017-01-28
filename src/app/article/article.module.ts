@@ -12,14 +12,14 @@ import {SharedModule} from '../shared/shared.module'
 import {ArticleRoutingModule} from './article.routing'
 import {ShowdownComponent} from './showdown/showdown.component'
 import {ArticleMainComponent} from './article-main/article-main.component'
-import {ListComponent} from './list/list.component'
+import {ArticleListComponent} from './article-list/article-list.component'
 import {DetailComponent} from './detail/detail.component'
 
 @NgModule({
     declarations: [
         ArticleMainComponent,
         ShowdownComponent,
-        ListComponent,
+        ArticleListComponent,
         DetailComponent
     ],
     imports: [
