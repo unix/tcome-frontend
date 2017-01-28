@@ -1,0 +1,32 @@
+.reply {
+	width: 600px;
+	margin-left: 20px;
+	> li{
+		width: 100%;
+		border-top: 1px solid #EEEEEE;
+		border-bottom: 1px solid #EEEEEE;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+		padding: 10px 0;
+		&:last-child {
+			border-bottom: none;
+		}
+		h4 {
+			font-size: 18px;
+			color: #000;
+			font-weight: 300;
+		}
+		.reply-quote {
+			border-left: 4px solid #ccc;
+			padding-left: 8px;
+			margin-left: 15px;
+			font-size: 15px;
+			margin-top: 10px;
+			.time {
+				font-size: 12px;
+				display: block;
+				margin: 10px 0;
+				color: #ccc;
+			}
+		}
+	}
+}
