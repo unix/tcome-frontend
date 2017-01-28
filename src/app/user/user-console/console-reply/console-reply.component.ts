@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
+
+import {LockerService} from '../../../shared/service/locker'
+import {ConsoleReplyService} from './console-reply.service'
+import {Reply} from './reply'
 
 @Component({
-  selector: 'app-console-reply',
-  templateUrl: './console-reply.component.html',
-  styleUrls: ['./console-reply.component.scss']
+    selector: 'app-console-reply',
+    templateUrl: './console-reply.component.html',
+    styleUrls: ['./console-reply.component.scss'],
+    providers: [ConsoleReplyService]
 })
 export class ConsoleReplyComponent implements OnInit {
 
-  constructor() { }
+    constructor (
+        private consoleReplyService: ConsoleReplyService,
+        private locker: LockerService,
+        private router: Router,
+    ){
+    }
+    public user: any
+    public reply: Reply[]
 
-  ngOnInit() {
-  }
+    getReply(id) {
+        this.consoleReplyService.getReply(id)
+            .subscribe(
+                reply => this.reply = reply,
+                error => {
+                    console.log(error);
+                }
+            )
+    }
+
+    ngOnInit (){
+        this.user = this.locker.get('user')
+        if (!this.user|| !this.user.id){
+            return this.router.navigate(['/welcome'])
+        }
+        this.getReply(this.user.id)
+    }
 
 }
