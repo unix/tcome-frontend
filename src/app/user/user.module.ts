@@ -10,22 +10,13 @@ import {UserRoutingModule} from './user.routing'
 
 import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
-import {MemberComponent} from './user-console/member.component'
 import {RegisterComponent} from './user-register/register.component'
-import {ArticleEditorComponent} from './user-console/article-editor/article-editor.component'
-import {ArticleCardComponent} from './user-console/console-subject/article-card.component'
-import {ArticleWriteComponent} from './user-console/article-write/article-write.component'
-
 
 @NgModule({
     declarations: [
         UserMainComponent,
         LoginComponent,
-        MemberComponent,
-        RegisterComponent,
-        ArticleEditorComponent,
-        ArticleCardComponent,
-        ArticleWriteComponent
+        RegisterComponent
     ],
     imports: [
         CommonModule,

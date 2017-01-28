@@ -5,14 +5,16 @@ import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 import {FormsModule} from '@angular/forms'
 import {MomentModule} from 'angular2-moment'
-import {ConsoleRoutingModule} from './console.routing'
 
+import {ConsoleRoutingModule} from './console.routing'
 import {ConsoleMainComponent} from './console-main/console-main.component'
+import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
 
 
 @NgModule({
     declarations: [
-        ConsoleMainComponent
+        ConsoleMainComponent,
+        ConsoleSubjectComponent
     ],
     imports: [
         CommonModule,

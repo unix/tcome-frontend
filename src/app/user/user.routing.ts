@@ -8,7 +8,6 @@ import {Routes, RouterModule} from '@angular/router'
 import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
 import {RegisterComponent} from './user-register/register.component'
-import {MemberComponent} from './user-console/member.component'
 
 import {AuthService} from '../shared/service/auth'
 
@@ -22,7 +21,10 @@ export const userRoutes: Routes = [{
     },{
         path: 'register', component: RegisterComponent
     },{
-        path: 'console', component: MemberComponent, canActivate: [AuthService],
+        path: 'console',
+        loadChildren: './user-console/console.module#ConsoleModule',
+        data: {preload: true},
+        canActivate: [AuthService],
     }]
 }]
 
