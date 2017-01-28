@@ -1,20 +1,20 @@
 import {Component, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
 
-import {ArticleWriteService} from './article-write.service'
+import {ConsoleWriteService} from './console-write.service'
 import {StaticService} from '../../../shared/service/static'
 
 @Component({
-    selector: 'app-article-write',
-    templateUrl: './article-write.component.html',
-    styleUrls: ['./article-write.component.scss'],
-    providers: [StaticService, ArticleWriteService]
+    selector: 'app-console-write',
+    templateUrl: './console-write.component.html',
+    styleUrls: ['./console-write.component.scss'],
+    providers: [ConsoleWriteService]
 })
-export class ArticleWriteComponent implements OnInit {
+export class ConsoleWriteComponent implements OnInit {
 
     constructor (
         private staticService: StaticService,
-        private articleWriteService: ArticleWriteService,
+        private consoleWriteService: ConsoleWriteService,
         private router: Router,
     ){
     }
@@ -34,7 +34,7 @@ export class ArticleWriteComponent implements OnInit {
         if (this.mdValue.length < 5 || this.mdValue.length > 20000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
-        this.articleWriteService.create({
+        this.consoleWriteService.create({
             title: this.titleValue,
             content: this.mdValue,
         })

@@ -7,7 +7,7 @@ import 'rxjs/Rx'
 import {StaticService} from '../../../shared/service/static'
 
 @Injectable()
-export class ArticleWriteService {
+export class ConsoleWriteService {
 
     constructor (
         private http: Http,

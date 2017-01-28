@@ -9,12 +9,14 @@ import {MomentModule} from 'angular2-moment'
 import {ConsoleRoutingModule} from './console.routing'
 import {ConsoleMainComponent} from './console-main/console-main.component'
 import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
+import {ConsoleWriteComponent} from './console-write/console-write.component'
 
 
 @NgModule({
     declarations: [
         ConsoleMainComponent,
-        ConsoleSubjectComponent
+        ConsoleSubjectComponent,
+        ConsoleWriteComponent
     ],
     imports: [
         CommonModule,

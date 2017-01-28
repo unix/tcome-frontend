@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router'
 
 import {ConsoleMainComponent} from './console-main/console-main.component'
 import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
+import {ConsoleWriteComponent} from './console-write/console-write.component'
 
 
 export const consoleRoutes: Routes = [{
@@ -14,6 +15,8 @@ export const consoleRoutes: Routes = [{
         path: '', redirectTo:'login',pathMatch:'full'
     },{
         path: 'subject', component: ConsoleSubjectComponent
+    },{
+        path: 'write', component: ConsoleWriteComponent
     }]
 }]
 
