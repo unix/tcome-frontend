@@ -1,25 +1,16 @@
 <div class="content" >
     <div class="recommended">
         <h2>今日精选</h2>
-        <ul>
-            <li>
-                <h3><a href="">第一篇博文第一篇博文第一篇博文</a></h3>
-                <p>200views / 33comment</p>
-                <p>-- WittBulter</p>
-            </li>
-            <li>
-                <h3><a href="">第一篇博文第一篇博文第一篇博文</a></h3>
-                <p>200views / 33comment</p>
-            </li>
-            <li>
-                <h3><a href="">第一篇博文第一篇博文第一篇博文</a></h3>
-                <p>200views / 33comment</p>
+        <ul *ngIf="option&& option.recommended">
+            <li *ngFor="let item of option.recommended">
+                <h3><a routerLink="/articles/list/{{item.id}}">{{item.title}}</a></h3>
+                <p>{{item.readTotal}}views / {{item.commentTotal}}comment</p>
+                <p>-- {{item.authorName}}</p>
             </li>
         </ul>
     </div>
-    <div class="welcome">
-        <h1>维特博客</h1>
-        <p>世界越快，心越慢。</p>
-        <p>尝试开始阅读。</p>
+    <div class="welcome" *ngIf="option">
+        <h1>{{option.blogName?option.blogName: '新博客'}}</h1>
+        <p>{{option.blogSubhead}}</p>
     </div>
 </div>
