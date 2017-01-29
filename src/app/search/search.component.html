@@ -1,0 +1,15 @@
+<div class="search">
+    <div class="search-input-box">
+        <input type="text" #searchInput placeholder="KeyWord" (keyup)="search(searchInput.value)">
+        <p class="search-tips">
+            键入关键字以查找文章
+        </p>
+    </div>
+    <ul class="search-list">
+        <li *ngFor="let item of list | async">
+            <h3><a routerLink="/articles/list/{{item.id}}">{{item.title}}</a></h3>
+            <p>发布于 {{item.createdAt | amDateFormat:'LL'}}  {{item.readTotal}}views</p>
+            <p>来自 {{item.authorName}}</p>
+        </li>
+    </ul>
+</div>

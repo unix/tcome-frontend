@@ -12,6 +12,7 @@ import {AppComponent} from './app.component'
 import {AppRoutingModule} from './app.routing'
 import {MenuComponent} from './menu/menu.component'
 import {HomeComponent} from './home/home.component'
+import {SearchComponent} from './search/search.component'
 import {AuthService} from './shared/service/auth'
 import {LockerService} from './shared/service/locker'
 
@@ -31,6 +32,7 @@ import {LockerService} from './shared/service/locker'
         AppComponent,
         MenuComponent,
         HomeComponent,
+        SearchComponent,
     ],
     providers: [
         LockerService,
