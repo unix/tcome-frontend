@@ -79,7 +79,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     ngOnInit (){
         this.user = this.locker.get('user')
-        // this.getVideo()
+        this.getVideo()
     }
     ngOnDestroy (){
         this.timer&& clearInterval(this.timer)

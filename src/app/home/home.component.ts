@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
             .subscribe(
                 option => {
                     this.option = option
-                    console.log(this.option);
                 },
                 error =>{
                     console.log(error);

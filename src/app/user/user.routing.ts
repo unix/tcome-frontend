@@ -21,6 +21,8 @@ export const userRoutes: Routes = [{
     },{
         path: 'register', component: RegisterComponent
     },{
+        path: 'register/:id/:token', component: RegisterComponent
+    },{
         path: 'console',
         loadChildren: './user-console/console.module#ConsoleModule',
         data: {preload: true},
