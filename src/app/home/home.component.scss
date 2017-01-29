@@ -1,81 +1,63 @@
-$titleHeight: -12px;
-$titleLeft: 30px;
-$titleFontSize: 50px;
 
 .content {
-	position: fixed;
-	left: 336px;
-	top: 44px;
-	width: 100%;
-	height: 100%;
-	font-family: "futura-pt",sans-serif;
-	.title-top {
-		position: absolute;
-		top: $titleHeight;
-		left: $titleLeft;
-		z-index: 2;
-		font-size: $titleFontSize;
-		background: #404040;
-		color: #fff;
-		padding: 0 20px;
-		transform: skewX(-7deg);
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		line-height: 50px;
-	}
-	.itellu {
-		position: relative;
-		overflow: hidden;
-		z-index: 10;
-		h2.title-bottom {
-			position: absolute;
-			top: $titleHeight;
-			left: $titleLeft;
-			font-size: $titleFontSize;
-			background: #fff;
+	width: 1100px;
+	margin: 0 auto;
+	padding-left: 200px;
+	padding-top: 150px;
+	.recommended {
+		width: 50%;
+		float: left;
+		padding-right: 20px;
+		border-right: 2px solid #eee;
+		h2 {
+			font-family: "futura-pt",sans-serif;
+			font-weight: normal;
+			font-size: 26px;
+			text-align: right;
+			line-height: 2.2;
 			color: #404040;
-			padding: 0 20px;
-			transform: skewX(-7deg);
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			line-height: 50px;
 		}
-		.text {
-			margin-top: 90px;
-			margin-left: 24px;
-			span {
-				font-size: 16px;
-				display: table;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				margin-top: 18px;
-				color: #404040;
-				background: #fff;
-				padding: 2px 14px 2px 8px;
-				transform: skewX(-7deg);
-				a {
-					color: #4094C7;
-					text-decoration: none;
+		>ul {
+			width: 100%;
+			li {
+				width: 100%;
+				text-align: right;
+				margin-bottom: 10px;
+				h3 {
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+					font-weight: 300;
+					font-size: 20px;
+					a {
+						color: #4094C7;
+						text-decoration: none;
+					}
+				}
+				p {
+					font-size: 13px;
+					color: #ccc;
+					line-height: 1;
 				}
 			}
 		}
 	}
-
-	.bg {
-		width: auto;
-		height: auto;
-		overflow: hidden;
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 50px;
-		z-index: 5;
-		img {
-			width: 100%;
-			height: 100%;
+	.welcome {
+		width: 50%;
+		float: right;
+		padding-left: 10px;
+		padding-top: 30px;
+		font-family: "futura-pt",sans-serif;
+		h1 {
+			font-weight: normal;
+			font-size: 30px;
+			color: #404040;
+			line-height: 2.2;
+		}
+		p {
+			font-size: 18px;
+			font-weight: normal;
+			color: #404040;
+			border-bottom: 1px solid #eee;
+			display: inline-block;
 		}
 	}
 
