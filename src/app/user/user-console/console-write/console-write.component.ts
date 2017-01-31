@@ -72,7 +72,10 @@ export class ConsoleWriteComponent implements OnInit {
                 name: file.name,
                 url: null
             }
-            this.uploadImage(thumbnail.result, file.size)
+            this.uploadImage(thumbnail.result, file.size, (err, res) =>{
+                if (err) return this.clearImage()
+                this.thumbnail.url = `http://static.wittsay.cc/${res.key}`
+            })
         }
     }
     clearImage (){
@@ -81,18 +84,20 @@ export class ConsoleWriteComponent implements OnInit {
             url: null
         }
     }
-    uploadImage (base64, size){
+    uploadImage (base64, size, done){
         if (!this.thumbnail.name) return;
         this.consoleWriteService.upload({image: base64, size: size})
             .subscribe(
                 res => {
-                    if (res && res.key) return this.thumbnail.url = `http://static.wittsay.cc/${res.key}`
-                    this.thumbnail.name = null
-                    this.staticService.toastyError('上传失败，请稍候重试')
+                    if (!res || !res.key){
+                        this.staticService.toastyError('上传失败，请稍候重试')
+                        return done({})
+                    }
+                    done(res)
                 },
                 error => {
-                    this.clearImage()
                     if (error) this.staticService.toastyError(error.toString())
+                    done(error)
                 }
             )
     }
