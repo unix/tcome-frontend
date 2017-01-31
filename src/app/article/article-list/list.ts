@@ -4,12 +4,11 @@
  */
 
 export class List {
-    constructor(
-        public id: string,          // id
-        public title: string,       // 标题
-        public createdAt: string,   // 创建日期
-        public readTotal: number,   // 阅读数
-        public commentTotal: number,// 评论数
-        public authorName: string,  // 用户姓名
-    ){}
+    id: string           // id
+    title: string        // 标题
+    createdAt: string    // 创建日期
+    readTotal: number    // 阅读数
+    commentTotal: number // 评论数
+    authorName: string   // 用户姓名
+    thumbnail?: string
 }
