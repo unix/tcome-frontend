@@ -3,6 +3,7 @@ import {Router} from '@angular/router'
 
 import {ConsoleWriteService} from './console-write.service'
 import {StaticService} from '../../../shared/service/static'
+import {isUndefined} from "util";
 
 @Component({
     selector: 'app-console-write',
@@ -22,6 +23,11 @@ export class ConsoleWriteComponent implements OnInit {
     public mdValue: any = ''
     public titleValue: any = ''
 
+    public thumbnail = {
+        name: null,
+        url: null
+    }
+
     mdChange (mdValue: any){
         this.mdValue = mdValue
     }
@@ -37,6 +43,7 @@ export class ConsoleWriteComponent implements OnInit {
         this.consoleWriteService.create({
             title: this.titleValue,
             content: this.mdValue,
+            thumbnail: this.thumbnail.url
         })
             .subscribe(
                 res => {
@@ -50,8 +57,44 @@ export class ConsoleWriteComponent implements OnInit {
                 }
             )
     }
-    addImages (){
-
+    addImage ($event: any){
+        const file = $event.target.files[0]
+        if (!file.type.startsWith('image')){
+            return this.staticService.toastyError('请选择正确的图片')
+        }
+        if (file.size > 1600000){
+            return this.staticService.toastyError('图片过大，请压缩后上传')
+        }
+        let thumbnail:FileReader = new FileReader()
+        thumbnail.readAsDataURL(file)
+        thumbnail.onloadend = () => {
+            this.thumbnail= {
+                name: file.name,
+                url: null
+            }
+            this.uploadImage(thumbnail.result, file.size)
+        }
+    }
+    clearImage (){
+        this.thumbnail= {
+            name: null,
+            url: null
+        }
+    }
+    uploadImage (base64, size){
+        if (!this.thumbnail.name) return;
+        this.consoleWriteService.upload({image: base64, size: size})
+            .subscribe(
+                res => {
+                    if (res && res.key) return this.thumbnail.url = `http://static.wittsay.cc/${res.key}`
+                    this.thumbnail.name = null
+                    this.staticService.toastyError('上传失败，请稍候重试')
+                },
+                error => {
+                    this.clearImage()
+                    if (error) this.staticService.toastyError(error.toString())
+                }
+            )
     }
 
     ngOnInit (){

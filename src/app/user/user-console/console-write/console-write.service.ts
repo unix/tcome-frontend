@@ -16,7 +16,13 @@ export class ConsoleWriteService {
     }
 
     private article = this.staticService.makeApi('article')
+    private image = this.staticService.makeApi('image')
 
+    upload (image): Observable<any> {
+        return this.http.post(this.image, image, this.staticService.options())
+            .map(this.staticService.extractData)
+            .catch(this.handleError)
+    }
     create (article: any): Observable<any>{
         return this.http.post(this.article, article, this.staticService.options())
             .map(this.staticService.extractData)
