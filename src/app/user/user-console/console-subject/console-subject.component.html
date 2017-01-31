@@ -2,6 +2,7 @@
 <ul class="article-list" *ngIf="list&& list[0]">
     <li *ngFor="let item of list" (click)="goNext(item.id)">
         <div class="top">
+            <div class="review" *ngIf="item.articleType === 'isReview'">等待审核中...</div>
             <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" class="thumbnail">
             <img src="http://static.wittsay.cc/default_photo.png" alt="" class="avatar">
         </div>
