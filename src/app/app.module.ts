@@ -14,6 +14,7 @@ import {MenuComponent} from './menu/menu.component'
 import {HomeComponent} from './home/home.component'
 import {SearchComponent} from './search/search.component'
 import {AuthService} from './shared/service/auth'
+import {AdminService} from './shared/service/admin'
 import {LockerService} from './shared/service/locker'
 
 @NgModule({
@@ -36,7 +37,8 @@ import {LockerService} from './shared/service/locker'
     ],
     providers: [
         LockerService,
-        AuthService
+        AuthService,
+        AdminService
     ],
     bootstrap: [AppComponent],
 })

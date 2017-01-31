@@ -13,6 +13,7 @@ import {ConsoleSubjectComponent} from './console-subject/console-subject.compone
 import {ConsoleWriteComponent} from './console-write/console-write.component'
 import {ConsoleReplyComponent} from './console-reply/console-reply.component'
 import {ConsoleSettingComponent} from './console-setting/console-setting.component'
+import {ConsoleCheckComponent} from './console-check/console-check.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ConsoleSettingComponent} from './console-setting/console-setting.compone
         ConsoleSubjectComponent,
         ConsoleWriteComponent,
         ConsoleReplyComponent,
-        ConsoleSettingComponent
+        ConsoleSettingComponent,
+        ConsoleCheckComponent
     ],
     imports: [
         CommonModule,

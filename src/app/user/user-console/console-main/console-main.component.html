@@ -4,6 +4,7 @@
         <li><a routerLinkActive="active" routerLink="/user/console/reply">回复</a></li>
         <li><a routerLinkActive="active" routerLink="/user/console/write">撰写</a></li>
         <li><a routerLinkActive="active" routerLink="/user/console/setting">设定</a></li>
+        <li *ngIf="user&& user.userType === 'admin'"><a routerLinkActive="active" routerLink="/user/console/check">审核</a></li>
     </ul>
     <div class="content">
         <router-outlet></router-outlet>

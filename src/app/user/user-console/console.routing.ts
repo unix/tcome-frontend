@@ -3,12 +3,14 @@
  */
 import {NgModule} from '@angular/core'
 import {Routes, RouterModule} from '@angular/router'
+import {AdminService} from '../../shared/service/admin'
 
 import {ConsoleMainComponent} from './console-main/console-main.component'
 import {ConsoleSubjectComponent} from './console-subject/console-subject.component'
 import {ConsoleWriteComponent} from './console-write/console-write.component'
 import {ConsoleReplyComponent} from './console-reply/console-reply.component'
 import {ConsoleSettingComponent} from './console-setting/console-setting.component'
+import {ConsoleCheckComponent} from './console-check/console-check.component'
 
 export const consoleRoutes: Routes = [{
     path: '', component: ConsoleMainComponent,
@@ -22,6 +24,8 @@ export const consoleRoutes: Routes = [{
         path: 'reply', component: ConsoleReplyComponent
     },{
         path: 'setting', component: ConsoleSettingComponent
+    },{
+        path: 'check', component: ConsoleCheckComponent, canActivate: [AdminService],
     }]
 }]
 
