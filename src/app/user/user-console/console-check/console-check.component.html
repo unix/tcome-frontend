@@ -1,3 +1,17 @@
-<p>
-  console-check works!
-</p>
+<div class="article-list-box">
+    <ul class="article-list" *ngIf="list&& list[0]">
+        <li *ngFor="let item of list">
+            <div class="profiles">
+                <h3 (click)="goNext(item.id)">{{item.title}}</h3>
+                <p>有一部分游戏就应该称之为任性了，因为它们的出现或消失完全不按照基本法，像变魔术一样出人意料。</p>
+                <div class="additional">
+                    <p class="author">From:{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
+                    <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img [src]="item.thumbnail" alt="">
+            </div>
+        </li>
+    </ul>
+</div>

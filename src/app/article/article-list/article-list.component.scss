@@ -1,115 +1,9 @@
-@import "../../../assets/sass/variables";
-
 ul.article-list{
 	width: 850px;
 	height: auto;
 	margin: 0 auto;
 	padding: 20px 0;
 	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-	//width: 100%;
-	//height: auto;
-	//padding: 60px 0 0 20px;
-	//margin-top: -40px;
-	//font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-	//>li{
-	//	@extend %auto;
-	//	position: relative;
-	//	margin-top: 1.3rem;
-	//	overflow: hidden;
-	//	border-bottom: 2px solid #f0f0f0;
-	//	&:first-child {
-	//		margin-top: 0;
-	//	}
-	//	>h2{
-	//		@include fontc(1.3rem,#555555,2rem);
-	//		font-weight: 600;
-	//		cursor: pointer;
-	//		a{
-	//			color: inherit;
-	//			text-decoration: none;
-	//		}
-	//	}
-	//	.mark {
-	//	}
-	//	p{
-	//		@include fontc(12px, #717171, 22px);
-	//		display: block;
-	//		float: left;
-	//		min-width: 80px;
-	//	}
-	//}
-	//>li {
-	//	width: 330px;
-	//	height: 250px;
-	//	overflow: hidden;
-	//	float: left;
-	//	margin-right: 15px;
-	//	margin-bottom: 15px;
-	//	border-radius: 2px;
-	//	background-color: #fff;
-	//	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
-	//	cursor: pointer;
-	//	-webkit-user-select: none;
-	//	-moz-user-select: none;
-	//	-ms-user-select: none;
-	//	user-select: none;
-	//	.top {
-	//		height: 60%;
-	//		width: 100%;
-	//		position: relative;
-	//		.thumbnail {
-	//			width: 100%;
-	//			height: 100%;
-	//			position: absolute;
-	//			top: 0;
-	//			left: 0;
-	//			right: 0;
-	//			bottom: 0;
-	//			z-index: 1;
-	//		}
-	//		.avatar {
-	//			width: 64px;
-	//			height: 64px;
-	//			position: absolute;
-	//			left: 50%;
-	//			bottom: -32px;
-	//			margin-left: -32px;
-	//			border-radius: 50%;
-	//			overflow: hidden;
-	//			z-index: 5;
-	//		}
-	//		span {
-	//			font-size: 16px;
-	//			width: 100px;
-	//			height:20px;
-	//			position: absolute;
-	//			right: 10px;
-	//			bottom: -10px;
-	//			overflow: hidden;
-	//			z-index: 5;
-	//			color: #fff;
-	//		}
-	//	}
-	//	.bottom {
-	//		height: 40%;
-	//		width: 100%;
-	//		position: relative;
-	//		color: #666;
-	//		text-align: center;
-	//		h3 {
-	//			font-size: 16px;
-	//			font-weight: normal;
-	//			overflow: hidden;
-	//			line-height: 20px;
-	//			margin-top: 40px;
-	//		}
-	//		p {
-	//			font-size: 12px;
-	//			color: #999;
-	//			line-height: 30px;
-	//		}
-	//	}
-	//}
 
 	>li {
 		width: 100%;
@@ -165,18 +59,6 @@ ul.article-list{
 				width: 100%;
 				height: 100%;
 			}
-		}
-	}
-}
-.mark{
-	width: auto;
-	margin-top: -0.3rem;
-	p{
-		@include fontc(.75rem,#717171);
-		display: inline;
-		margin-right: 0.5rem;
-		>span{
-			padding-left: .3rem;
 		}
 	}
 }

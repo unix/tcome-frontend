@@ -1,0 +1,64 @@
+ul.article-list{
+	width: 850px;
+	height: auto;
+	margin: 0 auto;
+	padding: 20px 0;
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+	>li {
+		width: 100%;
+		height: 185px;
+		border-bottom: 1px solid #E6E6E6;
+		padding: 15px 0;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+		&:last-child {
+			border-bottom: none;
+		}
+		.profiles {
+			width: 65%;
+			height: 100%;
+			float: left;
+			position: relative;
+			padding-right: 12px;
+			h3 {
+				font-size: 24px;
+				font-weight: normal;
+				line-height: 30px;
+				color: #333;
+				margin-bottom: 15px;
+				cursor: pointer;
+			}
+			p {
+				font-size: 16px;
+
+			}
+			.additional {
+				position: absolute;
+				padding-right: 12px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				overflow: hidden;
+				color: #9ba9b5;
+				p.author {
+					float: left;
+					font-size: 15px;
+				}
+				p.views {
+					float: right;
+					font-size: 15px;
+				}
+			}
+		}
+		.thumbnail {
+			width: 35%;
+			height: 100%;
+			float: right;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
