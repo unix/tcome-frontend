@@ -1,16 +1,19 @@
-<div class="article-detail" *ngIf="detail&& detail.id">
-    <div class="article-detail-title">
-        <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" class="photo">
-        <div class="title" id="title">
-            <h2>{{detail.title}}</h2>
-            <p>
-                <span>{{detail.authorName}}</span> -
-                <span>{{detail.createdAt | amDateFormat:'LL'}}</span> -
-                <span>{{detail.readTotal}} viewed</span>
-            </p>
-        </div>
+<div class="article-title" *ngIf="detail&& detail.id" >
+    <!--<img *ngIf="detail.thumbnail" [src]="detail.thumbnail" alt="" class="article-title-bg">-->
+    <a href="" class="photo">
+        <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" >
+        <div class="hide"></div>
+    </a>
+    <div class="title" id="title">
+        <h2>{{detail.title}}</h2>
+        <p>
+            <span>{{detail.authorName}}</span> -
+            <span>{{detail.createdAt | amDateFormat:'LL'}}</span> -
+            <span>{{detail.readTotal}} viewed</span>
+        </p>
     </div>
-
+</div>
+<div class="article-detail" *ngIf="detail&& detail.id">
     <div class="article-detail-content">
         <app-showdown html="{{detail.content}}"></app-showdown>
     </div>
