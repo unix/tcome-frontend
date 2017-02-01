@@ -15,8 +15,8 @@ export class CheckService {
 
     private reviewUrl = this.staticService.makeApi('reviews')
 
-    getList (): Observable<List[]>{
-        return this.http.get(this.reviewUrl, this.staticService.options())
+    getList (status:string = 'all'): Observable<List[]>{
+        return this.http.get(`${this.reviewUrl}?status=${status}`, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

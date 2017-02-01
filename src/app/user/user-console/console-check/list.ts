@@ -11,5 +11,6 @@ export class List {
     commentTotal: number // 评论数
     authorName: string   // 用户姓名
     thumbnail?: string
+    articleType: string
     checkShow?: boolean
 }

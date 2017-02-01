@@ -123,4 +123,38 @@ ul.article-list{
 		}
 	}
 }
+.bar {
+	width: 250px;
+	height: 35px;
+	background: transparent;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	margin: 10px auto;
+	font-family: "futura-pt",sans-serif;
+	button {
+		width: 33.3333%;
+		float: left;
+		border: none;
+		border-radius: 0;
+		background: transparent;
+		font-size: 14px;
+		line-height: 35px;
+		text-align: center;
+		padding: 0;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+		&:focus, &:active {
+			outline: none;
+		}
+		&:hover {
+			background: #ccc;
+		}
+		&.active {
+			background: #3D596D;
+			color: #FFF;
+		}
+	}
+}
 

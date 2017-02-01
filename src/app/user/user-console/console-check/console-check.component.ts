@@ -23,9 +23,10 @@ export class ConsoleCheckComponent implements OnInit {
     }
 
     list: List[]
+    status: string = 'all'
 
     getList (){
-        this.checkService.getList()
+        this.checkService.getList(this.status)
             .subscribe(
                 list => this.list = list,
                 error =>{
@@ -46,8 +47,18 @@ export class ConsoleCheckComponent implements OnInit {
             )
     }
 
-    goNext (path){
+    goNext (path: string){
         this.router.navigate(['/articles/list', path])
+    }
+    chengStatus (status: string = 'all'){
+        this.status = status
+        this.getList()
+    }
+    statusMap (status){
+        if (status == 'isReview') return '等待审核'
+        if (status == 'isActive') return '已审核'
+        if (status == 'isDestroy')  return '已删除'
+        return '已审核'
     }
 
     ngOnInit (){
