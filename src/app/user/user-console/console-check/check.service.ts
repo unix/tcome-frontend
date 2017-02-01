@@ -13,10 +13,15 @@ export class CheckService {
                  private staticService: StaticService){
     }
 
-    private listUrl = this.staticService.makeApi('articles')
+    private reviewUrl = this.staticService.makeApi('reviews')
 
     getList (): Observable<List[]>{
-        return this.http.get(this.listUrl)
+        return this.http.get(this.reviewUrl, this.staticService.options())
+            .map(this.staticService.extractData)
+            .catch(this.handleError)
+    }
+    checkArticle (id, status): Observable<any>{
+        return this.http.put(`${this.reviewUrl}/${id}/${status}`, {}, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

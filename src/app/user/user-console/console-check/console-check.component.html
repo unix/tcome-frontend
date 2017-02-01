@@ -12,14 +12,14 @@
             <div class="check">
                 <div class="status">
                     <p>等待审核</p>
-                    <div class="status-button" *ngIf="controlStatusShow">
-                        <button>未审核</button>
-                        <button>已审核</button>
-                        <button>删除</button>
+                    <div class="status-button" *ngIf="item.checkShow">
+                        <button (click)="review(item.id, 'isReview')">未审核</button>
+                        <button (click)="review(item.id, 'isActive')">已审核</button>
+                        <button (click)="review(item.id, 'isDestroy')">删除</button>
                     </div>
                 </div>
                 <div class="control">
-                    <button (click)="toggleControl()">{{controlStatusShow? '返回': '标记状态'}}</button>
+                    <button (click)="item.checkShow=!item.checkShow">{{controlStatusShow? '返回': '标记状态'}}</button>
                 </div>
             </div>
 

@@ -53,6 +53,14 @@ export class StaticService {
         }
         this.toastyService.info(toastOptions);
     }
+    public toastySuccess (message: string, title: string = '成功'){
+        const toastOptions:ToastOptions = {
+            title: title,
+            msg: message,
+            theme: 'material',
+        }
+        this.toastyService.success(toastOptions);
+    }
     public toastyError (message: string, title: string = '错误提示'){
         const toastOptions:ToastOptions = {
             title: title,

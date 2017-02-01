@@ -9,6 +9,7 @@ import {MdeditorComponent} from './component/mdeditor'
 import {BackComponent} from './component/back'
 import {BreadcrumbComponent} from './component/breadcrumb'
 import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
+import {LocalDirective} from './directive/local'
 
 @NgModule({
     imports: [
@@ -20,12 +21,14 @@ import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
         BackComponent,
         MdeditorComponent,
         BreadcrumbComponent,
+        LocalDirective
     ],
     exports: [
         SanitizeHtmlPipe,
         BackComponent,
         MdeditorComponent,
-        BreadcrumbComponent
+        BreadcrumbComponent,
+        LocalDirective
     ]
 })
 
