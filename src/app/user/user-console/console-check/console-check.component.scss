@@ -1,5 +1,5 @@
 ul.article-list{
-	width: 850px;
+	width: 800px;
 	height: auto;
 	margin: 0 auto;
 	padding: 20px 0;
@@ -10,9 +10,11 @@ ul.article-list{
 		border-bottom: 1px solid #E6E6E6;
 		padding: 15px 0;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+		position: relative;
 		&:last-child {
 			border-bottom: none;
 		}
+
 		.profiles {
 			width: 65%;
 			height: 100%;
@@ -50,13 +52,73 @@ ul.article-list{
 				}
 			}
 		}
-		.thumbnail {
+		.check {
 			width: 35%;
 			height: 100%;
 			float: right;
-			img {
+			font-family: "futura-pt",sans-serif;
+			.status {
 				width: 100%;
-				height: 100%;
+				height: 50%;
+				text-align: center;
+				padding-left: 15px;
+				font-size: 20px;
+				line-height: 75px;
+				position: relative;
+				.status-button {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 2;
+					background: #adaaaa;
+					overflow: hidden;
+					button {
+						width: 33.3333%;
+						height: 100%;
+						background: #adaaaa;
+						color: #FFF;
+						border: none;
+						border-radius: 0;
+						font-size: 24px;
+						float: left;
+						-webkit-transition: all 0.2s;
+						-moz-transition: all 0.2s;
+						-o-transition: all 0.2s;
+						transition: all 0.2s;
+						&:hover {
+							background: #666;
+						}
+						&:focus, &:active {
+							outline: none;
+						}
+					}
+				}
+			}
+			.control {
+				width: 100%;
+				height: 50%;
+				text-align: center;
+				button {
+					background: #adaaaa;
+					color: #FFF;
+					width: 100%;
+					height: 100%;
+					border: none;
+					border-radius: 0;
+					font-size: 24px;
+					-webkit-transition: all 0.2s;
+					-moz-transition: all 0.2s;
+					-o-transition: all 0.2s;
+					transition: all 0.2s;
+					&:hover {
+						background: #666;
+					}
+					&:focus, &:active {
+						outline: none;
+					}
+				}
 			}
 		}
 	}

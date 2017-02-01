@@ -9,9 +9,20 @@
                     <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
                 </div>
             </div>
-            <div class="thumbnail">
-                <img [src]="item.thumbnail" alt="">
+            <div class="check">
+                <div class="status">
+                    <p>等待审核</p>
+                    <div class="status-button" *ngIf="controlStatusShow">
+                        <button>未审核</button>
+                        <button>已审核</button>
+                        <button>删除</button>
+                    </div>
+                </div>
+                <div class="control">
+                    <button (click)="toggleControl()">{{controlStatusShow? '返回': '标记状态'}}</button>
+                </div>
             </div>
+
         </li>
     </ul>
 </div>

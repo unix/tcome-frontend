@@ -23,6 +23,8 @@ export class ConsoleCheckComponent implements OnInit {
     list: List[]
     errorMessage: string
 
+    controlStatusShow: boolean = false
+
     getList (){
         this.checkService.getList()
             .subscribe(
@@ -31,6 +33,9 @@ export class ConsoleCheckComponent implements OnInit {
                     this.errorMessage = error.json().message
                 }
             )
+    }
+    toggleControl (){
+        this.controlStatusShow = !this.controlStatusShow
     }
 
     goNext (path){
