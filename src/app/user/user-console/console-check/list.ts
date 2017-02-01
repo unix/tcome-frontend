@@ -12,5 +12,6 @@ export class List {
     authorName: string   // 用户姓名
     thumbnail?: string
     articleType: string
+    abstract?: string
     checkShow?: boolean
 }
