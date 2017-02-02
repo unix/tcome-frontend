@@ -8,7 +8,8 @@ import {FormsModule} from '@angular/forms'
 import {MdeditorComponent} from './component/mdeditor'
 import {BackComponent} from './component/back'
 import {BreadcrumbComponent} from './component/breadcrumb'
-import {SanitizeHtmlPipe} from './pipe/sanitize/sanitize-html.pipe'
+import {SanitizeHtmlPipe} from './pipe/sanitize'
+import {SafeStylePipe} from './pipe/safe-style'
 import {LocalDirective} from './directive/local'
 
 @NgModule({
@@ -18,6 +19,7 @@ import {LocalDirective} from './directive/local'
     ],
     declarations: [
         SanitizeHtmlPipe,
+        SafeStylePipe,
         BackComponent,
         MdeditorComponent,
         BreadcrumbComponent,
@@ -25,6 +27,7 @@ import {LocalDirective} from './directive/local'
     ],
     exports: [
         SanitizeHtmlPipe,
+        SafeStylePipe,
         BackComponent,
         MdeditorComponent,
         BreadcrumbComponent,

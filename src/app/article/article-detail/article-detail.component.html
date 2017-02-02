@@ -1,6 +1,6 @@
 <div class="article-title"
      *ngIf="detail&& detail.id"
-     [style.background-image]="backgroundImage(detail.thumbnail)"
+     [style.background-image]="detail.thumbnail&& ('url(' + detail.thumbnail + ')' | safeStyle)"
      [class.image]="detail.thumbnail"
 >
     <!--<img *ngIf="detail.thumbnail" [src]="detail.thumbnail" alt="" class="article-title-bg">-->

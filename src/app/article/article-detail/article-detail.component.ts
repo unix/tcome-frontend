@@ -96,10 +96,6 @@ export class ArticleDetailComponent implements OnInit {
         this.mdValue = mdValue
     }
 
-    backgroundImage (thumbnail:string){
-        console.log(thumbnail);
-        return this.sanitizer.bypassSecurityTrustStyle(`url('${thumbnail}')`)
-    }
     ngOnInit() {
         this.titleService.setTitle('文章详情-维特博客')
         this.route.params.forEach((params: Params) => {
