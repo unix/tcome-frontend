@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, Params} from '@angular/router'
-import {Title} from '@angular/platform-browser'
+import {Title, DomSanitizer} from '@angular/platform-browser'
 
 import {StaticService} from '../../shared/service/static'
 import {MissionService} from '../../shared/service/mission'
@@ -25,7 +25,8 @@ export class ArticleDetailComponent implements OnInit {
         private titleService: Title,
         private staticService: StaticService,
         private missionService: MissionService,
-        private locker: LockerService
+        private locker: LockerService,
+        private sanitizer: DomSanitizer
     ) {
     }
     public detail: Detail
@@ -95,6 +96,10 @@ export class ArticleDetailComponent implements OnInit {
         this.mdValue = mdValue
     }
 
+    backgroundImage (thumbnail:string){
+        console.log(thumbnail);
+        return this.sanitizer.bypassSecurityTrustStyle(`url('${thumbnail}')`)
+    }
     ngOnInit() {
         this.titleService.setTitle('文章详情-维特博客')
         this.route.params.forEach((params: Params) => {

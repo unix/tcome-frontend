@@ -1,12 +1,16 @@
-<div class="article-title" *ngIf="detail&& detail.id" >
+<div class="article-title"
+     *ngIf="detail&& detail.id"
+     [style.background-image]="backgroundImage(detail.thumbnail)"
+     [class.image]="detail.thumbnail"
+>
     <!--<img *ngIf="detail.thumbnail" [src]="detail.thumbnail" alt="" class="article-title-bg">-->
     <a href="" class="photo">
         <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" >
         <div class="hide"></div>
     </a>
-    <div class="title" id="title">
+    <div class="title" id="title" [class.image]="detail.thumbnail">
         <h2>{{detail.title}}</h2>
-        <p>
+        <p >
             <span>{{detail.authorName}}</span> -
             <span>{{detail.createdAt | amDateFormat:'LL'}}</span> -
             <span>{{detail.readTotal}} viewed</span>
