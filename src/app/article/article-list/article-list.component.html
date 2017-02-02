@@ -12,7 +12,7 @@
             <!--</div>-->
         <!--</li>-->
         <li *ngFor="let item of list">
-            <div class="profiles">
+            <div class="profiles" [class.no-thumbnail]="!item.thumbnail">
                 <h3 (click)="goNext(item.id)">{{item.title}}</h3>
                 <p>{{item.abstract}}</p>
                 <div class="additional">
@@ -20,7 +20,7 @@
                     <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
                 </div>
             </div>
-            <div class="thumbnail">
+            <div class="thumbnail" *ngIf="item.thumbnail">
                 <img [src]="item.thumbnail" alt="">
             </div>
         </li>
