@@ -7,6 +7,9 @@
         <img src="http://static.wittsay.cc/default_photo.png" alt="" draggable="false" (click)="goNext('console/subject')">
         <span>{{user&& user.username? user.username: '游客'}}</span>
     </div>
+    <div class="back-box">
+        <app-back></app-back>
+    </div>
     <ul class="menu">
         <li><a routerLinkActive="active" routerLink="/welcome">首页</a></li>
         <li><a routerLinkActive="active" routerLink="/articles">文章</a></li>

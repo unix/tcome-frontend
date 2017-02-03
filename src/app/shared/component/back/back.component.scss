@@ -3,23 +3,18 @@
 	border-radius: 4px;
 	display: block;
 	float: left;
-	background: #fff;
+	background: rgba(255, 255, 255, 0.6);
 	color: #3D596D;
-	border: 1px solid #3D596D;
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	transition: all 0.2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
 	&:hover {
 		background: #3D596D;
 		color: #fff;
-		border: 1px solid #fff;
-	}
-	>span {
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		cursor: pointer;
-		color: inherit;
 	}
 }
