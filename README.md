@@ -14,7 +14,7 @@ witt-blog-frontend
 $ npm install
 
 * 安装全局angular-cli
-$ sudo npm install -g angular-cli@1.0.0-beta.24
+$ sudo npm install -g angular-cli@1.0.0-beta.25.5
 ```
 
 
