@@ -10,7 +10,6 @@ import {ConsoleSubjectComponent} from './console-subject/console-subject.compone
 import {ConsoleWriteComponent} from './console-write/console-write.component'
 import {ConsoleReplyComponent} from './console-reply/console-reply.component'
 import {ConsoleSettingComponent} from './console-setting/console-setting.component'
-import {ConsoleCheckComponent} from './console-check/console-check.component'
 
 export const consoleRoutes: Routes = [{
     path: '', component: ConsoleMainComponent,
@@ -25,7 +24,10 @@ export const consoleRoutes: Routes = [{
     },{
         path: 'setting', component: ConsoleSettingComponent
     },{
-        path: 'check', component: ConsoleCheckComponent, canActivate: [AdminService],
+        path: 'admin',
+        loadChildren: './console-admin/admin.module#AdminModule',
+        data: {preload: true},
+        canActivate: [AdminService],
     }]
 }]
 
