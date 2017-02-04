@@ -35,6 +35,12 @@ export class ConsoleSubjectComponent implements OnInit {
     goNext (path){
         this.router.navigate(['/articles/list', path])
     }
+    statusMap (status){
+        if (status == 'isReview') return '等待审核'
+        if (status == 'isActive') return '已审核'
+        if (status == 'isDestroy')  return '已删除'
+        return '已审核'
+    }
 
     ngOnInit() {
         this.user = this.locker.get('user')

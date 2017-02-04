@@ -1,14 +1,22 @@
 <h3 class="article-card-tips" *ngIf="!list|| !list[0]">第一次投稿，请从[撰写]开始尝试。</h3>
 <ul class="article-list" *ngIf="list&& list[0]">
-    <li *ngFor="let item of list" (click)="goNext(item.id)">
-        <div class="top">
-            <div class="review" *ngIf="item.articleType === 'isReview'">等待审核中...</div>
-            <img src="http://static.wittsay.cc/default_bg.jpeg" alt="" class="thumbnail">
-            <img src="http://static.wittsay.cc/default_photo.png" alt="" class="avatar">
+    <li *ngFor="let item of list">
+
+        <div class="profiles">
+            <h3 (click)="goNext(item.id)">{{item.title}}</h3>
+            <p>{{item.abstract}}</p>
+            <div class="additional">
+                <p class="author">From:{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
+                <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
+            </div>
         </div>
-        <div class="bottom">
-            <h3>{{item.title}}</h3>
-            <p>{{item.createdAt | amTimeAgo:true}} {{item.authorName}}</p>
+        <div class="check">
+            <div class="status">
+                <p>{{statusMap(item.articleType)}}</p>
+            </div>
+            <div class="control">
+                <button>编辑文章</button>
+            </div>
         </div>
     </li>
 </ul>
