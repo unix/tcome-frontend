@@ -1,3 +1,33 @@
-<p>
-  admin-recommend works!
-</p>
+<div class="recommend">
+    <div class="bar">
+        <button>添加推荐</button>
+    </div>
+    <ul class="recommend-list" *ngIf="option&& option.recommended">
+        <li *ngFor="let item of option.recommended">
+            <div class="detail">
+                <h3>{{item.title}}</h3>
+                <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
+            </div>
+            <div class="delete">
+                <button>取消推荐</button>
+            </div>
+        </li>
+    </ul>
+    <div class="alert-recommend">
+        <div class="alert-recommend-filter">
+            <input type="text" placeholder="输入文章名以筛选">
+            <span>取消/关闭</span>
+        </div>
+        <ul class="recommend-list alert">
+            <li>
+                <div class="detail">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
+                </div>
+                <div class="delete">
+                    <button>取消推荐</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
