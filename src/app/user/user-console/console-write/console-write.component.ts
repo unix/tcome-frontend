@@ -48,7 +48,7 @@ export class ConsoleWriteComponent implements OnInit {
             .subscribe(
                 res => {
                     if (res && res.id){
-                        this.staticService.toastyInfo('文章已发表!', '发表成功')
+                        this.staticService.toastyInfo('文章已发表，等待审核中...', '发表成功')
                         this.router.navigate(['/articles/list', res.id])
                     }
                 },
