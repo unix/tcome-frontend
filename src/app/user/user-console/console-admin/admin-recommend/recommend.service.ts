@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable'
 import 'rxjs/Rx'
 
 import {Option} from './option'
+import {List} from './list'
 import {StaticService} from '../../../../shared/service/static'
 
 @Injectable()
@@ -13,15 +14,25 @@ export class RecommendService {
                  private staticService: StaticService){
     }
 
-    private reviewUrl = this.staticService.makeApi('option')
+    private optionUrl = this.staticService.makeApi('option')
+    private searchUrl = this.staticService.makeApi('articles')
 
-    getList (): Observable<Option>{
-        return this.http.get(`${this.reviewUrl}`, this.staticService.options())
+    getOption (): Observable<Option>{
+        return this.http.get(`${this.optionUrl}`, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
-    checkArticle (id, status): Observable<any>{
-        return this.http.put(`${this.reviewUrl}/${id}/${status}`, {}, this.staticService.options())
+    search (keyWord: string = 'allArticles'): Observable<List[]>{
+        console.log(123);
+        return this.http.get(`${this.searchUrl}/${keyWord}/search`, this.staticService.options())
+            .map(res =>{
+                if (res.status != 204) return res.json().slice(0, 5)
+                return []
+            })
+            .catch(this.handleError)
+    }
+    changeOption (option): Observable<any>{
+        return this.http.put(`${this.optionUrl}`, option, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
