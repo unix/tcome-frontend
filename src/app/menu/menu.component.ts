@@ -26,7 +26,9 @@ export class MenuComponent implements OnInit, OnDestroy {
         )
     }
 
-    public user: any
+    public user: any = {
+        avatar: 'http://static.wittsay.cc/default_avatar.jpg'
+    }
     public videoData: string [] = []
     public videoNow: string = ''
     private timer: any
