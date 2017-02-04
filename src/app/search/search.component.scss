@@ -34,18 +34,26 @@
 }
 
 .search-list {
-	width: 700px;
+	width: 760px;
 	margin: 0 auto;
 	>li {
 		color: #000;
 		cursor: pointer;
-		padding: 10px 0;
+		padding: 10px 10px;
 		width: 100%;
 		border-top: 1px solid #EEEEEE;
 		border-bottom: 1px solid #EEEEEE;
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+		background: #FCFCFC;
 		&:last-child {
 			border-bottom: none;
+		}
+		&:hover {
+			background: #ececec;
 		}
 		h3 {
 			font-weight: 300;
@@ -61,6 +69,7 @@
 			color: #CCC;
 			font-weight: 300;
 			line-height: 1.2;
+			padding-left: 5px;
 		}
 	}
 }
