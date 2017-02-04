@@ -1,3 +1,13 @@
-<p>
-  admin-option works!
-</p>
+<div class="option">
+    <div class="box">
+        <span>标题</span>
+        <input type="text" placeholder="此处键入文字以更改" [(ngModel)]="blogName">
+        <p>将显示在浏览器标签页，主页及搜索结果中</p>
+    </div>
+    <div class="box">
+        <span>副标题</span>
+        <input style="width: 400px;" type="text" placeholder="此处键入文字以更改" [(ngModel)]="blogSubhead">
+        <p>作为描述展示与搜索结果与主页中</p>
+    </div>
+    <button class="save" (click)="saveOption()">保存更改</button>
+</div>

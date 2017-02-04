@@ -1,0 +1,64 @@
+.option {
+	width: 800px;
+	margin: 0 auto;
+	background: #FFF;
+	padding: 20px 40px;
+
+	.box {
+		width: 100%;
+		font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+		margin-bottom: 25px;
+		span {
+			font-size: 22px;
+			font-family: "futura-pt",sans-serif;
+			font-weight: 300;
+			line-height: 2.2;
+			display: block;
+		}
+		p {
+			font-size: 14px;
+			color: #ccc;
+		}
+		input {
+			border: none;
+			border-bottom: 1px solid #EEE;
+			background: transparent;
+			width: 330px;
+			height: 38px;
+			font-size: 24px;
+			font-weight: 300;
+			font-family: "futura-pt",sans-serif;
+			padding-left: 2px;
+			&::-webkit-input-placeholder{
+				transition: all .25s;
+				font-size: 18px;
+			}
+			&:focus, &:active{
+				outline: none;
+				&::-webkit-input-placeholder{
+					color: #fff;
+				}
+			}
+		}
+	}
+	.save {
+		background: #adaaaa;
+		color: #FFF;
+		width: 150px;
+		height: 40px;
+		border: none;
+		border-radius: 0;
+		font-size: 24px;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+		margin: 22px 0;
+		&:hover {
+			background: #666;
+		}
+		&:focus, &:active {
+			outline: none;
+		}
+	}
+}
