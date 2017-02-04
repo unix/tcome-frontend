@@ -63,10 +63,10 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
     ended (){
         this.videoHidden = true
-        if (this.timer) return ;
-        this.timer = setInterval(() =>{
-            if (this.videoNow) return this.videoHidden = false;
-        }, 60 * 1000)
+        // if (this.timer) return ;
+        // this.timer = setInterval(() =>{
+        //     if (this.videoNow) return this.videoHidden = false;
+        // }, 60 * 1000)
     }
 
 

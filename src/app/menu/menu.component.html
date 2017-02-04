@@ -1,7 +1,7 @@
 <div class="menu-content">
     <div class="bg" style="background-image:url('http://static.wittsay.cc/blog-menu-bg.png?imageView2/3/w/1000/interlace/1/');"></div>
     <div class="bg-video">
-        <video [hidden]="videoShow" loop="loop" webkit-playsinline [src]="videoNow" autoplay="autoplay" (ended)="ended()"></video>
+        <video [hidden]="videoHidden"  webkit-playsinline [src]="videoNow" autoplay="autoplay" (ended)="ended()"></video>
     </div>
     <div class="photo">
         <img [src]="user&&user.avatar? user.avatar: 'http://static.wittsay.cc/default_avatar.jpg'" alt="" draggable="false" (click)="goNext('console/subject')">
