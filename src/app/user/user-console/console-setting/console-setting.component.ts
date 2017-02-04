@@ -69,7 +69,7 @@ export class ConsoleSettingComponent implements OnInit {
     }
 
     saveOption (){
-        if (!this.username|| this.username.length < 1 || this.username.length > 8){
+        if (!this.username|| this.username.length < 1 || this.username.length > 15){
             return this.staticService.toastyError('用户昵称格式有错误', '无法提交')
         }
         this.settingService.changeUser({
