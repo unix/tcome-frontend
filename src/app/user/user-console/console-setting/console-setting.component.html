@@ -1,0 +1,22 @@
+<div class="setting">
+    <div class="bar">
+        <button>个人信息</button>
+        <button>修改密码</button>
+    </div>
+    <div class="setting-user">
+        <div class="box">
+            <span>昵称</span>
+            <input type="text" placeholder="此处键入文字以更改" [(ngModel)]="user">
+            <p>将显示文章详情，评论以及私信中，不作登录之用</p>
+        </div>
+        <div class="box">
+            <span>头像</span>
+            <div class="avatar">
+                <input type="file">
+                <img src="http://static.wittsay.cc/default_photo.png" alt="">
+            </div>
+            <p>可能与昵称同时展示，用以辨别您</p>
+        </div>
+    </div>
+    <button class="save" (click)="saveOption()">保存更改</button>
+</div>

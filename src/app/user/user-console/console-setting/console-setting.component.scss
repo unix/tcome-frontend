@@ -1,0 +1,130 @@
+.setting {
+	width: 800px;
+	margin: 0 auto;
+	background: #FFF;
+	padding: 20px 40px;
+}
+
+.bar {
+	width: 250px;
+	height: 35px;
+	background: transparent;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	margin: 10px auto;
+	font-family: "futura-pt",sans-serif;
+	button {
+		width: 50%;
+		float: left;
+		border: none;
+		border-radius: 0;
+		background: transparent;
+		font-size: 14px;
+		line-height: 35px;
+		text-align: center;
+		padding: 0;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+		&:focus, &:active {
+			outline: none;
+		}
+		&:hover {
+			background: #ccc;
+		}
+		&.active {
+			background: #3D596D;
+			color: #FFF;
+		}
+	}
+}
+
+.setting-user {
+	.box {
+		width: 100%;
+		font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+		margin-bottom: 25px;
+		span {
+			font-size: 22px;
+			font-family: "futura-pt",sans-serif;
+			font-weight: 300;
+			line-height: 2.2;
+			display: block;
+		}
+		p {
+			font-size: 14px;
+			color: #ccc;
+		}
+		input {
+			border: none;
+			border-bottom: 1px solid #EEE;
+			background: transparent;
+			width: 330px;
+			height: 38px;
+			font-size: 24px;
+			font-weight: 300;
+			font-family: "futura-pt",sans-serif;
+			padding-left: 2px;
+			&::-webkit-input-placeholder{
+				transition: all .25s;
+				font-size: 18px;
+			}
+			&:focus, &:active{
+				outline: none;
+				&::-webkit-input-placeholder{
+					color: #fff;
+				}
+			}
+		}
+		.avatar {
+			width: 50px;
+			height: 50px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			position: relative;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 1px;
+			}
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				opacity: 0;
+				cursor: pointer;
+				display: block;
+				padding: 0;
+				border: 0;
+			}
+		}
+	}
+}
+
+.save {
+	background: #adaaaa;
+	color: #FFF;
+	width: 150px;
+	height: 40px;
+	border: none;
+	border-radius: 0;
+	font-size: 24px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	margin: 22px 0;
+	&:hover {
+		background: #666;
+	}
+	&:focus, &:active {
+		outline: none;
+	}
+}
