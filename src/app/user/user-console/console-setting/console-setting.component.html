@@ -6,14 +6,14 @@
     <div class="setting-user">
         <div class="box">
             <span>昵称</span>
-            <input type="text" placeholder="此处键入文字以更改" [(ngModel)]="user">
+            <input type="text" placeholder="此处键入文字以更改" [(ngModel)]="username">
             <p>将显示文章详情，评论以及私信中，不作登录之用</p>
         </div>
         <div class="box">
             <span>头像</span>
             <div class="avatar">
-                <input type="file">
-                <img src="http://static.wittsay.cc/default_photo.png" alt="">
+                <input type="file" accept="image/*" (change)="changeAvatar($event)">
+                <img [src]="avatar?avatar: 'http://static.wittsay.cc/default_avatar.jpg'" alt="">
             </div>
             <p>可能与昵称同时展示，用以辨别您</p>
         </div>
