@@ -23,7 +23,6 @@ export class RecommendService {
             .catch(this.handleError)
     }
     search (keyWord: string = 'allArticles'): Observable<List[]>{
-        console.log(123);
         return this.http.get(`${this.searchUrl}/${keyWord}/search`, this.staticService.options())
             .map(res =>{
                 if (res.status != 204) return res.json().slice(0, 5)

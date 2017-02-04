@@ -2,6 +2,9 @@
     <div class="bar">
         <button (click)="showAlert=true">添加推荐</button>
     </div>
+    <div class="tips" *ngIf="!option|| !option.recommended|| option.recommended.length == 0">
+        暂未添加推荐文章
+    </div>
     <ul class="recommend-list" *ngIf="option&& option.recommended">
         <li *ngFor="let item of option.recommended">
             <div class="detail">
@@ -9,7 +12,7 @@
                 <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
             </div>
             <div class="delete">
-                <button (click)="changeOption(item, true)">{{showOptionStatus('item')}}</button>
+                <button (click)="changeOption(item)">{{showOptionStatus(item)}}</button>
             </div>
         </li>
     </ul>
@@ -25,7 +28,7 @@
                     <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
                 </div>
                 <div class="delete">
-                    <button>取消推荐</button>
+                    <button (click)="changeOption(item)">{{showOptionStatus(item)}}</button>
                 </div>
             </li>
         </ul>

@@ -41,17 +41,14 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
                 }
             )
     }
-    changeOption (item: any, destroyRecommended: boolean){
-        if (destroyRecommended){
-            this.option.recommended.map(v =>{
-                if (v.id != item.id) return item
-                return null
-            })
-        }
+    changeOption (item: any){
+        const arrayIndex = this.option.recommended.findIndex(v => v.id === item.id)
+        if (arrayIndex >= 0) return this.option.recommended.splice(arrayIndex, 1)
+        console.log(this.option.recommended);
     }
     showOptionStatus (item){
-        const isRecommended = this.option.recommended.some(v => v.id === item.id)
-        return isRecommended? '取消推荐': '加入推荐'
+        return this.option.recommended.some(v => v.id === item.id)?
+            '取消推荐': '加入推荐'
     }
 
     search (keyWord: string){
