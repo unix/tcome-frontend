@@ -29,8 +29,8 @@ export class MenuComponent implements OnInit, OnDestroy {
     public user: any = {
         avatar: 'http://static.wittsay.cc/default_avatar.jpg'
     }
-    public videoData: string [] = []
     public videoNow: string = ''
+    public videoHidden: boolean = true
     private timer: any
 
     logout (){
@@ -50,28 +50,23 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.router.navigate([`/user/${path}`])
     }
     getVideo (){
-        ['http://static.wittsay.cc/homepage.mov'].forEach(v =>{
-            this.menuService.getVideo(v)
-                .subscribe(
-                    res =>{
-                        res.url? this.videoData.push(res.url): ''
-                        if (!this.videoNow) this.videoNow = res.url
-                    },
-                    error =>{
-                        console.log(error);
-                    }
-                )
-        })
+        this.menuService.getVideo('http://static.wittsay.cc/homepage.mov')
+            .subscribe(
+                res =>{
+                    if (!this.videoNow) this.videoNow = res.url
+                    this.videoHidden = false
+                },
+                error =>{
+                    console.log(error);
+                }
+            )
     }
     ended (){
-        if (this.timer) return this.videoNow = '';
+        this.videoHidden = true
+        if (this.timer) return ;
         this.timer = setInterval(() =>{
-            if (this.videoNow) {
-                this.videoNow = ''
-                return ;
-            }
-            this.videoNow = this.videoData[~~(Math.random() * this.videoData.length)]
-        }, 30000)
+            if (this.videoNow) return this.videoHidden = false;
+        }, 60 * 1000)
     }
 
 
