@@ -30,7 +30,7 @@ export class RecommendService {
             })
             .catch(this.handleError)
     }
-    changeOption (option): Observable<any>{
+    changeOption (option): Observable<Option>{
         return this.http.put(`${this.optionUrl}`, option, this.staticService.options())
             .map(this.staticService.extractData)
             .catch(this.handleError)

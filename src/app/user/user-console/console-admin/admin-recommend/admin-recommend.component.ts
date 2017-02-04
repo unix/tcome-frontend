@@ -43,8 +43,18 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
     }
     changeOption (item: any){
         const arrayIndex = this.option.recommended.findIndex(v => v.id === item.id)
-        if (arrayIndex >= 0) return this.option.recommended.splice(arrayIndex, 1)
-        console.log(this.option.recommended);
+        if (arrayIndex >= 0) {
+            this.option.recommended.splice(arrayIndex, 1)
+        } else {
+            this.option.recommended.push(item)
+        }
+        this.recommendService.changeOption(this.option)
+            .subscribe(
+                option => this.option = option,
+                error =>{
+                    return this.staticService.toastyInfo(error.json().message);
+                }
+            )
     }
     showOptionStatus (item){
         return this.option.recommended.some(v => v.id === item.id)?
@@ -65,7 +75,6 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
             .distinctUntilChanged()
             .switchMap(word => this.recommendService.search(word))
             .catch(error => {
-                console.log(error);
                 return Observable.of<List[]>([]);
             })
         this.timer = setTimeout( () =>{this.search('')},300)
