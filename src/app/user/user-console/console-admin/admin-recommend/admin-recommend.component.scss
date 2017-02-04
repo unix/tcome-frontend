@@ -81,8 +81,9 @@
 		.delete {
 			float: right;
 			width: 30%;
-			height: 100px;
-			line-height: 100px;
+			height: 90px;
+			line-height: 90px;
+			margin: 5px 0;
 			background: #333;
 			button {
 				background: #adaaaa;
@@ -103,6 +104,9 @@
 				&:focus, &:active {
 					outline: none;
 				}
+				&.add {
+					background: #43abb3;
+				}
 			}
 		}
 	}
@@ -111,6 +115,7 @@
 .alert-recommend {
 	width: 800px;
 	height: auto;
+	min-height: 650px;
 	position: fixed;
 	top: 100px;
 	left: 50%;

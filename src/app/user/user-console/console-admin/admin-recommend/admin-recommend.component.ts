@@ -46,6 +46,9 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
         if (arrayIndex >= 0) {
             this.option.recommended.splice(arrayIndex, 1)
         } else {
+            if (this.option.recommended.length >= 5){
+                return this.staticService.toastyInfo('最多只能添加5篇推荐文章', '添加失败')
+            }
             this.option.recommended.push(item)
         }
         this.recommendService.changeOption(this.option)
@@ -56,9 +59,8 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
                 }
             )
     }
-    showOptionStatus (item){
-        return this.option.recommended.some(v => v.id === item.id)?
-            '取消推荐': '加入推荐'
+    articleIsRecommended (item){
+        return this.option.recommended.some(v => v.id === item.id)
     }
 
     search (keyWord: string){
