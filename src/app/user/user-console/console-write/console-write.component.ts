@@ -33,11 +33,11 @@ export class ConsoleWriteComponent implements OnInit {
     }
     submit (){
         if (!this.titleValue) return this.staticService.toastyInfo('需要补全标题', '无法提交')
-        if (this.titleValue.length < 5 || this.titleValue.length > 40){
+        if (this.titleValue.length < 5 || this.titleValue.length > 60){
             return this.staticService.toastyInfo('标题长度不符合规范', '无法提交')
         }
         if (!this.mdValue) return this.staticService.toastyInfo('需要补全正文内容', '无法提交')
-        if (this.mdValue.length < 5 || this.mdValue.length > 20000){
+        if (this.mdValue.length < 100 || this.mdValue.length > 30000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
         this.consoleWriteService.create({
