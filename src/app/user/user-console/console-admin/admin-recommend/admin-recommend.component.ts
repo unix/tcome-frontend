@@ -1,7 +1,7 @@
-import {Component, OnInit, OnDestroy} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
 import {Router} from '@angular/router'
-import {Subject} from 'rxjs/Subject'
+import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 import {Observable} from 'rxjs/Observable'
 
 import {Option} from './option'
@@ -15,7 +15,7 @@ import {StaticService} from '../../../../shared/service/static'
     styleUrls: ['./admin-recommend.component.scss'],
     providers: [RecommendService]
 })
-export class AdminRecommendComponent implements OnInit, OnDestroy {
+export class AdminRecommendComponent implements OnInit {
 
     constructor (
         private recommendService: RecommendService,
@@ -28,7 +28,7 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
     public list: Observable<List[]>
     public showAlert: boolean = false
 
-    private searchTerms = new Subject<string>()
+    private searchTerms = new BehaviorSubject<string>('allArticles')
     private timer: any
 
 
@@ -79,10 +79,6 @@ export class AdminRecommendComponent implements OnInit, OnDestroy {
             .catch(error => {
                 return Observable.of<List[]>([]);
             })
-        this.timer = setTimeout( () =>{this.search('')},300)
-    }
-    ngOnDestroy (){
-        this.timer&& clearTimeout(this.timer)
     }
 
 }
