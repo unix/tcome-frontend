@@ -66,3 +66,63 @@ ul.article-list{
 }
 
 
+
+// mobile
+.mobile-article-list {
+	width:100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 8px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	>ul{
+		width: 100%;
+		>li {
+			width: 100%;
+			height: auto;
+			border-bottom: 1px solid #E6E6E6;
+			padding: 15px 0;
+
+			h3 {
+				font-size: 18px;
+				font-weight: normal;
+				line-height: 20px;
+				color: #4094C7;
+				margin-bottom: 5px;
+				cursor: pointer;
+			}
+			p {
+				font-size: 13px;
+			}
+			.mobile-article-list-additional {
+				padding-top: 10px;
+				width: 100%;
+				overflow: hidden;
+				color: #9ba9b5;
+				p.author {
+					float: left;
+					font-size: 12px;
+				}
+				p.views {
+					float: right;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

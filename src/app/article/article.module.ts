@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms'
 import {HttpModule} from '@angular/http'
 import {MomentModule} from 'angular2-moment'
 import {SharedModule} from '../shared/shared.module'
+import {ResponsiveModule, ResponsiveConfig} from 'ng2-responsive'
 
 import {ArticleRoutingModule} from './article.routing'
 import {ShowdownComponent} from './showdown/showdown.component'
@@ -28,7 +29,8 @@ import {ArticleDetailComponent} from './article-detail/article-detail.component'
         HttpModule,
         SharedModule,
         MomentModule,
-        ArticleRoutingModule
+        ArticleRoutingModule,
+        ResponsiveModule
     ],
     exports: [ArticleMainComponent],
     providers: []

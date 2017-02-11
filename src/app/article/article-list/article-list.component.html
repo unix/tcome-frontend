@@ -1,16 +1,5 @@
-<!--<app-breadcrumb></app-breadcrumb>-->
-<div class="article-list-box">
+<div class="article-list-box" *hideItBootstrap="['xs']">
     <ul class="article-list" *ngIf="list&& list[0]">
-        <!--<li *ngFor="let item of list" (click)="goNext(item.id)">-->
-            <!--<div class="top">-->
-                <!--<img src="http://static.wittsay.cc/default_bg.jpeg" alt="" class="thumbnail">-->
-                <!--<img src="http://static.wittsay.cc/default_photo.png" alt="" class="avatar">-->
-            <!--</div>-->
-            <!--<div class="bottom">-->
-                <!--<h3>{{item.title}}</h3>-->
-                <!--<p>{{item.createdAt | amTimeAgo:true}} {{item.authorName}}</p>-->
-            <!--</div>-->
-        <!--</li>-->
         <li *ngFor="let item of list">
             <div class="profiles" [class.no-thumbnail]="!item.thumbnail">
                 <h3 (click)="goNext(item.id)">{{item.title}}</h3>
@@ -22,6 +11,19 @@
             </div>
             <div class="thumbnail" *ngIf="item.thumbnail">
                 <img [src]="item.thumbnail" alt="">
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="mobile-article-list" *xs>
+    <ul *ngIf="list&& list[0]">
+        <li *ngFor="let item of list">
+            <h3 (click)="goNext(item.id)">{{item.title}}</h3>
+            <p>{{item.abstract | slice: 0:100}}</p>
+            <div class="mobile-article-list-additional">
+                <p class="author">{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
+                <p class="views">{{item.readTotal}}views</p>
             </div>
         </li>
     </ul>
