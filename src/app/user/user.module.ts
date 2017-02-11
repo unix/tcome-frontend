@@ -7,6 +7,7 @@ import {NgModule} from '@angular/core'
 import {FormsModule} from '@angular/forms'
 import {MomentModule} from 'angular2-moment'
 import {UserRoutingModule} from './user.routing'
+import {ResponsiveModule} from 'ng2-responsive'
 
 import {UserMainComponent} from './user-main/user-main.component'
 import {LoginComponent} from './user-login/login.component'
@@ -22,7 +23,8 @@ import {RegisterComponent} from './user-register/register.component'
         CommonModule,
         FormsModule,
         MomentModule,
-        UserRoutingModule
+        UserRoutingModule,
+        ResponsiveModule
     ],
     exports: [UserMainComponent],
     providers: []

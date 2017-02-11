@@ -1,6 +1,14 @@
-<!--<app-breadcrumb></app-breadcrumb>-->
 <div class="login">
-    <div class="login-box">
+    <div class="login-box" *hideItBootstrap="['xs']">
+        <h3>Login <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
+        <input type="email" placeholder="Your email" [(ngModel)]="email">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+        <button (click)="login()">Submit</button>
+    </div>
+
+
+
+    <div class="mobile-login-box" *xs>
         <h3>Login <p *ngIf="errorMessage">{{errorMessage}}</p></h3>
         <input type="email" placeholder="Your email" [(ngModel)]="email">
         <input type="password" placeholder="Password" [(ngModel)]="password">
