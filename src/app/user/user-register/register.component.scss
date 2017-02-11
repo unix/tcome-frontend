@@ -76,3 +76,78 @@
 		}
 	}
 }
+
+
+
+.mobile-register-box {
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	margin-left: 30px;
+	h3 {
+		font-size: 25px;
+		display: block;
+		color: #FFF;
+		font-weight: lighter;
+		margin-bottom: 30px;
+		margin-left: -10px;
+		p {
+			font-size: 14px;
+			font-weight: lighter;
+		}
+	}
+	input {
+		border: none;
+		border-bottom: 1px solid #8DD7C1;
+		color: #fff;
+		font-size: 21px;
+		line-height: 51px;
+		height: 38px;
+		margin-bottom: 10px;
+		width: 100%;
+		background: transparent;
+		display: block;
+		padding: 0;
+		font-weight: lighter;
+		&:focus, &:active {
+			outline: none;
+		}
+		&::-webkit-input-placeholder {
+			color: #8DD7C1;
+			font-size: 16px;
+			font-weight: 200;
+		}
+	}
+	button {
+		background: transparent;
+		color: #fff;
+		border-radius: 2px;
+		margin-top: 40px;
+		padding: 7px 30px;
+		font-size: 14px;
+		transition: all .2s;
+		margin-left: -20px;
+		border: none;
+		border-bottom: 1px solid #8DD7C1;
+		text-align: left;
+		&:focus, &:active {
+			outline: none;
+		}
+		&:hover {
+			border-bottom: 3px solid #8DD7C1;
+		}
+	}
+}
+.mobile-message {
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	margin-left: -30px;
+	p {
+		font-size: 20px;
+		display: block;
+		color: #FFF;
+		font-weight: lighter;
+		text-align: center;
+	}
+}
