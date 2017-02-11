@@ -103,14 +103,6 @@
 		margin: 6px 0px;
 	}
 
-	button, #ws {
-		font-size: 10pt;
-		padding: 4px 6px;
-		border-radius: 5px;
-		border: 1px solid #bbb;
-		background-color: #eee;
-	}
-
 	code, pre, #ws, #message {
 		font-family: Monaco;
 		font-size: 10pt;
@@ -157,4 +149,12 @@
 
 .error {
 	color: #AA0000;
+}
+
+button, #ws {
+	font-size: 10pt;
+	padding: 4px 6px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	background-color: #eee;
 }
