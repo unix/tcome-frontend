@@ -2,9 +2,10 @@
      *ngIf="detail&& detail.id"
      [style.background-image]="detail.thumbnail&& ('url(' + detail.thumbnail + ')' | safeStyle)"
      [class.image]="detail.thumbnail"
+
 >
     <!--<img *ngIf="detail.thumbnail" [src]="detail.thumbnail" alt="" class="article-title-bg">-->
-    <a href="" class="photo">
+    <a href="#" class="photo">
         <img [src]="detail.avatar? detail.avatar: 'http://static.wittsay.cc/default_photo.png'" alt="" >
         <div class="hide"></div>
     </a>
@@ -64,3 +65,4 @@
         <span>我们希望每一次评论都是深思熟虑的，所以对连续评论作出了一些限制。</span>
     </div>
 </div>
+

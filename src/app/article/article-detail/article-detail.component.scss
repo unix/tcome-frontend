@@ -2,9 +2,11 @@
 
 
 .article-detail {
-	width: 900px;
+	max-width: 900px;
 	margin: 0 auto;
-	padding: 20px 40px 0 40px;
+	padding-top: 20px;
+	padding-left: 2%;
+	padding-right: 2%;
 	background: #FFF;
 }
 
