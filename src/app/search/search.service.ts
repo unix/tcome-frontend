@@ -19,7 +19,6 @@ export class SearchService {
     private searchLink = this.staticService.makeApi('articles')
 
     search (word): Observable<Articles[]>{
-        console.log(word);
         return this.http.get(`${this.searchLink}/${word}/search`)
             .map(this.staticService.extractData)
             .catch(this.handleError)

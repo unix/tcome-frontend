@@ -1,4 +1,9 @@
 .article-detail-content {
+	font-family: Helvetica;
+	p {
+		font-weight: 400;
+		line-height: 1.6;
+	}
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
 	}
@@ -6,23 +11,23 @@
 	h1 {
 		color: #000000;
 		font-size: 28pt;
-		margin: 40px 0 10px 0;
+		margin: 45px 0 30px 0;
 	}
 
 	h2 {
 		border-bottom: 1px solid #CCCCCC;
 		color: #000000;
-		font-size: 24px;
-		margin: 40px 0 10px 0;
+		font-size: 26px;
+		margin: 45px 0 30px 0;
 	}
 
 	h3 {
-		font-size: 18px;
+		font-size: 22px;
 		margin: 20px 0;
 	}
 
 	h4 {
-		font-size: 16px;
+		font-size: 18px;
 	}
 
 	h5 {
@@ -42,14 +47,50 @@
 		background-color: #CCCCCC;
 	}
 
-	p, blockquote, ul, ol, dl, li, table, pre {
+	p, blockquote, dl, li, table, pre {
 		margin: 15px 0;
+	}
+	ul, ol {
+		margin: 35px 0;
 	}
 
 	a, a:visited {
 		color: #4183C4;
 		background-color: inherit;
 		text-decoration: none;
+	}
+
+	blockquote {
+		padding: 5px 10px;
+		margin-bottom: 25px;
+		background-color: #f7f7f7;
+		border-left: 6px solid #b4b4b4;
+		word-break: break-word;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 25px;
+	}
+	ol {
+		padding-left: 25px;
+		list-style-type: decimal;
+		>li {
+			list-style: decimal;
+
+		}
+	}
+	ul {
+		padding-left: 25px;
+		list-style-type: disc;
+		>li {
+			list-style: disc;
+
+		}
+	}
+	img {
+		display: block;
+		margin: 30px auto;
+		max-width: 90%;
+		border-radius: 2px;
 	}
 }
 
@@ -82,18 +123,21 @@ code {
 	border: 1px solid #EAEAEA;
 	margin: 0 2px;
 	padding: 0 5px;
+	color: #d14;
 }
 
 pre {
 	border: 1px solid #CCCCCC;
 	overflow: auto;
 	padding: 4px 8px;
-}
-
-pre > code {
-	border: 0;
-	margin: 0;
-	padding: 0;
+	color: #333333;
+	code {
+		border: 0;
+		margin: 0;
+		padding: 0;
+		color: #333333;
+		line-height: 1.7;
+	}
 }
 
 #ws {
