@@ -40,10 +40,11 @@
 			border: 3px solid #FCFCFC;
 		}
 	}
+	.title-fill {
+		height: 40%;
+	}
 	.title {
-		padding-top: 60px;
 		&.image {
-			padding-top: 120px;
 			h2 {
 				display: inline-block;
 				padding: 0 15px;
