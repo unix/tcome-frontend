@@ -19,6 +19,7 @@
 	background-size: cover;
 	&.image {
 		height: 300px;
+		background-position: center center;
 	}
 	a.photo {
 		width: 66px;
@@ -68,7 +69,7 @@
 		}
 		span {
 			font-weight: 300;
-			color: #373a3c;
+			color: #1c1e1f;
 			font-size: 13px;
 		}
 

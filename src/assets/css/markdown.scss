@@ -2,7 +2,8 @@
 	font-family: Helvetica;
 	p {
 		font-weight: 400;
-		line-height: 1.6;
+		line-height: 1.7;
+		margin: 20px 0;
 	}
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold;
@@ -47,7 +48,7 @@
 		background-color: #CCCCCC;
 	}
 
-	p, blockquote, dl, li, table, pre {
+	blockquote, dl, li, table, pre {
 		margin: 15px 0;
 	}
 	ul, ol {
