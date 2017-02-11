@@ -82,4 +82,5 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.timer&& clearInterval(this.timer)
     }
 
+    public mobileMenuIsShow: boolean = false
 }
