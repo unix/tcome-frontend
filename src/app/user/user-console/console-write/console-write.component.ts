@@ -93,7 +93,7 @@ export class ConsoleWriteComponent implements OnInit {
                         this.staticService.toastyError('上传失败，请稍候重试')
                         return done({})
                     }
-                    done(res)
+                    done(null, res)
                 },
                 error => {
                     if (error) this.staticService.toastyError(error.toString())
