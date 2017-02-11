@@ -24,3 +24,26 @@
 	}
 }
 
+
+
+
+// mobile
+
+
+.mobile-body {
+	width: 100%;
+	height: 100%;
+	flex: 1;
+	display: flex;
+	flex-flow: row;
+	>.mobile-list {
+
+	}
+	>.mobile-content {
+		flex: 1;
+		overflow-x: hidden;
+		height: 100%;
+		background: #FCFCFC;
+		padding-top: 50px;
+	}
+}

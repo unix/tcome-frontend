@@ -1,10 +1,25 @@
-<div class="app-body">
+<div class="app-body" *hideItBootstrap="['xs']">
 
     <div class="app-list">
         <app-menu></app-menu>
     </div>
 
     <div class="app-content">
+        <router-outlet>
+        </router-outlet>
+    </div>
+
+    <ng2-toasty [position]="'top-right'"></ng2-toasty>
+</div>
+
+
+<div class="mobile-body" *xs>
+
+    <div class="mobile-list">
+        <app-menu></app-menu>
+    </div>
+
+    <div class="mobile-content">
         <router-outlet>
         </router-outlet>
     </div>
