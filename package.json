@@ -30,6 +30,7 @@
     "highlight.js": "^9.9.0",
     "markdown": "^0.5.0",
     "moment": "^2.17.1",
+    "ng2-responsive": "^0.8.3",
     "ng2-toasty": "^2.2.2",
     "remarkable": "^1.7.1",
     "rxjs": "^5.0.3",
