@@ -35,6 +35,8 @@ import {LocalDirective} from './directive/local'
         BreadcrumbComponent,
         PaginationComponent,
         LocalDirective
+    ],
+    providers: [
     ]
 })
 

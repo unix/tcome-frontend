@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
 import {Router, ActivatedRoute, Params} from '@angular/router'
+import {StaticService} from '../../shared/service/static'
 
 import {List} from './list'
 import {ArticleListService} from './article-list.service'
@@ -17,12 +18,14 @@ export class ArticleListComponent implements OnInit {
         private listService: ArticleListService,
         private titleService: Title,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private staticService: StaticService
     ) {}
 
     list: List[]
     errorMessage: string
     public activePage: number = 1
+    public listOver: boolean = false
 
     getList(pageSize:number = 1) {
         this.activePage = ~~pageSize? pageSize: 1
@@ -30,7 +33,8 @@ export class ArticleListComponent implements OnInit {
             .subscribe(
                 list => this.list = list,
                 error => {
-                    this.errorMessage = error.json().message
+                    console.log(error);
+                    // this.errorMessage = error.json().message
                 }
             )
     }

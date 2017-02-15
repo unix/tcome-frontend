@@ -12,7 +12,8 @@ export class ArticleListService {
 
     constructor (
         private http: Http,
-        private staticService: StaticService){
+        private staticService: StaticService
+    ){
     }
 
     private listUrl = this.staticService.makeApi('articles')
@@ -22,6 +23,7 @@ export class ArticleListService {
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }
+
     private handleError (error: any){
         return Observable.throw(error || '服务器错误')
     }

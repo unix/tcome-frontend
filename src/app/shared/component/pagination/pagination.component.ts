@@ -7,8 +7,10 @@ import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core'
 })
 export class PaginationComponent implements OnInit {
 
-    constructor (){
+    constructor (
+    ){
     }
+    private listOver: boolean = false
 
     @Input()
     private page: number = 1
@@ -20,6 +22,12 @@ export class PaginationComponent implements OnInit {
         const next = this.page + nextNumber
         if (next < 1) return;
         this.next.emit(next)
+    }
+
+    private checkCount (count){
+        if (count / 15 <= this.page){
+            this.listOver = true
+        }
     }
 
     ngOnInit (){

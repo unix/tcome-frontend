@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core'
 import {Response, Headers, RequestOptions} from '@angular/http'
-import {Observable} from "rxjs"
 import {LockerService} from '../locker'
 import {ToastyService, ToastOptions} from 'ng2-toasty'
+import {MissionService} from '../mission'
 
 import 'rxjs/Rx'
 import {environment} from '../../../../environments/environment'
@@ -12,7 +12,7 @@ export class StaticService {
 
     constructor(
         private locker: LockerService,
-        private toastyService:ToastyService,
+        private toastyService:ToastyService
     ) {
     }
 
@@ -38,11 +38,13 @@ export class StaticService {
     }
 
     public extractData(res: Response) {
-        let body
-        if (res.status != 204){
-            body = res.json()
+        // 存在总数限制，通知其他组件
+        const total = res.headers.get('total')
+        if (total){
         }
-        return body || {}
+
+        if (res.status != 204) return res.json() || {}
+        return {}
     }
 
     public toastyInfo (message: string, title: string = '提示'){

@@ -8,7 +8,7 @@ import {StaticService} from './shared/service/static'
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    providers: [StaticService, MissionService]
+    providers: []
 })
 export class AppComponent{
     constructor (

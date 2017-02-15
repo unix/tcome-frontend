@@ -17,6 +17,8 @@ import {SearchComponent} from './search/search.component'
 import {AuthService} from './shared/service/auth'
 import {AdminService} from './shared/service/admin'
 import {LockerService} from './shared/service/locker'
+import {MissionService} from './shared/service/mission'
+import {StaticService} from './shared/service/static'
 
 const config = {
     breakPoints: {
@@ -53,9 +55,11 @@ export function ResponsiveDefinition (){
         SearchComponent,
     ],
     providers: [
+        MissionService,
         LockerService,
         AuthService,
         AdminService,
+        StaticService,
         {
             provide: ResponsiveConfig,
             useFactory: ResponsiveDefinition
