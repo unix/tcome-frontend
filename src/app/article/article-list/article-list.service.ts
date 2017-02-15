@@ -17,8 +17,8 @@ export class ArticleListService {
 
     private listUrl = this.staticService.makeApi('articles')
 
-    getList (): Observable<List[]>{
-        return this.http.get(this.listUrl)
+    getList (pageSize): Observable<List[]>{
+        return this.http.get(`${this.listUrl}?page=${pageSize}`)
             .map(this.staticService.extractData)
             .catch(this.handleError)
     }

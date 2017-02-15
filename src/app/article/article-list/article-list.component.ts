@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
-import {Router} from '@angular/router'
+import {Router, ActivatedRoute, Params} from '@angular/router'
 
 import {List} from './list'
 import {ArticleListService} from './article-list.service'
@@ -17,13 +17,16 @@ export class ArticleListComponent implements OnInit {
         private listService: ArticleListService,
         private titleService: Title,
         private router: Router,
+        private route: ActivatedRoute
     ) {}
 
     list: List[]
     errorMessage: string
+    public activePage: number = 1
 
-    getList() {
-        this.listService.getList()
+    getList(pageSize:number = 1) {
+        this.activePage = ~~pageSize? pageSize: 1
+        this.listService.getList(this.activePage)
             .subscribe(
                 list => this.list = list,
                 error => {
@@ -36,12 +39,13 @@ export class ArticleListComponent implements OnInit {
         this.router.navigate(['/articles/list', path])
     }
     pageNext (page: number){
-        console.log(page);
+        this.getList(page)
     }
 
     ngOnInit() {
         this.titleService.setTitle('文章列表-维特博客')
-        this.getList()
+        this.route.params
+            .forEach((params: Params) => this.getList(+params['p']))
     }
 
 }
