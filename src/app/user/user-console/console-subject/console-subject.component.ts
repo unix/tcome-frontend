@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {LockerService} from '../../../shared/service/locker'
+import {StaticService} from '../../../shared/service/static'
 import {Router} from '@angular/router'
 
 import {ConsoleSubjectService} from './console-subject.service'
@@ -16,6 +17,7 @@ export class ConsoleSubjectComponent implements OnInit {
     constructor (
         private consoleSubjectService: ConsoleSubjectService,
         private locker: LockerService,
+        private staticService: StaticService,
         private router: Router,
     ){
     }
@@ -35,10 +37,13 @@ export class ConsoleSubjectComponent implements OnInit {
     goNext (path){
         this.router.navigate(['/articles/list', path])
     }
-    goAppend (id){
+    goAppend (id, status: string){
+        if (status == 'isDestroy') {
+            return this.staticService.toastyInfo('无法编辑', '此文章已被管理员标记为删除！')
+        }
         this.router.navigate(['/user/console/subject/append', id])
     }
-    statusMap (status){
+    statusMap (status: string){
         if (status == 'isReview') return '等待审核'
         if (status == 'isActive') return '已审核'
         if (status == 'isDestroy')  return '已删除'
