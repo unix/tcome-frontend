@@ -35,6 +35,9 @@ export class ConsoleSubjectComponent implements OnInit {
     goNext (path){
         this.router.navigate(['/articles/list', path])
     }
+    goAppend (id){
+        this.router.navigate(['/user/console/subject/append', id])
+    }
     statusMap (status){
         if (status == 'isReview') return '等待审核'
         if (status == 'isActive') return '已审核'

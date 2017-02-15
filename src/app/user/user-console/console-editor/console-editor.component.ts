@@ -13,12 +13,16 @@ export class ConsoleEditorComponent implements AfterViewInit {
 
     @ViewChild('simplemde') textarea: ElementRef
 
-    @Input() text: string
-    @Output() mdChange = new EventEmitter<any>()
+    @Input()
+    text: string
+
+    @Output()
+    mdChange = new EventEmitter<any>()
 
     ngAfterViewInit (){
         const simplemde = new SimpleMDE({
             element: this.textarea.nativeElement,
+            initialValue: this.text,
             showIcons: ["code", "table"],
             placeholder: '撰写正文内容',
             autoDownloadFontAwesome: false,

@@ -1,6 +1,6 @@
 <div class="write">
     <div class="write-submit">
-        <button (click)="submit()">发表</button>
+        <button (click)="submit()">{{isAppend? '更新': '发表'}}</button>
         <button *ngIf="!thumbnail.name">题图
             <input type="file" accept="image/*" (change)="addImage($event)">
         </button>
@@ -10,8 +10,8 @@
     <div class="write-title">
         <input type="text" placeholder="补全标题" [(ngModel)]="titleValue">
     </div>
-
-    <app-console-editor [text]="field" (mdChange)="mdChange($event)"></app-console-editor>
+    <app-console-editor [text]="mdInitialValue" (mdChange)="mdChange($event)" *ngIf="mdInitialValue"></app-console-editor>
+    <app-console-editor (mdChange)="mdChange($event)" *ngIf="!mdInitialValue"></app-console-editor>
     <!--<div class="write-tags">-->
         <!--<div class="write-tags-box">-->
             <!--<input type="text">-->
@@ -19,7 +19,7 @@
         <!--</div>-->
         <!--<ul class="write-tags-view">-->
             <!--<li>-->
-                <!--心标签-->
+                <!--新标签-->
             <!--</li>-->
         <!--</ul>-->
     <!--</div>-->

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
-import {Router} from '@angular/router'
+import {Router, ActivatedRoute, Params} from '@angular/router'
+import {Title} from '@angular/platform-browser'
 
 import {ConsoleWriteService} from './console-write.service'
 import {StaticService} from '../../../shared/service/static'
@@ -17,11 +18,16 @@ export class ConsoleWriteComponent implements OnInit {
         private staticService: StaticService,
         private consoleWriteService: ConsoleWriteService,
         private router: Router,
+        private route: ActivatedRoute,
+        private titleService: Title,
     ){
     }
 
+    public mdInitialValue: any = ''
     public mdValue: any = ''
     public titleValue: any = ''
+    public isAppend: boolean = false
+    public appendDetail: any = {}
 
     public thumbnail = {
         name: null,
@@ -40,22 +46,12 @@ export class ConsoleWriteComponent implements OnInit {
         if (this.mdValue.length < 100 || this.mdValue.length > 30000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
-        this.consoleWriteService.create({
+        const method = this.isAppend? 'update': 'create'
+        this[method]({
             title: this.titleValue,
             content: this.mdValue,
             thumbnail: this.thumbnail.url
         })
-            .subscribe(
-                res => {
-                    if (res && res.id){
-                        this.staticService.toastyInfo('文章已发表，等待审核中...', '发表成功')
-                        this.router.navigate(['/articles/list', res.id])
-                    }
-                },
-                error => {
-                    if (error) this.staticService.toastyError(error.toString())
-                }
-            )
     }
     addImage ($event: any){
         const file = $event.target.files[0]
@@ -101,8 +97,62 @@ export class ConsoleWriteComponent implements OnInit {
                 }
             )
     }
+    create (article: any){
+        this.consoleWriteService.create(article)
+            .subscribe(
+                res => {
+                    if (res && res.id){
+                        this.staticService.toastyInfo('文章已发表，等待审核中...', '发表成功')
+                        this.router.navigate(['/articles/list', res.id])
+                    }
+                },
+                error => {
+                    if (error) this.staticService.toastyError(error.toString())
+                }
+            )
+    }
+    update (article: any){
+        this.consoleWriteService.update(article, this.appendDetail.id)
+            .subscribe(
+                res => {
+                    if (res && res.id){
+                        this.staticService.toastyInfo('文章已更新，等待审核中...', '更新成功')
+                        this.router.navigate(['/articles/list', res.id])
+                    }
+                },
+                error => {
+                    if (error) this.staticService.toastyError(error.toString())
+                }
+            )
+    }
+
+    getArticleDetail (id: string){
+        this.consoleWriteService.getArticleDetail(id)
+            .subscribe(
+                res =>{
+                    if (res&& res.content){
+                        this.mdInitialValue = res.content
+                        this.titleValue = res.title
+                        this.thumbnail = {
+                            name: res.thumbnail? '原题图': null,
+                            url: res.thumbnail
+                        }
+                        this.appendDetail = res
+                    }
+                }
+            )
+    }
 
     ngOnInit (){
+        this.titleService.setTitle('创建文章-维特博客')
+        this.route.params.forEach((params: Params) => {
+            const id = params['id']
+            if (id) {
+                this.isAppend = true
+                this.titleService.setTitle('更新文章-维特博客')
+                this.getArticleDetail(id)
+            }
+        })
     }
 
 }

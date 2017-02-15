@@ -18,6 +18,8 @@ export const consoleRoutes: Routes = [{
     },{
         path: 'subject', component: ConsoleSubjectComponent
     },{
+        path: 'subject/append/:id', component: ConsoleWriteComponent
+    },{
         path: 'write', component: ConsoleWriteComponent
     },{
         path: 'reply', component: ConsoleReplyComponent
