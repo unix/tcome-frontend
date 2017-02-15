@@ -35,6 +35,9 @@ export class ArticleListComponent implements OnInit {
     goNext (path){
         this.router.navigate(['/articles/list', path])
     }
+    pageNext (page: number){
+        console.log(page);
+    }
 
     ngOnInit() {
         this.titleService.setTitle('文章列表-维特博客')
