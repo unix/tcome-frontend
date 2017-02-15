@@ -1,4 +1,5 @@
 <div class="article-list-box" *hideItBootstrap="['xs']">
+
     <ul class="article-list" *ngIf="list&& list[0]">
         <li *ngFor="let item of list">
             <div class="profiles" [class.no-thumbnail]="!item.thumbnail">

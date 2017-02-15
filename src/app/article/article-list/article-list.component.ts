@@ -39,7 +39,7 @@ export class ArticleListComponent implements OnInit {
         this.router.navigate(['/articles/list', path])
     }
     pageNext (page: number){
-        this.getList(page)
+        this.router.navigate(['/articles/list/page', page])
     }
 
     ngOnInit() {
