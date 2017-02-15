@@ -1,0 +1,46 @@
+.pagination {
+	margin-top: 20px;
+	margin-bottom: 200px;
+	border-radius: 2px;
+	border-top: 1px solid #E6E6E6;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: "futura-pt",sans-serif;
+
+}
+.pagination-list {
+
+	>li {
+		float: left;
+		width: auto;
+		height: 35px;
+		line-height: 35px;
+		cursor: pointer;
+		padding: 0 15px;
+		font-size: 16px;
+		font-weight: 300;
+		border-right: 1px solid #E6E6E6;
+		-webkit-transition: all 0.15s;
+		-moz-transition: all 0.15s;
+		-o-transition: all 0.15s;
+		transition: all 0.15s;
+		
+		&:last-child {
+			border: none;
+		}
+		&.disabled {
+			cursor: not-allowed;
+		}
+		&:hover {
+			background: #ADAAAA;
+		}
+		&.number {
+			cursor: text;
+			&:hover {
+				background: transparent;
+			}
+		}
+	}
+}

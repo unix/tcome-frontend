@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms'
 
 import {MdeditorComponent} from './component/mdeditor'
 import {BackComponent} from './component/back'
+import {PaginationComponent} from './component/pagination'
 import {BreadcrumbComponent} from './component/breadcrumb'
 import {SanitizeHtmlPipe} from './pipe/sanitize'
 import {SafeStylePipe} from './pipe/safe-style'
@@ -23,6 +24,7 @@ import {LocalDirective} from './directive/local'
         BackComponent,
         MdeditorComponent,
         BreadcrumbComponent,
+        PaginationComponent,
         LocalDirective
     ],
     exports: [
@@ -31,6 +33,7 @@ import {LocalDirective} from './directive/local'
         BackComponent,
         MdeditorComponent,
         BreadcrumbComponent,
+        PaginationComponent,
         LocalDirective
     ]
 })

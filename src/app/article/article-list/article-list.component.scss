@@ -1,8 +1,12 @@
-ul.article-list{
+.article-list-box {
 	width: 850px;
 	height: auto;
 	margin: 0 auto;
 	padding: 20px 0;
+}
+ul.article-list{
+	width: 100%;
+	height: auto;
 	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 
 	>li {
