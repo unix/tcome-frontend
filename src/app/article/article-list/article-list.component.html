@@ -15,7 +15,7 @@
             </div>
         </li>
     </ul>
-    <app-pagination [page]="activePage" (next)="pageNext($event)"></app-pagination>
+    <app-pagination [page]="activePage" [over]="listOver" (next)="pageNext($event)"></app-pagination>
 </div>
 
 <div class="mobile-article-list" *xs>

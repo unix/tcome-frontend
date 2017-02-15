@@ -14,6 +14,7 @@ export class AppComponent{
     constructor (
         private missionService: MissionService,
         private titleService: Title,
+        private staticService: StaticService
     ){
         // 订阅子组件通知 通知至所有子组件
         missionService.missionConfirmed$.subscribe(

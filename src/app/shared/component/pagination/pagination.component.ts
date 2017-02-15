@@ -1,4 +1,5 @@
 import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core'
+import {MissionService} from '../../service/mission'
 
 @Component({
     selector: 'app-pagination',
@@ -8,12 +9,22 @@ import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core'
 export class PaginationComponent implements OnInit {
 
     constructor (
+        private missionService: MissionService
     ){
+        this.missionService.missionAnnounced$.subscribe(
+            mission =>{
+                if (mission&& mission.count) {
+
+                }
+            }
+        )
     }
-    private listOver: boolean = false
 
     @Input()
     private page: number = 1
+
+    @Input()
+    private over: boolean = false
 
     @Output()
     private next = new EventEmitter<Number>()
@@ -21,13 +32,8 @@ export class PaginationComponent implements OnInit {
     paginationHandle (nextNumber){
         const next = this.page + nextNumber
         if (next < 1) return;
+        if (nextNumber > 0&& this.over) return;
         this.next.emit(next)
-    }
-
-    private checkCount (count){
-        if (count / 15 <= this.page){
-            this.listOver = true
-        }
     }
 
     ngOnInit (){

@@ -2,7 +2,7 @@
     <ul class="pagination-list">
         <li [class.disabled]="page <= 1" (click)="paginationHandle(-1)"><span>上一页</span></li>
         <li class="number"><span>第1页</span></li>
-        <li (click)="paginationHandle(1)" [class.disabled]="listOver"><span>下一页</span></li>
+        <li (click)="paginationHandle(1)" [class.disabled]="over"><span>下一页</span></li>
     </ul>
 </div>
 

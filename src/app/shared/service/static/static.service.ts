@@ -38,11 +38,6 @@ export class StaticService {
     }
 
     public extractData(res: Response) {
-        // 存在总数限制，通知其他组件
-        const total = res.headers.get('total')
-        if (total){
-        }
-
         if (res.status != 204) return res.json() || {}
         return {}
     }

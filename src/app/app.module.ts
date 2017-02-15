@@ -44,7 +44,7 @@ export function ResponsiveDefinition (){
         FormsModule,
         RouterModule,
         HttpModule,
-        SharedModule,
+        SharedModule.forRoot(),
         MomentModule,
         AppRoutingModule,
     ],
@@ -59,7 +59,6 @@ export function ResponsiveDefinition (){
         LockerService,
         AuthService,
         AdminService,
-        StaticService,
         {
             provide: ResponsiveConfig,
             useFactory: ResponsiveDefinition

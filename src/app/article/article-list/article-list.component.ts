@@ -31,12 +31,23 @@ export class ArticleListComponent implements OnInit {
         this.activePage = ~~pageSize? pageSize: 1
         this.listService.getList(this.activePage)
             .subscribe(
-                list => this.list = list,
+                res => {
+                    if (res&& res.list){
+                        this.list = res.list
+                        console.log(res.total);
+                        this.checkOver(res.total)
+                    }
+                },
                 error => {
-                    console.log(error);
-                    // this.errorMessage = error.json().message
+                    this.errorMessage = error.json().message
                 }
             )
+    }
+    checkOver (total: number){
+        if (total&& total / 15 <= this.activePage){
+            return this.listOver = true
+        }
+        this.listOver = false
     }
 
     goNext (path){

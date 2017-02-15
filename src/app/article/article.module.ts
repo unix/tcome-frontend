@@ -24,10 +24,10 @@ import {ArticleDetailComponent} from './article-detail/article-detail.component'
         ArticleDetailComponent
     ],
     imports: [
+        SharedModule,
         CommonModule,
         FormsModule,
         HttpModule,
-        SharedModule,
         MomentModule,
         ArticleRoutingModule,
         ResponsiveModule

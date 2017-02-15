@@ -1,7 +1,7 @@
 /**
  * Created by WittBulter on 2017/1/25.
  */
-import {NgModule} from '@angular/core'
+import {NgModule, ModuleWithProviders} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {FormsModule} from '@angular/forms'
 
@@ -12,6 +12,9 @@ import {BreadcrumbComponent} from './component/breadcrumb'
 import {SanitizeHtmlPipe} from './pipe/sanitize'
 import {SafeStylePipe} from './pipe/safe-style'
 import {LocalDirective} from './directive/local'
+
+import {StaticService} from './service/static'
+
 
 @NgModule({
     imports: [
@@ -41,4 +44,10 @@ import {LocalDirective} from './directive/local'
 })
 
 export class SharedModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: [StaticService]
+        };
+    }
 }
