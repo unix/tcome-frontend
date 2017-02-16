@@ -3,11 +3,10 @@
  */
 
 export class Comment {
-    constructor (
-        public authorId: string,
-        public authorName: string,
-        public content: string,
-        public createdAt: string,
-        public id: string
-    ){}
+    authorId: string
+    authorName: string
+    content: string
+    createdAt: string
+    id: string
+    avatar?: string
 }
