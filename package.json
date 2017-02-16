@@ -1,6 +1,6 @@
 {
-  "name": "sails-blog-frontend",
-  "version": "1.0.1",
+  "name": "tcome-frontend",
+  "version": "1.1.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
