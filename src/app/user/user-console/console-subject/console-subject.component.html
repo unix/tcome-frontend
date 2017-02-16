@@ -4,7 +4,7 @@
 
         <div class="profiles">
             <h3 (click)="goNext(item.id)">{{item.title}}</h3>
-            <p>{{item.abstract}}</p>
+            <p>{{item.abstract | slice: 0:120}}</p>
             <div class="additional">
                 <p class="author">From:{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
                 <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
