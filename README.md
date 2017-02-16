@@ -1,51 +1,42 @@
-### T-COME, Frontend,
+### T-COME, Frontend, [中文](https://github.com/WittBulter/tcome-frontend/blob/master/README_CN.md)
 #### new blog, present for you.  
 
 I'm not perfect, i'm sorry.
 
-### [Website](http://wittsay.cc/)  &nbsp;  [Docs](ttp://120.27.200.112/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
+### [PREVIEW](http://wittsay.cc/)  &nbsp;  [API](http://wittsay.cc/doc)  &nbsp; 
 
-这是基于NodeJs,MongoDB的博客系统，它负责前端展示。如需要与之契合的服务端项目请前往[服务端项目](https://github.com/WittBulter/sails-blog/)
+This is a blog based on Angular.  
+If you need a server code, goto [tcome-server](https://github.com/WittBulter/tcome)
 
 
-## 开发者
-**配置环境**
+## DEVELOP
+**install**
 ```sh
-* 安装依赖
+* install package
 $ npm install
 
-* 安装全局angular-cli
+* install cli
 $ sudo npm install -g angular-cli@1.0.0-beta.25.5
 ```
 
 
-**开发:**
+**start:**
 ```sh
-* 本地已有服务端运行
 $ npm run start
-
-* 本地暂无服务端 使用远程接口开发
-$ npm run start_pro
 ```
 
-**打包:**
+**build:**
 ```sh
-* 仅在服务器运行 本地无需build
+* build 
 $ npm run build
-* 将静态文件上传至qiniu静态服务器 并替换链接(需要配置qiniuKey)
+* replace index.html link
 $ npm run build-static
 ```
 
 
-## 参考
-- [API DOC](http://120.27.200.112/doc)
-- [Angular Doc](https://angular.cn/docs/ts/latest/)
-- [Angular Cli](https://github.com/angular/angular-cli)
-- [TypeScript](http://www.typescriptlang.org/docs/tutorial.html)
 
-
-## 团队
-TCOME由WittBulter开发，如果你需要加入开发团队，请联系我:
+## TEAM
+TCOME developed by WittBulter，any question，please contact me:
 
 [![Witt Bulter](http://obqqxnnm4.bkt.clouddn.com/11304944.gif?imageView2/1/w/100)](https://github.com/WittBulter) |  
 :---:|
