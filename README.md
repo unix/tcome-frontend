@@ -1,6 +1,7 @@
-<h1>
-witt-blog-frontend
-</h1>
+### T-COME, Frontend,
+#### new blog, present for you.  
+
+I'm not perfect, i'm sorry.
 
 ### [Website](http://wittsay.cc/)  &nbsp;  [Docs](ttp://120.27.200.112/doc)  &nbsp; [Submit Issue](https://github.com/WittBulter/sails-blog/issues)
 
@@ -44,7 +45,7 @@ $ npm run build-static
 
 
 ## 团队
-blog由WittBulter开发，如果你需要加入开发团队，请联系我:
+TCOME由WittBulter开发，如果你需要加入开发团队，请联系我:
 
 [![Witt Bulter](http://obqqxnnm4.bkt.clouddn.com/11304944.gif?imageView2/1/w/100)](https://github.com/WittBulter) |  
 :---:|
