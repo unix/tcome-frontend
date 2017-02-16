@@ -46,6 +46,5 @@
     <li><a routerLinkActive="active" routerLink="/search">搜索</a></li>
     <li><a routerLinkActive="active" routerLink="{{user&& user.id? '/user/console/subject': '/user/login'}}">{{user&& user.id? '总览': '登录'}}</a></li>
     <li *ngIf="user&& user.id"><a (click)="logout()">登出</a></li>
-    <li *ngIf="!user|| !user.id"><a (click)="goNext('login')">登入</a></li>
     <li *ngIf="!user|| !user.id"><a (click)="goNext('register')">注册</a></li>
 </ul>
