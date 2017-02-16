@@ -9,6 +9,7 @@ import {MdeditorComponent} from './component/mdeditor'
 import {BackComponent} from './component/back'
 import {PaginationComponent} from './component/pagination'
 import {BreadcrumbComponent} from './component/breadcrumb'
+import {CopyrightComponent} from './component/copyright'
 import {SanitizeHtmlPipe} from './pipe/sanitize'
 import {SafeStylePipe} from './pipe/safe-style'
 import {LocalDirective} from './directive/local'
@@ -28,6 +29,7 @@ import {StaticService} from './service/static'
         MdeditorComponent,
         BreadcrumbComponent,
         PaginationComponent,
+        CopyrightComponent,
         LocalDirective
     ],
     exports: [
@@ -37,6 +39,7 @@ import {StaticService} from './service/static'
         MdeditorComponent,
         BreadcrumbComponent,
         PaginationComponent,
+        CopyrightComponent,
         LocalDirective
     ],
     providers: [
