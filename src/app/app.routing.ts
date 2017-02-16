@@ -13,7 +13,7 @@ export const appRoutes: Routes = [
     {path: 'welcome', component: HomeComponent},
     {path: 'search', component: SearchComponent},
     {path: 'articles', loadChildren: './article/article.module#ArticleModule', data: {preload: true}},
-    {path: 'user', loadChildren: './user/user.module#UserModule', data: {preload: true}},
+    {path: 'user', loadChildren: './user/user.module#UserModule', data: {preload: false}},
 ]
 
 @NgModule({
