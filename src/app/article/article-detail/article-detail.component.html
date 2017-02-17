@@ -34,7 +34,7 @@
         </div>
         <ul class="comment-list" *ngIf="comment&& comment.length">
             <li *ngFor="let c of comment" id="{{c.id}}">
-                <img [src]="c.avatar?c.avatar:'http://static.wittsay.cc/default_photo.png'" alt="" draggable="false">
+                <img [src]="c.avatar?c.avatar + '?imageView2/1/w/150/h/150':'http://static.wittsay.cc/default_photo.png'" alt="" draggable="false">
                 <div class="right">
                     <div class="name">
                         <p>{{c.authorName}}</p>
