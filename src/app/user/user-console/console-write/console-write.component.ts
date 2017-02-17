@@ -43,9 +43,7 @@ export class ConsoleWriteComponent implements OnInit {
     }
     appendTags (tags: any){
         this.articleTags.show = false
-        if (tags){
-           this.articleTags.value = tags
-        }
+        this.articleTags.value = tags
     }
     submit (){
         if (!this.titleValue) return this.staticService.toastyInfo('需要补全标题', '无法提交')
@@ -60,7 +58,8 @@ export class ConsoleWriteComponent implements OnInit {
         this[method]({
             title: this.titleValue,
             content: this.mdValue,
-            thumbnail: this.thumbnail.url
+            thumbnail: this.thumbnail.url,
+            tags: this.articleTags.value
         })
     }
     addImage ($event: any){
@@ -132,6 +131,7 @@ export class ConsoleWriteComponent implements OnInit {
                             name: res.thumbnail? '原题图': null,
                             url: res.thumbnail
                         }
+                        this.articleTags.value = res.tags
                         this.appendDetail = res
                     }
                 }
