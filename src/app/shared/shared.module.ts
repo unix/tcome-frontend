@@ -10,6 +10,7 @@ import {BackComponent} from './component/back'
 import {PaginationComponent} from './component/pagination'
 import {BreadcrumbComponent} from './component/breadcrumb'
 import {CopyrightComponent} from './component/copyright'
+import {TagsComponent} from './component/tags'
 import {SanitizeHtmlPipe} from './pipe/sanitize'
 import {SafeStylePipe} from './pipe/safe-style'
 import {LocalDirective} from './directive/local'
@@ -30,6 +31,7 @@ import {StaticService} from './service/static'
         BreadcrumbComponent,
         PaginationComponent,
         CopyrightComponent,
+        TagsComponent,
         LocalDirective
     ],
     exports: [
@@ -40,6 +42,7 @@ import {StaticService} from './service/static'
         BreadcrumbComponent,
         PaginationComponent,
         CopyrightComponent,
+        TagsComponent,
         LocalDirective
     ],
     providers: [

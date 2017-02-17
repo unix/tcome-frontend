@@ -1,0 +1,19 @@
+<div class="tags-bg" (click)="active=false" [hidden]="!active"></div>
+<div class="tags" [hidden]="!active">
+    <div class="tags-content">
+        <div class="input-box">
+            <input type="text" placeholder="键入标签以回车确认" [(ngModel)]="tagValue" (keyup)="addTag($event)">
+            <span>{{errorMessage&& errorMessage}}</span>
+        </div>
+        <div class="tags-render">
+            <div class="box" *ngFor="let t of saveTags">
+                <p>{{t}}</p>
+                <span class="iconfont"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tags-bar">
+        <button (click)="submitTags(true)">接受</button>
+        <button class="close" (click)="submitTags(false)">取消</button>
+    </div>
+</div>

@@ -4,7 +4,8 @@
         <button *ngIf="!thumbnail.name">题图
             <input type="file" accept="image/*" (change)="addImage($event)">
         </button>
-        <button *ngIf="thumbnail.name" (click)="clearImage()" style="width: auto;">删除{{thumbnail.name}}</button>
+        <button *ngIf="thumbnail.name" (click)="clearImage()" style="width: auto;">删除{{thumbnail.name | slice: -10}}</button>
+        <input type="text" class="tag" placeholder="标签请以，分隔" [(ngModel)]="tags">
     </div>
 
     <div class="write-title">
@@ -12,5 +13,5 @@
     </div>
     <app-console-editor [text]="mdInitialValue" (mdChange)="mdChange($event)" *ngIf="mdInitialValue"></app-console-editor>
     <app-console-editor (mdChange)="mdChange($event)" *ngIf="!mdInitialValue"></app-console-editor>
-
+    <app-tags [active]="true"></app-tags>
 </div>

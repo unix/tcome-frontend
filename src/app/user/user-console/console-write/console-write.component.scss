@@ -66,6 +66,27 @@
 			cursor: pointer;
 		}
 	}
+	>.tag {
+		width: 30%;
+		max-width: 200px;
+		height: 35px;
+		padding-left: 3px;
+		background: transparent;
+		border: 1px solid #DDD;
+		font-size: 18px;
+		overflow: hidden;
+		-webkit-transition: all 0.35s;
+		-moz-transition: all 0.35s;
+		-o-transition: all 0.35s;
+		transition: all 0.35s;
+		&:active, &:hover, &:focus{
+			outline: none;
+		}
+		&:active {
+			width: 40%;
+			max-width: 280px;
+		}
+	}
 }
 
 .write-tags {
