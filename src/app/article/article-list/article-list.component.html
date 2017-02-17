@@ -4,7 +4,7 @@
         <li *ngFor="let item of list">
             <div class="profiles" [class.no-thumbnail]="!item.thumbnail">
                 <h3 (click)="goNext(item.id)">{{item.title}}</h3>
-                <p>{{item.abstract | slice: 0:150}}</p>
+                <p>{{item.abstract | slice: 0:130}}</p>
                 <div class="additional">
                     <p class="author">From:{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
                     <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
