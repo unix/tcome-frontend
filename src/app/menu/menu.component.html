@@ -27,7 +27,7 @@
 
 <div class="mobile-menu" *xs>
     <div class="mobile-menu-user">
-        <img [src]="user&&user.avatar? user.avatar: 'http://static.wittsay.cc/default_avatar.jpg'"
+        <img [src]="user&&user.avatar? user.avatar + '?imageView2/1/w/150/h/150': 'http://static.wittsay.cc/default_avatar.jpg'"
              alt=""
              draggable="false"
              (click)="goNext('console/subject')"
