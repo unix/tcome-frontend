@@ -125,12 +125,16 @@ export class ConsoleWriteComponent implements OnInit {
             .subscribe(
                 res =>{
                     if (res&& res.content){
+                        // 初始化编辑区域
                         this.mdInitialValue = res.content
                         this.titleValue = res.title
+                        this.mdValue = res.content
+                        // 初始化题图
                         this.thumbnail = {
                             name: res.thumbnail? '原题图': null,
                             url: res.thumbnail
                         }
+                        // 初始化tags
                         this.articleTags.value = res.tags
                         this.appendDetail = res
                     }
