@@ -5,7 +5,7 @@
             <input type="file" accept="image/*" (change)="addImage($event)">
         </button>
         <button *ngIf="thumbnail.name" (click)="clearImage()" style="width: auto;">删除{{thumbnail.name | slice: -10}}</button>
-        <input type="text" class="tag" placeholder="标签请以，分隔" [(ngModel)]="tags">
+        <button (click)="articleTags.show=true">标签{{articleTags.value.length? '(' + articleTags.value.length + ')': '(添加)'}}</button>
     </div>
 
     <div class="write-title">
@@ -13,5 +13,5 @@
     </div>
     <app-console-editor [text]="mdInitialValue" (mdChange)="mdChange($event)" *ngIf="mdInitialValue"></app-console-editor>
     <app-console-editor (mdChange)="mdChange($event)" *ngIf="!mdInitialValue"></app-console-editor>
-    <app-tags [active]="true"></app-tags>
+    <app-tags [active]="articleTags.show" [init]="articleTags.value" (tagsChange)="appendTags($event)"></app-tags>
 </div>

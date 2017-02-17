@@ -28,7 +28,10 @@ export class ConsoleWriteComponent implements OnInit {
     public titleValue: any = ''
     public isAppend: boolean = false
     public appendDetail: any = {}
-    public tags: string = ''
+    public articleTags = {
+        value: [],
+        show: false
+    }
 
     public thumbnail = {
         name: null,
@@ -37,6 +40,12 @@ export class ConsoleWriteComponent implements OnInit {
 
     mdChange (mdValue: any){
         this.mdValue = mdValue
+    }
+    appendTags (tags: any){
+        this.articleTags.show = false
+        if (tags){
+           this.articleTags.value = tags
+        }
     }
     submit (){
         if (!this.titleValue) return this.staticService.toastyInfo('需要补全标题', '无法提交')
@@ -47,13 +56,6 @@ export class ConsoleWriteComponent implements OnInit {
         if (this.mdValue.length < 100 || this.mdValue.length > 30000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
-        // if (!this.tags || this.tags.length< 2|| this.tags.length > 30){
-        //     return this.staticService.toastyInfo('标签长度不符合规范', '无法提交')
-        // }
-        // Array.from(this.tags).forEach(v =>{
-        //
-        // })
-
         const method = this.isAppend? 'update': 'create'
         this[method]({
             title: this.titleValue,

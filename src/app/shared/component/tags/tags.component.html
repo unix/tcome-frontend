@@ -1,4 +1,4 @@
-<div class="tags-bg" (click)="active=false" [hidden]="!active"></div>
+<div class="tags-bg" (click)="submitTags(false)" [hidden]="!active"></div>
 <div class="tags" [hidden]="!active">
     <div class="tags-content">
         <div class="input-box">
@@ -6,7 +6,7 @@
             <span>{{errorMessage&& errorMessage}}</span>
         </div>
         <div class="tags-render">
-            <div class="box" *ngFor="let t of saveTags">
+            <div class="box" *ngFor="let t of init">
                 <p>{{t}}</p>
                 <span class="iconfont"></span>
             </div>
