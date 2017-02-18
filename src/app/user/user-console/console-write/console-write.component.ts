@@ -54,6 +54,9 @@ export class ConsoleWriteComponent implements OnInit {
         if (this.mdValue.length < 100 || this.mdValue.length > 30000){
             return this.staticService.toastyInfo('正文内容长度不符合规范', '无法提交')
         }
+        if (!this.articleTags.value|| this.articleTags.value.length === 0){
+            return this.staticService.toastyInfo('请至少添加一个标签！', '无法提交')
+        }
         const method = this.isAppend? 'update': 'create'
         this[method]({
             title: this.titleValue,
