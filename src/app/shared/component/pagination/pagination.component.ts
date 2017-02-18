@@ -33,6 +33,7 @@ export class PaginationComponent implements OnInit {
         const next = this.page + nextNumber
         if (next < 1) return;
         if (nextNumber > 0&& this.over) return;
+        this.page = next
         this.next.emit(next)
     }
 
