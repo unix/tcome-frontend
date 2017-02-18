@@ -34,7 +34,6 @@ export class ArticleListComponent implements OnInit {
                 res => {
                     if (res&& res.list){
                         this.list = res.list
-                        console.log(res.total);
                         this.checkOver(res.total)
                     }
                 },
