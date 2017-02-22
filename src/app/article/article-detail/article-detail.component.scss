@@ -93,6 +93,37 @@
 	background-color: #fff;
 	padding:  10px 15px;
 	margin-bottom: 20px;
+	.article-detail-tag {
+		width: 100%;
+		height: auto;
+		margin: 20px auto;
+		padding-bottom: 25px;
+		text-align: center;
+		>span {
+			padding: 5px 12px;
+			display: inline-block;
+			background: rgba(255, 255, 255, 0.75);
+			color: #86acd8;
+			font-size: 15px;
+			border: 1px solid #86acd8;
+			border-radius: 2px;
+			margin: 0 8px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
+			-webkit-transition: all 0.2s;
+			-moz-transition: all 0.2s;
+			-o-transition: all 0.2s;
+			transition: all 0.2s;
+			&:hover {
+				background: #86acd8;
+				border: 1px solid #fff;
+				color: #fff;
+			}
+		}
+	}
 }
 .copyright {
 	width: 95%;

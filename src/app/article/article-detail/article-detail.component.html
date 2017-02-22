@@ -18,6 +18,9 @@
 </div>
 <div class="article-detail" *ngIf="detail&& detail.id">
     <div class="article-detail-content">
+        <div class="article-detail-tag" *ngIf="detail.tags&&detail.tags.length">
+           <span *ngFor="let tag of detail.tags">{{tag}}</span>
+        </div>
         <app-showdown html="{{detail.content}}"></app-showdown>
     </div>
     <div class="copyright">
