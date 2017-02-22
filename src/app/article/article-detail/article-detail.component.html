@@ -3,9 +3,8 @@
      [style.background-image]="detail.thumbnail&& ('url(' + detail.thumbnail + '?imageView2/1/w/1250/h/450)' | safeStyle)"
      [class.image]="detail.thumbnail"
 >
-    <!--<img *ngIf="detail.thumbnail" [src]="detail.thumbnail" alt="" class="article-title-bg">-->
     <a href="#" class="photo">
-        <img [src]="detail.avatar? detail.avatar + '?imageView2/1/w/150/h/150': 'http://static.wittsay.cc/default_photo.png'" alt="" >
+        <img [src]="detail.avatar? detail.avatar + '?imageView2/1/w/150/h/150': 'http://static.wittsay.cc/default_photo.png'" alt="" draggable="false">
         <div class="hide"></div>
     </a>
     <div class="title" id="title" [class.image]="detail.thumbnail">
