@@ -33,7 +33,10 @@ $ npm run build
 $ npm run build-static
 ```
 
-
+## DEMO
+[PREVIEW](http://wittsay.cc/) 
+![demo1](http://static.wittsay.cc/tcome-demo-1.png)
+![demo2](http://static.wittsay.cc/tcome-demo-2.png)
 
 ## TEAM
 TCOME developed by WittBulter，any question，please contact me:
