@@ -12,17 +12,15 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 25%;
-		max-width: 420px;
-		min-width: 285px;
+		width: 350px;
 		height: 100%;
 		z-index: 10;
 	}
 	>.app-content {
 		flex: 1;
-		margin-left: 25%;
 		overflow-x: hidden;
 		height: 100%;
+		margin-left: 350px;
 		background: #FCFCFC;
 	}
 }
