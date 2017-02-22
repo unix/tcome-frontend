@@ -6,8 +6,8 @@
                 <h3 (click)="goNext(item.id)">{{item.title}}</h3>
                 <p>{{item.abstract | slice: 0:130}}</p>
                 <div class="additional">
-                    <p class="author">From:{{item.authorName}} - {{item.createdAt | amDateFormat:'LL'}}</p>
-                    <p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>
+                    <p class="author">{{item.authorName}} - {{item.createdAt | amDateFormat:'MM-DD-YYYY'}} - {{item.readTotal}} views </p>
+                    <!--<p class="views">{{item.readTotal}}views / {{item.commentTotal}}comments</p>-->
                 </div>
             </div>
             <div class="thumbnail" *ngIf="item.thumbnail">

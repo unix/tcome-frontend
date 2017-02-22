@@ -9,14 +9,12 @@
 ul.article-list{
 	width: 100%;
 	height: auto;
-	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-
 	>li {
 		width: 100%;
-		height: 185px;
+		height: 195px;
 		border-bottom: 1px solid #E6E6E6;
-		padding: 15px 0;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+		padding: 22px 0;
+		font-family: -apple-system, "Hiragino Sans GB", "Hiragino Sans GB W3", Helvetica, "Microsoft YaHei", sans-serif;
 		&:last-child {
 			border-bottom: none;
 		}
@@ -34,11 +32,19 @@ ul.article-list{
 				font-weight: normal;
 				line-height: 30px;
 				color: #333;
-				margin-bottom: 15px;
+				margin-bottom: 8px;
 				cursor: pointer;
+				-webkit-transition: all 0.15s;
+				-moz-transition: all 0.15s;
+				-o-transition: all 0.15s;
+				transition: all 0.15s;
+				&:hover {
+					color: #458fd2;
+				}
 			}
 			p {
 				font-size: 15px;
+				color: #999;
 			}
 			.additional {
 				position: absolute;
@@ -52,6 +58,7 @@ ul.article-list{
 				p.author {
 					float: left;
 					font-size: 15px;
+					color: #c7c7c7;
 				}
 				p.views {
 					float: right;
