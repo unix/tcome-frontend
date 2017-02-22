@@ -5,16 +5,16 @@
     </div>
     <div class="photo">
         <img [src]="user&&user.avatar? user.avatar: 'http://static.wittsay.cc/default_avatar.jpg'" alt="" draggable="false" (click)="goNext('console/subject')">
-        <span>{{user&& user.username? user.username: '游客'}}</span>
+        <span>{{user&& user.username? user.username: 'Visitors'}}</span>
     </div>
     <div class="back-box">
         <app-back></app-back>
     </div>
     <ul class="menu">
-        <li><a routerLinkActive="active" routerLink="/welcome">首页</a></li>
-        <li><a routerLinkActive="active" routerLink="/articles">文章</a></li>
-        <li><a routerLinkActive="active" routerLink="/search">搜索</a></li>
-        <li><a routerLinkActive="active" routerLink="{{user&& user.id? '/user/console/subject': '/user/login'}}">{{user&& user.id? '总览': '登录'}}</a></li>
+        <li><a routerLinkActive="active" routerLink="/welcome">HOME</a></li>
+        <li><a routerLinkActive="active" routerLink="/articles">ARTICLES</a></li>
+        <li><a routerLinkActive="active" routerLink="/search">SEARCH</a></li>
+        <li><a routerLinkActive="active" routerLink="{{user&& user.id? '/user/console/subject': '/user/login'}}">{{user&& user.id? 'CONSOLE': 'LOGIN'}}</a></li>
     </ul>
     <div class="session">
         <button *ngIf="user&& user.id" (click)="logout()">Sign out</button>
