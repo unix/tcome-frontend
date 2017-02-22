@@ -1,6 +1,6 @@
 <div class="content" *hideItBootstrap="['xs']">
     <div class="recommended">
-        <h2>今日精选</h2>
+        <h2>Today's Special</h2>
         <ul *ngIf="option&& option.recommended">
             <li *ngFor="let item of option.recommended">
                 <h3><a routerLink="/articles/list/{{item.id}}">{{item.title}}</a></h3>
@@ -10,14 +10,14 @@
         </ul>
     </div>
     <div class="welcome" *ngIf="option">
-        <h1>{{option.blogName?option.blogName: '新博客'}}</h1>
+        <h1>{{option.blogName?option.blogName: 'NEW BLOG'}}</h1>
         <p>{{option.blogSubhead}}</p>
     </div>
 </div>
 
 <div class="mobile-home" *xs>
     <div class="mobile-home-title" *ngIf="option">
-        <h1>{{option.blogName?option.blogName: '新博客'}} <span>今日推荐</span></h1>
+        <h1>{{option.blogName?option.blogName: 'NEW BLOG'}} <span>Today's Special</span></h1>
         <p>{{option.blogSubhead}}</p>
     </div>
     <ul class="mobile-home-list" *ngIf="option&& option.recommended">
