@@ -1,6 +1,6 @@
 .search-input-box {
 	width: 80%;
-	max-width: 380px;
+	max-width: 450px;
 	height: 42px;
 	line-height: 40px;
 	margin: 80px auto;
@@ -35,8 +35,10 @@
 }
 
 .search-list {
-	width: 760px;
+	width: 75%;
+	max-width: 700px;
 	margin: 0 auto;
+	padding-bottom: 60px;
 	>li {
 		color: #000;
 		cursor: pointer;

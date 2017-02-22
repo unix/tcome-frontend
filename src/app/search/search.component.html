@@ -7,8 +7,8 @@
         </p>
     </div>
     <ul class="search-list">
-        <li *ngFor="let item of list | async">
-            <h3><a routerLink="/articles/list/{{item.id}}">{{item.title}}</a></h3>
+        <li *ngFor="let item of list | async" (click)="goNext(item.id)">
+            <h3>{{item.title}}</h3>
             <p>发布于 {{item.createdAt | amDateFormat:'LL'}}  {{item.readTotal}}views</p>
             <p>来自 {{item.authorName}}</p>
         </li>

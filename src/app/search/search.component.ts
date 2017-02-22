@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Subject} from 'rxjs/Subject'
 import {Observable} from 'rxjs/Observable'
+import {Router} from '@angular/router'
 import {SearchService} from './search.service'
 import {Articles} from './articles'
 
@@ -13,7 +14,8 @@ import {Articles} from './articles'
 export class SearchComponent implements OnInit {
 
     constructor (
-        private searchService: SearchService
+        private searchService: SearchService,
+        private router: Router
     ){
     }
 
@@ -22,6 +24,9 @@ export class SearchComponent implements OnInit {
 
     search (keyWord: string){
         this.searchTerms.next(keyWord)
+    }
+    goNext (id: string){
+        this.router.navigate(['/articles/list', id])
     }
 
     ngOnInit (){
