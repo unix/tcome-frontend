@@ -41,15 +41,15 @@ export class AdminRecommendComponent implements OnInit {
                 }
             )
     }
-    changeOption (item: any){
-        const arrayIndex = this.option.recommended.findIndex(v => v.id === item.id)
+    changeOption (id: string){
+        const arrayIndex = this.option.recommended.findIndex(v => v.id === id)
         if (arrayIndex >= 0) {
             this.option.recommended.splice(arrayIndex, 1)
         } else {
             if (this.option.recommended.length >= 5){
                 return this.staticService.toastyInfo('最多只能添加5篇推荐文章', '添加失败')
             }
-            this.option.recommended.push(item)
+            this.option.recommended.push(id)
         }
         this.recommendService.changeOption(this.option)
             .subscribe(
