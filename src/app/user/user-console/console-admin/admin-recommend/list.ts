@@ -2,7 +2,6 @@
  * Created by WittBulter on 2016/10/19.
  * List Model
  */
-
 export class List {
     id: string           // id
     title: string        // 标题

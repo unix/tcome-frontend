@@ -12,7 +12,7 @@
                 <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
             </div>
             <div class="delete">
-                <button (click)="changeOption(item.id)"
+                <button (click)="changeOption(item.id, !articleIsRecommended(item))"
                         [class.add]="!articleIsRecommended(item)">
                     {{articleIsRecommended(item)? '取消推荐': '加入推荐'}}
                 </button>
@@ -31,7 +31,7 @@
                     <p>{{item.authorName}} {{item.createdAt | amDateFormat:'LL'}}</p>
                 </div>
                 <div class="delete">
-                    <button (click)="changeOption(item)"
+                    <button (click)="changeOption(item.id, !articleIsRecommended(item))"
                             [class.add]="!articleIsRecommended(item)">
                         {{articleIsRecommended(item)? '取消推荐': '加入推荐'}}
                     </button>

@@ -2,13 +2,18 @@ import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
 import {Router} from '@angular/router'
 import {BehaviorSubject} from 'rxjs/BehaviorSubject'
+import {Subject} from 'rxjs/Subject'
 import {Observable} from 'rxjs/Observable'
-
+import 'rxjs'
 import {Option} from './option'
 import {List} from './list'
 import {RecommendService} from './recommend.service'
 import {StaticService} from '../../../../shared/service/static'
 
+interface OptionChangeItem {
+    value: string,
+    isAdd: boolean
+}
 @Component({
     selector: 'app-admin-recommend',
     templateUrl: './admin-recommend.component.html',
@@ -17,49 +22,51 @@ import {StaticService} from '../../../../shared/service/static'
 })
 export class AdminRecommendComponent implements OnInit {
 
-    constructor (
-        private recommendService: RecommendService,
-        private staticService: StaticService,
-        private titleService: Title,
-        private router: Router
-    ){
+    constructor (private recommendService: RecommendService,
+                 private staticService: StaticService,
+                 private titleService: Title,
+                 private router: Router){
     }
-    public option: Option
+
+    public option: Option = {recommended: []}
     public list: Observable<List[]>
     public showAlert: boolean = false
 
-    private searchTerms = new BehaviorSubject<string>('allArticles')
+    private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>('allArticles')
+
+
+    private optionChangeItem: Subject<OptionChangeItem> = new Subject<OptionChangeItem>()
     private timer: any
 
 
     getOption (){
         this.recommendService.getOption()
+            .do(
+                option => Object.assign(this.option, option),
+                error => this.staticService.toastyInfo(error.json().message)
+            )
+            .combineLatest(this.optionChangeItem, (option, item) =>{
+                return item.isAdd ?
+                    [...option.recommended, {id: item.value}]:
+                    option.recommended.map(v => v.id == item.value? false: v)
+            })
+            .map(rec => {
+                console.log(rec);
+                return rec.filter(v => v&& v.id).map(v => v.id)
+            })
+            .switchMap(rec => this.recommendService.changeOption({recommended: rec}))
             .subscribe(
-                option => this.option = option,
-                error =>{
-                    return this.staticService.toastyInfo(error.json().message);
-                }
+                option => Object.assign(this.option, option),
+                error => this.staticService.toastyInfo(error.json().message)
             )
     }
-    changeOption (id: string){
-        const arrayIndex = this.option.recommended.findIndex(v => v.id === id)
-        if (arrayIndex >= 0) {
-            this.option.recommended.splice(arrayIndex, 1)
-        } else {
-            if (this.option.recommended.length >= 5){
-                return this.staticService.toastyInfo('最多只能添加5篇推荐文章', '添加失败')
-            }
-            this.option.recommended.push(id)
-        }
-        this.recommendService.changeOption(this.option)
-            .subscribe(
-                option => this.option = option,
-                error =>{
-                    return this.staticService.toastyInfo(error.json().message);
-                }
-            )
+
+    changeOption (id: string, isAdd: boolean = true): void{
+        this.optionChangeItem.next({value: id, isAdd: isAdd})
     }
+
     articleIsRecommended (item){
+        if (!this.option.recommended) return;
         return this.option.recommended.some(v => v.id === item.id)
     }
 
@@ -76,7 +83,7 @@ export class AdminRecommendComponent implements OnInit {
             .debounceTime(300)
             .distinctUntilChanged()
             .switchMap(word => this.recommendService.search(word))
-            .catch(error => {
+            .catch(error =>{
                 return Observable.of<List[]>([]);
             })
     }
