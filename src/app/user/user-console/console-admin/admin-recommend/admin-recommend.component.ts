@@ -11,7 +11,7 @@ import {RecommendService} from './recommend.service'
 import {StaticService} from '../../../../shared/service/static'
 
 interface OptionChangeItem {
-    value: string,
+    id: string,
     isAdd: boolean
 }
 @Component({
@@ -33,7 +33,7 @@ export class AdminRecommendComponent implements OnInit {
     public showAlert: boolean = false
 
     private searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>('allArticles')
-
+    private optionSub: BehaviorSubject<any> = new BehaviorSubject<any>({recommended: []})
 
     private optionChangeItem: Subject<OptionChangeItem> = new Subject<OptionChangeItem>()
     private timer: any
@@ -41,28 +41,19 @@ export class AdminRecommendComponent implements OnInit {
 
     getOption (){
         this.recommendService.getOption()
-            .do(
-                option => Object.assign(this.option, option),
-                error => this.staticService.toastyInfo(error.json().message)
-            )
-            .combineLatest(this.optionChangeItem, (option, item) =>{
-                return item.isAdd ?
-                    [...option.recommended, {id: item.value}]:
-                    option.recommended.map(v => v.id == item.value? false: v)
-            })
-            .map(rec => {
-                console.log(rec);
-                return rec.filter(v => v&& v.id).map(v => v.id)
-            })
-            .switchMap(rec => this.recommendService.changeOption({recommended: rec}))
             .subscribe(
-                option => Object.assign(this.option, option),
+                option =>{
+                    this.optionSub.next(option)
+                    Object.assign(this.option, option)
+                },
                 error => this.staticService.toastyInfo(error.json().message)
             )
+
+
     }
 
     changeOption (id: string, isAdd: boolean = true): void{
-        this.optionChangeItem.next({value: id, isAdd: isAdd})
+        this.optionChangeItem.next({id: id, isAdd: isAdd})
     }
 
     articleIsRecommended (item){
@@ -86,6 +77,22 @@ export class AdminRecommendComponent implements OnInit {
             .catch(error =>{
                 return Observable.of<List[]>([]);
             })
+
+        this.optionChangeItem
+            .withLatestFrom(this.optionSub, (item, option) =>{
+                return item.isAdd ?
+                    [...option.recommended, item] :
+                    option.recommended.map(v => v.id == item.id ? false : v)
+            })
+            .map(rec => rec.filter(v => v && v.id).map(v => v.id))
+            .switchMap(rec => this.recommendService.changeOption({recommended: rec}))
+            .subscribe(
+                option =>{
+                    this.optionSub.next(option)
+                    Object.assign(this.option, option)
+                },
+                error => this.staticService.toastyInfo(error.json().message)
+            )
     }
 
 }
