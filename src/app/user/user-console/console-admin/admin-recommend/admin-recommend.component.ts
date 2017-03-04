@@ -36,7 +36,6 @@ export class AdminRecommendComponent implements OnInit {
     private optionSub: BehaviorSubject<any> = new BehaviorSubject<any>({recommended: []})
 
     private optionChangeItem: Subject<OptionChangeItem> = new Subject<OptionChangeItem>()
-    private timer: any
 
 
     getOption (){
@@ -48,8 +47,6 @@ export class AdminRecommendComponent implements OnInit {
                 },
                 error => this.staticService.toastyInfo(error.json().message)
             )
-
-
     }
 
     changeOption (id: string, isAdd: boolean = true): void{
