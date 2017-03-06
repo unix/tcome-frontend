@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core'
 import {Title} from '@angular/platform-browser'
 import {Router} from '@angular/router'
+import {Subject} from 'rxjs/Subject'
 
-import {Option} from './option'
+import {Option, BlogDescription} from './option'
 import {OptionService} from './option.service'
 import {StaticService} from '../../../../shared/service/static'
 
@@ -25,6 +26,9 @@ export class AdminOptionComponent implements OnInit {
     public blogName: string
     public blogSubhead: string
 
+    public blogDescription: Subject<BlogDescription> = new Subject()
+
+
     getOption (){
         this.optionService.getOption()
             .subscribe(
@@ -40,22 +44,25 @@ export class AdminOptionComponent implements OnInit {
     }
 
     saveOption (){
-        if (this.blogName) this.option.blogName = this.blogName
-        if (this.blogSubhead) this.option.blogSubhead = this.blogSubhead
-        this.optionService.changeOption(this.option)
-            .subscribe(
-                option =>{
-                    return this.staticService.toastyInfo('博客基础信息已更新', '修改成功')
-                },
-                error =>{
-                    return this.staticService.toastyInfo(error.json().message);
-                }
-            )
+        this.blogDescription.next({
+            blogName: this.blogName? this.blogName: this.option.blogName,
+            blogSubhead: this.blogSubhead? this.blogSubhead: this.option.blogSubhead,
+        })
     }
 
     ngOnInit (){
         this.titleService.setTitle('博客设置-维特博客')
         this.getOption()
+
+        this.blogDescription
+            .distinctUntilChanged()
+            .switchMap(des => this.optionService.changeOption(des))
+            .subscribe(
+                option => this.staticService.toastyInfo('博客基础信息已更新', '修改成功'),
+                error => this.staticService.toastyInfo(error.json().message)
+            )
+
+
     }
 
 }
